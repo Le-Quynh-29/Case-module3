@@ -145,13 +145,13 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             </a>
                         </li>
                         <li class="treeview">
-                            <a href="#">
+                            <a href="{{route('customers.list')}}">
                                 <i class="fa fa-laptop"></i>
-                                <span>Components</span>
+                                <span>Danh sách khách hàng</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{asset('backend/grids.html')}}"><i class="fa fa-angle-right"></i> Grids</a></li>
+                                <li><a href="{{route('customers.list')}}"><i class="fa fa-angle-right"></i> Grids</a></li>
                                 <li><a href="{{asset('backend/media.html')}}"><i class="fa fa-angle-right"></i> Media Css</a></li>
                             </ul>
                         </li>
@@ -164,9 +164,9 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                         </li>
                         <li class="treeview">
                         <li class="treeview">
-                            <a href="#">
+                            <a href="{{route('products.list')}}">
                                 <i class="fa fa-laptop"></i>
-                                <span>UI Elements</span>
+                                <span>Danh sách sản phẩm </span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
