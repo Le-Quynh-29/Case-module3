@@ -1,4 +1,7 @@
-@extends('backend.index')
+@extends('master')
+@section('title')
+    Them moi khach hang
+@endsection
 @section('content')
 
     <style>

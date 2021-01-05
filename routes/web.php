@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('backend.index');
-});
+    return view('welcome');
+})->name('welcome');
+
+Route::get('/shop',function (){
+    return view('frontend.index');
+})->name('shop');
 
 Route::group(['prefix'=> 'customers'],function (){
     Route::get('/',[\App\Http\Controllers\backend\CustomerController::class,'index'])->name('customers.list');
