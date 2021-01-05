@@ -51,10 +51,6 @@ class CustomerController extends Controller
 //        $customer->password =Hash::make($request->password);
         $customer->save();
 
-        //dung session de dua ra thong bao
-//        Session::flash('success', 'Cập nhật khách hàng thành công');
-
-        //cap nhat xong quay ve trang danh sach khach hang
         return redirect()->route('customers.list');
     }
 

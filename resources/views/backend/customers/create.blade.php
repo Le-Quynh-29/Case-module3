@@ -14,19 +14,19 @@
                     </div>
                     <div class="form-group">
                         <label>Địa chỉ</label>
-                        <input type="text" class="form-control" name="address" placeholder="Enter email">
+                        <input type="text" class="form-control" name="address" placeholder="Enter address">
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" class="form-control" name="email">
+                        <input type="email" class="form-control" name="email" placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <label>Số điện thoại</label>
-                        <input type="text" class="form-control" name="phone">
+                        <input type="text" class="form-control" name="phone" placeholder="Enter phone">
                     </div>
                     <div class="form-group">
                         <label>Mật khẩu</label>
-                        <input type="text" class="form-control" name="password">
+                        <input type="text" class="form-control" name="password" placeholder="Enter pasword">
                     </div>
                     <button type="submit" class="btn btn-primary">Thêm mới</button>
                     <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>
