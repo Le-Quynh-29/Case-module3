@@ -160,7 +160,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             </ul>
                         </li>
                         <li class="treeview">
-                            <a href="{{asset('backend/charts.html')}}">
+                           <a href="#" >
                                 <i class="fa fa-pie-chart"></i>
                                 <span>Charts</span>
                                 <span class="label label-primary pull-right">new</span>
