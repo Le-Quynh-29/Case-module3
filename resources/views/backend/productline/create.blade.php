@@ -1,6 +1,24 @@
 @extends('backend.index')
 @section('content')
+
+
+    <style>
+        h1{
+            font-size: 70px!important;
+
+        }
+        label{
+            font-size: 25px!important;
+        }
+        input{
+            font-size: 20px!important;
+        }
+        button{
+            font-size: 20px!important;
+        }
+    </style>
     <div class="sub-main-w3">
+        <h1>Thêm dòng sản phẩm</h1>
         <form method="post" action="{{ route('productline.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">

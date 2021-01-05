@@ -1,11 +1,31 @@
 @extends('backend.index')
 @section('content')
+
+    <style>
+        h1{
+            font-size: 70px!important;
+
+        }
+        td{
+            font-size: 20px!important;
+        }
+        th{
+            font-size:25px!important;
+
+        }
+        button{
+            font-size: 15px!important;
+        }
+        /*a{*/
+        /*    font-size: 30px!important;*/
+        /*}*/
+    </style>
     <div class="col-12">
         <div class="row">
             <div class="col-12">
                 <h1>Danh Sách Khách Hàng</h1>
             </div>
-            <a class="btn btn-primary" href="{{route('customers.create')}}">Thêm mới</a>
+            <a style="font-size: 25px!important;" class="btn btn-primary" href="{{route('customers.create')}}">Thêm mới</a>
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -19,11 +39,6 @@
                 </tr>
                 </thead>
                 <tbody>
-                {{--                @if(count($customers) == 0)--}}
-                {{--                    <tr>--}}
-                {{--                        <td colspan="7" class="text-center">Không có dữ liệu</td>--}}
-                {{--                    </tr>--}}
-                {{--                @else--}}
                 @foreach($customers as $key => $customer)
                     <tr>
                         <th scope="row">{{ ++$key }}</th>
@@ -31,11 +46,10 @@
                         <td>{{ $customer->address }}</td>
                         <td>{{ $customer->email }}</td>
                         <td>{{ $customer->phone }}</td>
-                        <td><a href="{{ route('customers.edit', $customer->id) }}" class="btn btn-warning">sửa</a></td>
-                        <td><a href="{{ route('customers.destroy', $customer->id) }}" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">xóa</a></td>
+                        <td><a href="{{ route('customers.edit', $customer->id) }}" class="btn btn-info">Sửa</a></td>
+                        <td><a href="{{ route('customers.destroy', $customer->id) }}" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa</a></td>
                     </tr>
                 @endforeach
-                {{--                @endif--}}
                 </tbody>
             </table>
             <div style="font-size:25px;text-align: right!important; ">

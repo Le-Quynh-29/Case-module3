@@ -1,11 +1,32 @@
 @extends('backend.index')
 @section('content')
+
+
+    <style>
+        h1{
+            font-size: 70px!important;
+
+        }
+        td{
+            font-size: 20px!important;
+        }
+        th{
+            font-size:25px!important;
+
+        }
+        button{
+            font-size: 15px!important;
+        }
+        /*a{*/
+        /*    font-size: 30px!important;*/
+        /*}*/
+    </style>
     <div class="col-12">
         <div class="row">
             <div class="col-12">
                 <h1>Danh Sách Sản Phẩm</h1>
             </div>
-            <a class="btn btn-primary" href="{{route('products.create')}}">Thêm mới</a>
+            <a style="font-size: 25px!important;" class="btn btn-primary" href="{{route('products.create')}}">Thêm mới</a>
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -15,10 +36,11 @@
                     <th scope="col">Mô tả</th>
                     <th scope="col">Số lượng </th>
                     <th scope="col">Giá</th>
-                    <th scope="col">Hình ảnh</th>
+
                     <th scope="col">Mã giảm giá</th>
-                    <th></th>
-                    <th></th>
+                    <th scope="col">Hình ảnh</th>
+{{--                    <th></th>--}}
+{{--                    <th></th>--}}
                 </tr>
                 </thead>
                 <tbody>
@@ -31,10 +53,14 @@
                         <td>{{$product->descripton }}</td>
                         <td>{{$product->quantity }}</td>
                         <td>{{$product->price}}</td>
-                        <td>{{$product->img }}</td>
+
                         <td>{{$product->voucher}}</td>
-                        <td><a href="{{ route('product.edit', $product->id) }}" class="btn btn-warning">Sửa</a></td>
-                        <td><a href="{{ route('product.destroy', $product->id) }}" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa</a></td>
+
+                        <td>
+                            <img src="{{asset ('storage/images/'.$product->img)}} " alt="" style="width: 100px ">
+                        </td>
+                        <td><a href="{{ route('products.edit', $product->id) }}" class="btn btn-info">Sửa</a></td>
+                        <td><a href="{{ route('products.delete', $product->id) }}" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa</a></td>
                     </tr>
                 @endforeach
                 </tbody>

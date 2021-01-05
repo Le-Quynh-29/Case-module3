@@ -4,7 +4,9 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\ProductLine;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -26,7 +28,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $product = Product::all();
+        $product = ProductLine::all();
+
         return view('backend.products.create', compact('product'));
     }
 
@@ -38,20 +41,30 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-
-        dd($request);
         $product = new Product();
         $product-> productName = $request->input('productName');
-        $product-> productLine = $request->input('productLine ');
+        $product-> productLine = $request->input('productLine');
         $product-> descripton = $request->input('descripton');
         $product-> quantity = $request->input('quantity');
         $product-> price = $request->input('price');
-        $product-> img = $request->input('img');
         $product-> voucher = $request->input('voucher');
 
+        $file = $request->inputFile;
+        if (!$request->hasFile('inputFile')) {
+            $product->img = $file;
+        } else {
+            $file = $request->file('inputFile');
+            $fileExtension = $file->getClientOriginalExtension();
+            $fileName = $request->inputName;
+            $newFileName = "$fileName.$fileExtension";
+            $request->file('inputFile')->storeAs('public/images', $newFileName);
+            $product->img = $newFileName;
+        }
         $product->save();
 
         return redirect()->route('products.list');
+
+
 
     }
 
@@ -70,11 +83,14 @@ class ProductController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $product = Product::findOrFail($id);
+
+        $productline = ProductLine::all();
+        return view('backend.products.edit', compact('product','productline'));
     }
 
     /**
@@ -82,21 +98,44 @@ class ProductController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $product = Product::find($id);
+
+        $product->productName = $request->input('productName');
+        $product->productLine = $request->input('productLine');
+        $product->descripton = $request->input('descripton');
+        $product->quantity = $request->input('quantity');
+        $product->price = $request->input('price');
+        $product->voucher = $request->input('voucher');
+                $file = $request->inputFile;
+        if (!$request->hasFile('inputFile')) {
+            $product->img = $file;
+        } else {
+            $file = $request->file('inputFile');
+            $fileExtension = $file->getClientOriginalExtension();
+            $fileName = $request->inputName;
+            $newFileName = "$fileName.$fileExtension";
+            $request->file('inputFile')->storeAs('public/images', $newFileName);
+            $product->img = $newFileName;
+        }
+        $product->save();
+        return redirect()->route('products.list');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $product->delete();
+        return redirect()->route('products.list');
     }
 }

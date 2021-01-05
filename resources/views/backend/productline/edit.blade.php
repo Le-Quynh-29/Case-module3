@@ -6,7 +6,7 @@
                 <h1>Chỉnh sửa dòng sản phẩm </h1>
             </div>
             <div class="col-12">
-                <form method="post" action="{{ route('productline.update', $productline->id) }}">
+                <form method="post" action="{{ route('productline.update', $productline->id) }}"  enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label>Dòng sản phẩm </label>
