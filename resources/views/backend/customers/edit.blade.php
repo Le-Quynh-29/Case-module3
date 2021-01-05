@@ -1,5 +1,6 @@
 @extends('backend.index')
 @section('content')
+    <div class="container">
     <div class="col-12 col-md-12">
         <div class="row">
             <div class="col-12">
@@ -29,6 +30,7 @@
                 </form>
             </div>
         </div>
+    </div>
     </div>
 @endsection
 

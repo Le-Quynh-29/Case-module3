@@ -1,11 +1,31 @@
 @extends('backend.index')
 @section('content')
+
+    <style>
+        h1{
+            font-size: 70px!important;
+
+        }
+        td{
+            font-size: 20px!important;
+        }
+        th{
+            font-size:25px!important;
+
+        }
+        button{
+            font-size: 15px!important;
+        }
+        /*a{*/
+        /*    font-size: 30px!important;*/
+        /*}*/
+    </style>
     <div class="col-12">
         <div class="row">
             <div class="col-12">
                 <h1>Các dòng sản phẩm</h1>
             </div>
-            <a class="btn btn-primary" href="{{route('productline.create')}}">Thêm Mới</a>
+            <a style="font-size: 25px!important;" class="btn btn-primary" href="{{route('productline.create')}}">Thêm Mới</a>
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -26,8 +46,8 @@
                             <img src="{{asset('storage/images/' . $pl->img)}}" alt="" style="width: 100px">
                         </td>
                         <td>
-                            <a class="btn btn-info" href="{{ route('productline.edit',$pl->id) }}">Update</a>
-                            <a class="btn btn-danger" href="{{ route('productline.delete',$pl->id) }}"  onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a>
+                            <a class="btn btn-info" href="{{ route('productline.edit',$pl->id) }}">Sửa</a>
+                            <a class="btn btn-danger" href="{{ route('productline.delete',$pl->id) }}"  onclick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa</a>
                         </td>
                     </tr>
                 @endforeach
