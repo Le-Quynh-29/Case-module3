@@ -36,3 +36,16 @@ Route::group(['prefix'=> 'products'],function (){
     Route::get('/delete/{id}',[\App\Http\Controllers\backend\ProductController::class,'destroy'])->name('products.delete');
 
 });
+
+
+Route::group(['prefix'=> 'productline'],function () {
+    Route::get('/', [\App\Http\Controllers\backend\ProductLineController::class, 'index'])->name('productline.list');
+    Route::get('/create', [\App\Http\Controllers\backend\ProductLineController::class, 'create'])->name('productline.create');
+    Route::post('/create', [\App\Http\Controllers\backend\ProductLineController::class, 'store'])->name('productline.store');
+    Route::get('edit/{id}', [\App\Http\Controllers\backend\ProductLineController::class, 'edit'])->name('productline.edit');
+    Route::post('/edit/{id}', [\App\Http\Controllers\backend\ProductLineController::class, 'update'])->name('productline.update');
+    Route::get('/delete/{id}', [\App\Http\Controllers\backend\ProductLineController::class, 'destroy'])->name('productline.delete');
+
+});
+
+

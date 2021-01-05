@@ -9,7 +9,7 @@ class ProductLine extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['productLine','description','img'];
+    protected $fillable = ['id','description','img'];
 
     public function Product()
     {
@@ -20,4 +20,6 @@ class ProductLine extends Model
     {
         return false;
     }
+    public $incrementing = false;
+
 }

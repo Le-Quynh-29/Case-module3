@@ -177,8 +177,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             </ul>
                         </li>
                         <li>
-                            <a href="widgets.html">
-                                <i class="fa fa-th"></i> <span>Widgets</span>
+                            <a href="{{route('productline.list')}}">
+                                <i class="fa fa-th"></i> <span>Dòng sản phẩm </span>
                                 <small class="label pull-right label-info">08</small>
                             </a>
                         </li>
