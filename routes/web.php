@@ -38,7 +38,6 @@ Route::group(['prefix'=> 'products'],function (){
     Route::get('edit/{id}',[\App\Http\Controllers\backend\ProductController::class,'edit'])->name('products.edit');
     Route::post('/edit/{id}',[\App\Http\Controllers\backend\ProductController::class,'update'])->name('products.update');
     Route::get('/delete/{id}',[\App\Http\Controllers\backend\ProductController::class,'destroy'])->name('products.delete');
-    Route::get('/show',[\App\Http\Controllers\backend\ProductController::class,'show'])->name('prpducts.show');
 
 });
 
@@ -50,6 +49,12 @@ Route::group(['prefix'=> 'productline'],function () {
     Route::get('edit/{id}', [\App\Http\Controllers\backend\ProductLineController::class, 'edit'])->name('productline.edit');
     Route::post('/edit/{id}', [\App\Http\Controllers\backend\ProductLineController::class, 'update'])->name('productline.update');
     Route::get('/delete/{id}', [\App\Http\Controllers\backend\ProductLineController::class, 'destroy'])->name('productline.delete');
+
+});
+
+Route::group(['prefix'=>'show'],function (){
+    Route::get('/index',[\App\Http\Controllers\frontend\ProductController::class,'index'])->name('products.show');
+//    Route::get('/productline',[\App\Http\Controllers\frontend\ProductController::class,'showproductline'])->name('products.productlinne');
 
 });
 

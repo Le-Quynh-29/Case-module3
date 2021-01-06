@@ -46,7 +46,7 @@
                         <td>{!! $pl->id !!}</td>
                         <td>{{$pl->description}}</td>
                         <td>
-                            <img src="{{asset('storage/images/' . $pl->img)}}" alt="" style="width: 100px">
+                            <img src="{{asset('storage/images/' . $pl->img)}}" alt="" style="width: 100px;height: 100px">
                         </td>
                         <td>
                             <a class="btn btn-info" href="{{ route('productline.edit',$pl->id) }}">Sửa</a>

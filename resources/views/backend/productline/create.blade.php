@@ -28,10 +28,7 @@
                 <label>Dòng Sản Phẩm</label>
                 <input type="text" name="id" class="form-control">
             </div>
-            <div class="form-group">
-                <label>Mô Tả</label>
-                <input type="text" name="description" class="form-control">
-            </div>
+
 
             <div class="form-group">
                 <label for="inputName">Tên ảnh </label>
@@ -41,6 +38,10 @@
                 <input type="file"
                        id="inputFile"
                        name="inputFile" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Mô Tả</label>
+                <textarea style="height: 200px" name="description" class="form-control"></textarea>
             </div>
             <button type="submit" value="add" class="btn btn-primary">ADD</button>
             <button onclick="window.history.go(-1); return false;">Cancle</button>

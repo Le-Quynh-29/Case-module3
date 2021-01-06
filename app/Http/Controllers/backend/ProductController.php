@@ -21,11 +21,11 @@ class ProductController extends Controller
         return view('backend.products.list', compact('products'));
     }
 
-    public function show()
-    {
-        $products = Product::all();
-        return view('frontend.index', compact('products'));
-    }
+//    public function show()
+//    {
+//        $products = Product::all();
+//        return view('frontend.index', compact('products'));
+//    }
 
 
     /**

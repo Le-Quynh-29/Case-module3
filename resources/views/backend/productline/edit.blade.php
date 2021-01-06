@@ -15,10 +15,7 @@
                         <label>Dòng sản phẩm </label>
                         <input type="text" class="form-control" name="id" value="{{ $productline->id }}">
                     </div>
-                    <div class="form-group">
-                        <label>Mô tả</label>
-                        <input type="text" class="form-control" name="description" value="{{ $productline->description }}">
-                    </div>
+
                     <div>
                         <label for="inputName">Tên ảnh </label>
                         <input type="text"
@@ -27,6 +24,10 @@
                         <input type="file"
                                id="inputFile"
                                name="inputFile">
+                    </div>
+                    <div class="form-group">
+                        <label>Mô tả</label>
+                        <textarea style="height: 200px" class="form-control" name="description" >{{ $productline->description }}</textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
