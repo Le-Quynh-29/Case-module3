@@ -38,6 +38,7 @@ Route::group(['prefix'=> 'products'],function (){
     Route::get('edit/{id}',[\App\Http\Controllers\backend\ProductController::class,'edit'])->name('products.edit');
     Route::post('/edit/{id}',[\App\Http\Controllers\backend\ProductController::class,'update'])->name('products.update');
     Route::get('/delete/{id}',[\App\Http\Controllers\backend\ProductController::class,'destroy'])->name('products.delete');
+    Route::get('/show',[\App\Http\Controllers\backend\ProductController::class,'show'])->name('prpducts.show');
 
 });
 
