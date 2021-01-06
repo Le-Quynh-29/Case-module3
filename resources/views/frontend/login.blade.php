@@ -32,96 +32,37 @@
 
 
 <div class="main" >
-
-    <!-- Sign up form -->
-        <section class="signup">
-            <div class="container" >
-                <div class="signup-content" id="1">
-                    <div class="signup-form" >
-                        <h2 class="form-title">Sign up</h2>
-                        <form action="{{route('storeRegister')}}" method="post" class="register-form" id="register-form">
-                            @csrf
-                            <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="user" id="name" placeholder="Your Name"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="password" id="pass" placeholder="Password"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">
-{{--                                    <i class="zmdi zmdi-lock"></i>--}}
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-                                        <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
-                                    </svg>
-                                </label>
-                                <input type="text" name="address" id="add" placeholder="Address"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">
-{{--                                    <i class="zmdi zmdi-telephone"></i>--}}
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-                                    </svg>
-                                </label>
-                                <input type="number" name="phone" id="phone" placeholder="Phone"/>
-                            </div>
-                            {{--                        <div class="form-group">--}}
-                            {{--                            <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>--}}
-                            {{--                            <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>--}}
-                            {{--                        </div>--}}
-                            <div class="form-group">
-                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term"/>
-                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all
-                                    statements in <a href="#" class="term-service">Terms of service</a></label>
-                            </div>
-                            <div class="form-group form-button">
-                                <input type="submit" name="signup" id="3" class="form-submit" value="Register"/>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="signup-image">
-                        <figure><img src="{{asset('frontend/login/images/signup-image.jpg')}}" alt="sing up image">
-                        </figure>
-                        <a href="#" class="signup-image-link">I am already member</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </form>
-
     <!-- Sing in  Form -->
-
-
         <section class="sign-in">
             <div class="container">
                 <div class="signin-content" id="4">
                     <div class="signin-image">
                         <figure><img src="{{asset('frontend/login/images/signin-image.jpg')}}" alt="sing up image">
                         </figure>
-                        <button type="submit" id="2" href="{{route('storeRegister')}}" class="signup-image-link">Create an account</button>
+                        <a style="font-size: 25px!important; color: #00bb00" href="{{route('storeRegister')}}" class="signup-image-link">Create an account</a>
                     </div>
 
                     <div class="signin-form">
                         <h2 class="form-title">Sign in</h2>
+                        @if(\Illuminate\Support\Facades\Session::has('error_login'))
+                            <div class="alert-danger">{{ \Illuminate\Support\Facades\Session::get('error_login') }}</div>
+                            @endif
                         <form method="POST" class="register-form" action="{{route('login')}}" id="login-form">
                             @csrf
-{{--                            <div class="form-group">--}}
-{{--                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>--}}
-{{--                                <input type="text" name="user" id="your_name" placeholder="Your Name"/>--}}
-{{--                            </div>--}}
+
                             <div class="form-group">
-                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <label for="your_name"><i class="zmdi zmdi-email"></i></label>
                                 <input type="email" name="email" id="your_name" placeholder="Your Email"/>
+                                @if($errors->any())
+                                    <div class="alert-danger">{{ $errors->first('email') }}</div>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" name="password" id="your_pass" placeholder="Password"/>
+                                @if($errors->any())
+                                    <div class="alert-danger">{{ $errors->first('password') }}</div>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="remember-me" id="remember-me" class="agree-term"/>
@@ -145,26 +86,7 @@
         </section>
     </form>
 
-
-
 </div>
-
-<script>
-    $(function (){
-        $('#1').hide();
-        $('#2').click(function (){
-            $('#1').show();
-            $('#4').hide();
-
-
-        })
-        $('#3').click(function (){
-            $('#4').show();
-
-        })
-    })
-</script>
-
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
 <!-- JS -->

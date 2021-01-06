@@ -81,8 +81,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <img alt="" src="{{asset('backend/images/thuy.jpg')}}">
-                        <span style="font-size: 20px!important;" class="username">Ta Thi Thuy</span>
+                        <img alt="" src="">
+                        <span style="font-size: 30px!important; text-align: center!important; width: 100px!important;" class="username">Action</span>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">

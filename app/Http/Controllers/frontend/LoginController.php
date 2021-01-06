@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\FormExampleRequest;
 use App\Http\Requests\LoginExampleRequest;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -17,12 +19,11 @@ class LoginController extends Controller
 
     public function showRegister()
     {
-        return view('frontend.login');
+        return view('frontend.signup');
     }
 
-    public function storeRegister(Request $request)
+    public function storeRegister(LoginExampleRequest $request)
     {
-//        dd($request);
         $user = new Customer();
         $user->user = $request->input('user');
         $user->email = $request->input('email');
@@ -33,25 +34,24 @@ class LoginController extends Controller
         return redirect()->route("showLogin");
     }
 
-    public function login(Request $request)
+    public function login(FormExampleRequest $request)
     {
         $data = [
-
             'email' => $request->input('email'),
             'password' => $request->input('password'),
         ];
-        //dd(Auth::guard('customer'));
 
         if (Auth::guard('customer')->attempt($data)) {
-            //dd(111);
+
             return redirect()->route("shop");
         }
+        Session::flash('error_login', "Email hoặc mật khẩu không đúng.");
         return redirect()->route('login');
     }
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        Auth::guard('customer')->logout();
         return redirect()->route('login');
     }
 
