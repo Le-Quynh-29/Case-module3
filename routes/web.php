@@ -19,16 +19,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('LoginCheck')->group(function (){
 
-
-
     Route::get('/welcome', function () {
         return view('welcome');
     })->name('welcome');
     Route::get('/shop',function (){
         return view('frontend.index');
     })->name('shop');
-
-
 
     Route::group(['prefix'=> 'customers'],function (){
         Route::get('/',[\App\Http\Controllers\backend\CustomerController::class,'index'])->name('customers.list');
@@ -50,7 +46,6 @@ Route::middleware('LoginCheck')->group(function (){
 
     });
 
-
     Route::group(['prefix'=> 'productline'],function () {
         Route::get('/', [\App\Http\Controllers\backend\ProductLineController::class, 'index'])->name('productline.list');
         Route::get('/create', [\App\Http\Controllers\backend\ProductLineController::class, 'create'])->name('productline.create');
@@ -67,3 +62,12 @@ Route::middleware('LoginCheck')->group(function (){
 Route::get('/', [\App\Http\Controllers\backend\LoginController::class, 'showLogin'])->name('show.login');
 Route::post('login', [\App\Http\Controllers\backend\LoginController::class, 'login'])->name('user.login');
 Route::get('logout', [\App\Http\Controllers\backend\LoginController::class, 'logout'])->name('logout');
+
+Route::get("login", [\App\Http\Controllers\frontend\LoginController::class, "showLogin"])->name("showLogin");
+Route::post("login",[\App\Http\Controllers\frontend\LoginController::class,'login'])->name('login');
+
+Route::get("register", [\App\Http\Controllers\frontend\LoginController::class, "showRegister"])->name("showRegister");
+Route::post("register", [\App\Http\Controllers\frontend\LoginController::class, "storeRegister"])->name("storeRegister");
+
+Route::get('logout',[\App\Http\Controllers\frontend\LoginController::class,'logout'])->name('logout');
+

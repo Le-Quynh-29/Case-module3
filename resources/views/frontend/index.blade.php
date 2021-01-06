@@ -61,10 +61,16 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="login-box">
-                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-                        <option>Register Here</option>
-                        <option>Sign In</option>
-                    </select>
+                    <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <button style="font-size: 15px!important;color: #00bb00; width: 120px; " class="username">ACTION</button>
+                        <b class="caret"></b>
+                    </a>
+                        <ul class="dropdown-menu extended logout">
+                            <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                            <li><a href="{{route('logout')}}"><i class="fa fa-key"></i> Log Out</a></li>
+                        </ul>
+                    </li>
                 </div>
                 <div class="text-slid-box">
                     <div id="offer-box" class="carouselTicker">
@@ -249,18 +255,26 @@
 <div class="categories-shop">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="shop-cat-box">
-                    <img class="img-fluid" src="{{asset('frontend/images/categories_img_01.jpg')}}" alt="" />
-                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+            @foreach($products as $product)
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box">
+                        <img src="{{asset ('storage/images/'.$product->img)}} " alt="" style="width: 100px ">
+                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="shop-cat-box">
-                    <img class="img-fluid" src="{{asset('frontend/images/categories_img_02.jpg')}}" alt="" />
-                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
-                </div>
-            </div>
+                @endforeach
+{{--            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">--}}
+{{--                <div class="shop-cat-box">--}}
+{{--                    <img class="img-fluid" src="{{asset('frontend/images/categories_img_01.jpg')}}" alt="" />--}}
+{{--                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">--}}
+{{--                <div class="shop-cat-box">--}}
+{{--                    <img class="img-fluid" src="{{asset('frontend/images/categories_img_02.jpg')}}" alt="" />--}}
+{{--                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
                     <img class="img-fluid" src="{{asset('frontend/images/categories_img_03.jpg')}}" alt="" />
