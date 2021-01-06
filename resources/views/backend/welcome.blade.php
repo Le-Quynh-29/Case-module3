@@ -1,4 +1,4 @@
-@extends('master')
+@extends('backend.master')
 
 @section('title')
     Trang chu

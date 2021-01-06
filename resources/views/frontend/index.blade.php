@@ -53,7 +53,7 @@
                 </div>
                 <div class="our-link">
                     <ul>@if(!\Illuminate\Support\Facades\Auth::guard('customer')->check())
-                        <li><a href="{{route('login')}}">
+                        <li><a href="{{route('showLogin')}}">
                                 <i class="fa fa-user s_color"></i> Login</a>
                         </li>
                         @else
@@ -75,7 +75,7 @@
                     </a>
                         <ul class="dropdown-menu extended logout">
                             <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                            <li><a href="{{route('logout')}}"><i class="fa fa-key"></i> Log Out</a></li>
+                            <li><a href="{{route('frontend.logout')}}"><i class="fa fa-key"></i> Log Out</a></li>
                         </ul>
                     </li>
                 </div>

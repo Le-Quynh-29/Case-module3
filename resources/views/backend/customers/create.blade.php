@@ -1,6 +1,6 @@
-@extends('master')
+@extends('backend.master')
 @section('title')
-    Them moi khach hang
+  Thêm mới khách hàng
 @endsection
 @section('content')
 
