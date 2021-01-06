@@ -61,10 +61,16 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="login-box">
-                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-                        <option>Register Here</option>
-                        <option>Sign In</option>
-                    </select>
+                    <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <button style="font-size: 15px!important;color: #00bb00; width: 120px; " class="username">ACTION</button>
+                        <b class="caret"></b>
+                    </a>
+                        <ul class="dropdown-menu extended logout">
+                            <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                            <li><a href="{{route('logout')}}"><i class="fa fa-key"></i> Log Out</a></li>
+                        </ul>
+                    </li>
                 </div>
                 <div class="text-slid-box">
                     <div id="offer-box" class="carouselTicker">

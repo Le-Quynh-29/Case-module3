@@ -53,3 +53,13 @@ Route::group(['prefix'=> 'productline'],function () {
 });
 
 
+// login frontend:
+Route::get("login", [\App\Http\Controllers\frontend\LoginController::class, "showLogin"])->name("showLogin");
+Route::post("login",[\App\Http\Controllers\frontend\LoginController::class,'login'])->name('login');
+
+Route::get("register", [\App\Http\Controllers\frontend\LoginController::class, "showRegister"])->name("showRegister");
+Route::post("register", [\App\Http\Controllers\frontend\LoginController::class, "storeRegister"])->name("storeRegister");
+
+Route::get('logout',[\App\Http\Controllers\frontend\LoginController::class,'logout'])->name('logout');
+//
+
