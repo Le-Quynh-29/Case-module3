@@ -21,6 +21,13 @@ class ProductController extends Controller
         return view('backend.products.list', compact('products'));
     }
 
+    public function show()
+    {
+        $products = Product::all();
+        return view('frontend.index', compact('products'));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -74,10 +81,10 @@ class ProductController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+//    public function show($id)
+//    {
+//        //
+//    }
 
     /**
      * Show the form for editing the specified resource.
