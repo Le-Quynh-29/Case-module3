@@ -116,11 +116,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <i class="fa fa-book"></i>
                             <span>Danh sách khách hàng</span>
                         </a>
-{{--                        <ul class="sub">--}}
-{{--                            <li><a href=""></a></li>--}}
-{{--                            <li><a href="glyphicon.html">glyphicon</a></li>--}}
-{{--                            <li><a href="grids.html">Grids</a></li>--}}
-{{--                        </ul>--}}
+
                     </li>
 
                     <li class="sub-menu">

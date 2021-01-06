@@ -1,8 +1,25 @@
-@extends('master')
+@extends('backend.master')
 @section('title')
-    Them moi khach hang
+    Chỉnh sửa sản phẩm
 @endsection
 @section('content')
+
+    <style>
+        h1{
+            font-size: 70px!important;
+
+        }
+        label{
+            font-size: 25px!important;
+        }
+        input{
+            font-size: 20px!important;
+        }
+        button{
+            font-size: 20px!important;
+        }
+    </style>
+
     <div class="col-12 col-md-12">
         <div class="row">
             <div class="col-12">

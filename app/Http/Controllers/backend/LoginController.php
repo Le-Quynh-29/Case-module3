@@ -4,24 +4,26 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\FormExampleRequest;
+use App\Http\Requests\LoginBackendExampleRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
     public function showLogin()
     {
-        return view('login');
+        return view('backend.login');
     }
 
-    public function login(FormExampleRequest $request)
+    public function login(LoginBackendExampleRequest $request)
     {
         $username = $request->user;
         $password = $request->Password;
 
         if ($username == 'admin@gmail.com' && $password == '12345'){
-//            $request->session()->push('login', true);
-            return view('welcome');
+            Session::put('login', true);
+            return view('backend.welcome');
         }else {
 
             $message = 'Đăng nhập không thành công. Tên người dùng hoặc mật khẩu không đúng';

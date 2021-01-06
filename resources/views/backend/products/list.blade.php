@@ -1,6 +1,6 @@
-@extends('master')
+@extends('backend.master')
 @section('title')
-    Them moi khach hang
+    Danh sách sản phẩm
 @endsection
 @section('content')
 
