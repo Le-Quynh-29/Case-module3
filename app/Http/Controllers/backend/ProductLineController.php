@@ -11,7 +11,6 @@ class ProductLineController extends Controller
 {
     public function index(){
         $productline = ProductLine::all();
-//        dd($productline);
         return view('backend.productline.list',compact('productline'));
     }
     public function create()
@@ -30,7 +29,6 @@ class ProductLineController extends Controller
         $file = $request->inputFile;
         if (!$request->hasFile('inputFile')) {
             $productline->img = $file;
-
         } else {
             $file = $request->file('inputFile');
             $fileExtension = $file->getClientOriginalExtension();
@@ -39,6 +37,7 @@ class ProductLineController extends Controller
             $request->file('inputFile')->storeAs('public/images', $newFileName);
             $productline->img = $newFileName;
         }
+
         $productline->save();
 
         return redirect()->route('productline.list');

@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('backend.index');
-});
+    return view('welcome');
+})->name('welcome');
+
+Route::get('/shop',function (){
+    return view('frontend.index');
+})->name('shop');
 
 Route::group(['prefix'=> 'customers'],function (){
     Route::get('/',[\App\Http\Controllers\backend\CustomerController::class,'index'])->name('customers.list');
@@ -34,6 +38,7 @@ Route::group(['prefix'=> 'products'],function (){
     Route::get('edit/{id}',[\App\Http\Controllers\backend\ProductController::class,'edit'])->name('products.edit');
     Route::post('/edit/{id}',[\App\Http\Controllers\backend\ProductController::class,'update'])->name('products.update');
     Route::get('/delete/{id}',[\App\Http\Controllers\backend\ProductController::class,'destroy'])->name('products.delete');
+    Route::get('/show',[\App\Http\Controllers\backend\ProductController::class,'show'])->name('prpducts.show');
 
 });
 
