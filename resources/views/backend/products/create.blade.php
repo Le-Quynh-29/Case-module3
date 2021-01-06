@@ -39,10 +39,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Mô tả</label>
-                        <input type="text" class="form-control" name="descripton" placeholder="Enter descripton">
-                    </div>
+
                     <div class="form-group">
                         <label>Số lượng </label>
                         <input type="text" class="form-control" name="quantity" placeholder="Enter quantity">
@@ -64,6 +61,11 @@
                         <input type="file"
                                id="inputFile"
                                name="inputFile" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Mô tả</label>
+                        <textarea name="descripton" class="form-control" style="height: 200px" placeholder="Enter descripton"></textarea>
+                        {{--                        <input type="text" class="form-control" name="descripton" placeholder="Enter descripton"/>--}}
                     </div>
                     <button type="submit" class="btn btn-primary">Thêm mới</button>
                     <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>

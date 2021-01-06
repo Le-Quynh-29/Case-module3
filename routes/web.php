@@ -11,10 +11,7 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-//*/
-//Route::get('/',function (){
-//    return view('login');
-//})->name('login');
+*/
 
 
 Route::middleware('LoginCheck')->group(function (){
@@ -59,9 +56,17 @@ Route::middleware('LoginCheck')->group(function (){
 });
 
 
+
+Route::group(['prefix'=>'show'],function (){
+    Route::get('/index',[\App\Http\Controllers\frontend\ProductController::class,'index'])->name('products.show');
+
+});
+
+
 Route::get('/', [\App\Http\Controllers\backend\LoginController::class, 'showLogin'])->name('show.login');
 Route::post('login', [\App\Http\Controllers\backend\LoginController::class, 'login'])->name('user.login');
 Route::get('logout', [\App\Http\Controllers\backend\LoginController::class, 'logout'])->name('logout');
+
 
 Route::get("login", [\App\Http\Controllers\frontend\LoginController::class, "showLogin"])->name("showLogin");
 Route::post("login",[\App\Http\Controllers\frontend\LoginController::class,'login'])->name('login');

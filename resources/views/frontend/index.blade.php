@@ -132,6 +132,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+
                     <li class="nav-item active"><a class="nav-link" href="{{asset('frontend/index.html')}}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{asset('frontend/about.html')}}">About Us</a></li>
                     <li class="dropdown">
@@ -167,32 +168,32 @@
             <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->
-        <div class="side">
-            <a href="#" class="close-side"><i class="fa fa-times"></i></a>
-            <li class="cart-box">
-                <ul class="cart-list">
-                    <li>
-                        <a href="#" class="photo"><img src="{{asset('frontend/images/img-pro-01.jpg')}}" class="cart-thumb" alt="" /></a>
-                        <h6><a href="#">Delica omtantur </a></h6>
-                        <p>1x - <span class="price">$80.00</span></p>
-                    </li>
-                    <li>
-                        <a href="#" class="photo"><img src="{{asset('frontend/images/img-pro-02.jpg')}}" class="cart-thumb" alt="" /></a>
-                        <h6><a href="#">Omnes ocurreret</a></h6>
-                        <p>1x - <span class="price">$60.00</span></p>
-                    </li>
-                    <li>
-                        <a href="#" class="photo"><img src="{{asset('frontend/images/img-pro-03.jpg')}}" class="cart-thumb" alt="" /></a>
-                        <h6><a href="#">Agam facilisis</a></h6>
-                        <p>1x - <span class="price">$40.00</span></p>
-                    </li>
-                    <li class="total">
-                        <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                        <span class="float-right"><strong>Total</strong>: $180.00</span>
-                    </li>
-                </ul>
-            </li>
-        </div>
+{{--        <div class="side">--}}
+{{--            <a href="#" class="close-side"><i class="fa fa-times"></i></a>--}}
+{{--            <li class="cart-box">--}}
+{{--                <ul class="cart-list">--}}
+{{--                    <li>--}}
+{{--                        <a href="#" class="photo"><img src="{{asset('frontend/images/img-pro-01.jpg')}}" class="cart-thumb" alt="" /></a>--}}
+{{--                        <h6><a href="#">Delica omtantur </a></h6>--}}
+{{--                        <p>1x - <span class="price">$80.00</span></p>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                        <a href="#" class="photo"><img src="{{asset('frontend/images/img-pro-02.jpg')}}" class="cart-thumb" alt="" /></a>--}}
+{{--                        <h6><a href="#">Omnes ocurreret</a></h6>--}}
+{{--                        <p>1x - <span class="price">$60.00</span></p>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                        <a href="#" class="photo"><img src="{{asset('frontend/images/img-pro-03.jpg')}}" class="cart-thumb" alt="" /></a>--}}
+{{--                        <h6><a href="#">Agam facilisis</a></h6>--}}
+{{--                        <p>1x - <span class="price">$40.00</span></p>--}}
+{{--                    </li>--}}
+{{--                    <li class="total">--}}
+{{--                        <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>--}}
+{{--                        <span class="float-right"><strong>Total</strong>: $180.00</span>--}}
+{{--                    </li>--}}
+{{--                </ul>--}}
+{{--            </li>--}}
+{{--        </div>--}}
         <!-- End Side Menu -->
     </nav>
     <!-- End Navigation -->
@@ -213,43 +214,13 @@
 
 <!-- Start Slider -->
 <div id="slides-shop" class="cover-slides">
+
     <ul class="slides-container">
-        <li class="text-center">
-            <img src="{{asset('frontend/images/banner-01.jpg')}}" alt="">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                        <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                        <p><a class="btn hvr-hover" href="#">Shop New</a></p>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="text-center">
-            <img src="{{asset('frontend/images/banner-02.jpg')}}" alt="">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                        <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                        <p><a class="btn hvr-hover" href="#">Shop New</a></p>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="text-center">
-            <img src="{{asset('frontend/images/banner-03.jpg')}}" alt="">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                        <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                        <p><a class="btn hvr-hover" href="#">Shop New</a></p>
-                    </div>
-                </div>
-            </div>
-        </li>
+
+
+        @yield('productline')
+
+
     </ul>
     <div class="slides-navigation">
         <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
@@ -262,55 +233,9 @@
 <div class="categories-shop">
     <div class="container">
         <div class="row">
-            @foreach($products as $product)
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img src="{{asset ('storage/images/'.$product->img)}} " alt="" style="width: 100px ">
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
-                    </div>
-                </div>
-                @endforeach
-{{--            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">--}}
-{{--                <div class="shop-cat-box">--}}
-{{--                    <img class="img-fluid" src="{{asset('frontend/images/categories_img_01.jpg')}}" alt="" />--}}
-{{--                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">--}}
-{{--                <div class="shop-cat-box">--}}
-{{--                    <img class="img-fluid" src="{{asset('frontend/images/categories_img_02.jpg')}}" alt="" />--}}
-{{--                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="shop-cat-box">
-                    <img class="img-fluid" src="{{asset('frontend/images/categories_img_03.jpg')}}" alt="" />
-                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
-                </div>
-            </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="shop-cat-box">
-                    <img class="img-fluid" src="{{asset('frontend/images/categories_img_03.jpg')}}" alt="" />
-                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
-                </div>
-            </div>
+            @yield('productlines')
 
-
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="shop-cat-box">
-                    <img class="img-fluid" src="{{asset('frontend/images/categories_img_03.jpg')}}" alt="" />
-                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="shop-cat-box">
-                    <img class="img-fluid" src="{{asset('frontend/images/categories_img_03.jpg')}}" alt="" />
-                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -356,98 +281,10 @@
             </div>
         </div>
 
+
         <div class="row special-list">
-            <div class="col-lg-3 col-md-6 special-grid best-seller">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <div class="type-lb">
-                            <p class="sale">Sale</p>
-                        </div>
-                        <img src="{{asset('frontend/images/img-pro-01.jpg')}}" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                            </ul>
-                            <a class="cart" href="#">Add to Cart</a>
-                        </div>
-                    </div>
-                    <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $7.79</h5>
-                    </div>
-                </div>
-            </div>
+            @yield('product')
 
-            <div class="col-lg-3 col-md-6 special-grid top-featured">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <div class="type-lb">
-                            <p class="new">New</p>
-                        </div>
-                        <img src="{{asset('frontend/images/img-pro-02.jpg')}}" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                            </ul>
-                            <a class="cart" href="#">Add to Cart</a>
-                        </div>
-                    </div>
-                    <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $9.79</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 special-grid top-featured">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <div class="type-lb">
-                            <p class="sale">Sale</p>
-                        </div>
-                        <img src="{{asset('frontend/images/img-pro-03.jpg')}}" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                            </ul>
-                            <a class="cart" href="#">Add to Cart</a>
-                        </div>
-                    </div>
-                    <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $10.79</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 special-grid best-seller">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <div class="type-lb">
-                            <p class="sale">Sale</p>
-                        </div>
-                        <img src="{{asset('frontend/images/img-pro-04.jpg')}}" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                            </ul>
-                            <a class="cart" href="#">Add to Cart</a>
-                        </div>
-                    </div>
-                    <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $15.79</h5>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -789,11 +626,7 @@
                             <h3>Fusce in augue non nisi fringilla</h3>
                             <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
                         </div>
-                        <ul class="option-blog">
-                            <li><a href="#"><i class="far fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                            <li><a href="#"><i class="far fa-comments"></i></a></li>
-                        </ul>
+
                     </div>
                 </div>
             </div>
@@ -807,11 +640,7 @@
                             <h3>Fusce in augue non nisi fringilla</h3>
                             <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
                         </div>
-                        <ul class="option-blog">
-                            <li><a href="#"><i class="far fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                            <li><a href="#"><i class="far fa-comments"></i></a></li>
-                        </ul>
+
                     </div>
                 </div>
             </div>
@@ -825,11 +654,7 @@
                             <h3>Fusce in augue non nisi fringilla</h3>
                             <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
                         </div>
-                        <ul class="option-blog">
-                            <li><a href="#"><i class="far fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                            <li><a href="#"><i class="far fa-comments"></i></a></li>
-                        </ul>
+
                     </div>
                 </div>
             </div>
@@ -942,33 +767,33 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="footer-top-box">
-                        <h3>Newsletter</h3>
-                        <form class="newsletter-box">
-                            <div class="form-group">
-                                <input class="" type="email" name="Email" placeholder="Email Address*" />
-                                <i class="fa fa-envelope"></i>
-                            </div>
-                            <button class="btn hvr-hover" type="submit">Submit</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="footer-top-box">
-                        <h3>Social Media</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <ul>
-                            <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+{{--                <div class="col-lg-4 col-md-12 col-sm-12">--}}
+{{--                    <div class="footer-top-box">--}}
+{{--                        <h3>Newsletter</h3>--}}
+{{--                        <form class="newsletter-box">--}}
+{{--                            <div class="form-group">--}}
+{{--                                <input class="" type="email" name="Email" placeholder="Email Address*" />--}}
+{{--                                <i class="fa fa-envelope"></i>--}}
+{{--                            </div>--}}
+{{--                            <button class="btn hvr-hover" type="submit">Submit</button>--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-4 col-md-12 col-sm-12">--}}
+{{--                    <div class="footer-top-box">--}}
+{{--                        <h3>Social Media</h3>--}}
+{{--                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>--}}
+{{--                        <ul>--}}
+{{--                            <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>--}}
+{{--                            <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>--}}
+{{--                            <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>--}}
+{{--                            <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>--}}
+{{--                            <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>--}}
+{{--                            <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>--}}
+{{--                            <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
             <hr>
             <div class="row">

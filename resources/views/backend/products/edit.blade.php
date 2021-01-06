@@ -23,10 +23,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Mô tả </label>
-                        <input type="text" class="form-control" name="descripton" value="{{ $product->descripton }}">
-                    </div>
+
                     <div class="form-group">
                         <label>Số lượng </label>
                         <input type="text" class="form-control" name="quantity" value="{{ $product->quantity }}">
@@ -47,6 +44,11 @@
                         <input type="file"
                                id="inputFile"
                                name="inputFile">
+                    </div>
+                    <div class="form-group">
+                        <label>Mô tả </label>
+                        <textarea style="height: 200px" class="form-control" name="descripton" >{{ $product->descripton }}</textarea>
+{{--                        <input type="text" class="form-control" name="descripton" value="{{ $product->descripton }}">--}}
                     </div>
                     <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
                     <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>
