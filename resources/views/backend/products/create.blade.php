@@ -42,7 +42,7 @@
 
                     <div class="form-group">
                         <label>Số lượng </label>
-                        <input type="text" class="form-control" name="quantity" placeholder="Enter quantity">
+                        <input type="number" class="form-control" name="quantity" placeholder="Enter quantity">
                     </div>
                     <div class="form-group">
                         <label>Giá</label>
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Mã giảm giá</label>
+                        <label>Phần trăm giảm giá</label>
                         <input type="text" class="form-control" name="voucher" placeholder="Enter voucher">
                     </div>
                     <div class="form-group">

@@ -45,7 +45,7 @@
                     </div>
                     <div class="form-group">
                         <label>Mật khẩu</label>
-                        <input type="text" class="form-control" name="password" placeholder="Enter pasword">
+                        <input type="password" class="form-control" name="password" placeholder="Enter pasword">
                     </div>
                     <button type="submit" class="btn btn-primary">Thêm mới</button>
                     <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>
