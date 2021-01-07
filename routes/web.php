@@ -65,9 +65,9 @@ Route::group(['prefix' => 'admin'], function () {
     });
 });
 
-//Route::get('/', function () {
-//    return view('frontend.list');
-//})->name('shop');
+Route::group(['prefix'], function () {
+    Route::get('', [\App\Http\Controllers\frontend\ProductController::class, 'index'])->name('products.show');
+});
 
 Route::group(['prefix' => 'user'], function () {
 
