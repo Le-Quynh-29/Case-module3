@@ -26,7 +26,7 @@ class LoginController extends Controller
 
         if ($username == 'admin@gmail.com' && $password == '12345'){
             Session::put('login', true);
-            return view('backend.welcome');
+            return redirect()->route('welcome');
         }else {
 
             $message = 'Đăng nhập không thành công. Tên người dùng hoặc mật khẩu không đúng';
