@@ -13,6 +13,9 @@ class LoginController extends Controller
 {
     public function showLogin()
     {
+        if (Session::has('login')) {
+            return redirect()->route('welcome');
+        }
         return view('backend.login');
     }
 
@@ -34,7 +37,8 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        //Auth::logout();
+        Session::forget('login');
         return redirect()->route('show.login');
 
     }
