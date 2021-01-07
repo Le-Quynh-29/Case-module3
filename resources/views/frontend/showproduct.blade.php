@@ -17,7 +17,7 @@
                 {{$product->descripton}}
             </p>
             <a class="btn hvr-hover" href="#">Read More</a>
-            <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Cancle</button>
+            <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Canle</button>
 
         </div>
     </div>

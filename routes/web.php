@@ -55,7 +55,7 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::get('/', [\App\Http\Controllers\backend\ProductLineController::class, 'index'])->name('productline.list');
                 Route::get('/create', [\App\Http\Controllers\backend\ProductLineController::class, 'create'])->name('productline.create');
                 Route::post('/create', [\App\Http\Controllers\backend\ProductLineController::class, 'store'])->name('productline.store');
-                Route::get('edit/{id}', [\App\Http\Controllers\backend\ProductLineController::class, 'edit'])->name('productline.edit');
+                Route::get('/edit/{id}', [\App\Http\Controllers\backend\ProductLineController::class, 'edit'])->name('productline.edit');
                 Route::post('/edit/{id}', [\App\Http\Controllers\backend\ProductLineController::class, 'update'])->name('productline.update');
                 Route::get('/delete/{id}', [\App\Http\Controllers\backend\ProductLineController::class, 'destroy'])->name('productline.delete');
 
@@ -85,4 +85,13 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/list', [\App\Http\Controllers\frontend\ProductController::class, 'index'])->name('products.show');
     Route::get('/list/{id}', [\App\Http\Controllers\frontend\ProductController::class, 'showProductline'])->name('productline.detail');
     Route::get('/show/{id}', [\App\Http\Controllers\frontend\ProductController::class, 'showProduct'])->name('products.detail');
+
+
+//    Route::get('/menu',[\App\Http\Controllers\frontend\ProductController::class,'indexMenu'])->name('show.menu');
+
+
+    //menu
+    Route::get('menu',function (){
+        return view('frontend.menu');
+    })->name('menu');
 });

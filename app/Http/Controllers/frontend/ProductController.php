@@ -31,4 +31,11 @@ class ProductController extends Controller
         $des1 = html_entity_decode($product->description);
         return view('frontend.showproduct', compact('product', 'des1'));
     }
+
+    public function indexMenu()
+    {
+        $products = Product::all();
+        $productlines = ProductLine::all();
+        return view('frontend.menu',compact('products','productlines'));
+    }
 }
