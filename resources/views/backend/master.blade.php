@@ -142,7 +142,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
                         <ul class="sub">
                             <li><a href="{{route('products.list')}}">{!! __('language.Danh sách') !!}</a></li>
-                            <li><a href="responsive_table.html">Responsive Table</a></li>
+{{--                            <li><a href="responsive_table.html">Responsive Table</a></li>--}}
                         </ul>
                     </li>
                     <li class="sub-menu">

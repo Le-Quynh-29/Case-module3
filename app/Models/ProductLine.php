@@ -13,7 +13,7 @@ class ProductLine extends Model
 
     public function Product()
     {
-        return $this->hasMany('App\Models\Product');
+        return $this->hasMany(Product::class, 'productline');
     }
 
     public function usesTimestamps():bool
