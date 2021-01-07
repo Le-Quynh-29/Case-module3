@@ -12,11 +12,14 @@
         td{
             font-size: 20px!important;
             color: black!important;
+            text-align: center!important;
+
 
         }
         th{
             font-size:25px!important;
             color: black!important;
+            text-align: center!important;
 
         }
         button{
@@ -47,7 +50,7 @@
                 <tbody>
                 @foreach($customers as $key => $customer)
                     <tr>
-                        <th scope="row">{{ ++$key }}</th>
+                        <th scope="row">{{ $key + $customers-> firstItem() }}</th>
                         <td>{{ $customer->user }}</td>
                         <td>{{ $customer->address }}</td>
                         <td>{{ $customer->email }}</td>
@@ -58,9 +61,9 @@
                 @endforeach
                 </tbody>
             </table>
-            <div style="font-size:25px;text-align: right!important; ">
-                {{$customers->links()}}
-            </div>
+
+                <div style="float: right;">{{ $customers->links( "pagination::bootstrap-4") }}</div>
+
         </div>
     </div>
 
