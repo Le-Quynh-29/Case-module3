@@ -46,6 +46,7 @@ class ProductLineController extends Controller
     public function destroy($id)
     {
         $productline = ProductLine::find($id);
+        $productline->Product()->delete();
         $productline->delete();
         return redirect()->route('productline.list');
     }

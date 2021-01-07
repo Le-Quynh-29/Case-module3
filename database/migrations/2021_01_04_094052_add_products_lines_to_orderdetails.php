@@ -14,7 +14,7 @@ class AddProductsLinesToOrderdetails extends Migration
     public function up()
     {
         Schema::table('orderdetails', function (Blueprint $table) {
-            $table->foreign('productCode')->references('id')->on('products');
+            $table->foreign('id')->references('id')->on('products');
         });
     }
 

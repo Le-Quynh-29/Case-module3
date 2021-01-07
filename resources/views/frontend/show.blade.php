@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -152,8 +153,8 @@
             <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->
-{{--      --}}
-        <!-- End Side Menu -->
+    {{--      --}}
+    <!-- End Side Menu -->
     </nav>
     <!-- End Navigation -->
 </header>
@@ -170,11 +171,8 @@
     </div>
 </div>
 
-<div class="about-box-main">
-    <div class="container">
-        @yield('productline1')
-    </div>
-</div>
+
+@yield('productline')
 <!-- End About Page -->
 
 <!-- Start Instagram Feed  -->
@@ -351,4 +349,5 @@
 </body>
 
 </html>
+
 
