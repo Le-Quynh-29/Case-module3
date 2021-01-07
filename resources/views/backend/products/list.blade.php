@@ -46,7 +46,6 @@
                     <th scope="col">Mã giảm giá</th>
                     <th scope="col">Hình ảnh</th>
                     <th></th>
-{{--                    <th></th>--}}
                 </tr>
                 </thead>
                 <tbody>
