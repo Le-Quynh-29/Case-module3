@@ -136,25 +136,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
 
                     </li>
-                    <li class="sub-menu">
-                        <a href="javascript:;">
-                            <i class="fa fa-envelope"></i>
-                            <span>Mail </span>
+                    < <li class="sub-menu">
+                        <a href="{{route('orders.list')}}">
+                            <i class="fa fa-book"></i>
+                            <span>Danh sách hóa đơn</span>
                         </a>
-                        <ul class="sub">
-                            <li><a href="mail.html">Inbox</a></li>
-                            <li><a href="mail_compose.html">Compose Mail</a></li>
-                        </ul>
+
                     </li>
                     <li class="sub-menu">
-                        <a href="javascript:;">
-                            <i class=" fa fa-bar-chart-o"></i>
-                            <span>Charts</span>
+                        <a href="{{route('orderdetails.list')}}">
+                            <i class="fa fa-book"></i>
+                            <span>Danh sách chi tiết hóa đơn</span>
                         </a>
-                        <ul class="sub">
-                            <li><a href="chartjs.html">Chart js</a></li>
-                            <li><a href="flot_chart.html">Flot Charts</a></li>
-                        </ul>
+
                     </li>
                     <li class="sub-menu">
                         <a href="javascript:;">

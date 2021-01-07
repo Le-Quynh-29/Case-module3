@@ -21,7 +21,7 @@ class Customer extends Authenticatable
 
     public function Order()
     {
-        return $this->hasMany('App\Models\Order');
+        return $this->hasMany(Order::class,'customerNumber');
     }
 
     public function usesTimestamps():bool

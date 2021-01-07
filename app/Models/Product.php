@@ -13,7 +13,7 @@ class Product extends Model
 
     public function Orderdetail()
     {
-        return $this->belongsTo('App\Models\Orderdetail');
+        return $this->hasMany('App\Models\Orderdetail');
     }
 
     public function ProductLine()
