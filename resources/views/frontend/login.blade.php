@@ -47,7 +47,7 @@
                         @if(\Illuminate\Support\Facades\Session::has('error_login'))
                             <div class="alert-danger">{{ \Illuminate\Support\Facades\Session::get('error_login') }}</div>
                             @endif
-                        <form method="POST" class="register-form" action="{{route('login')}}" id="login-form">
+                        <form method="POST" class="register-form" action="{{route('frontend.login')}}" id="login-form">
                             @csrf
 
                             <div class="form-group">

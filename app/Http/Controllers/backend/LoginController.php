@@ -13,6 +13,9 @@ class LoginController extends Controller
 {
     public function showLogin()
     {
+        if (Session::has('login')) {
+            return redirect()->route('welcome');
+        }
         return view('backend.login');
     }
 
@@ -23,7 +26,7 @@ class LoginController extends Controller
 
         if ($username == 'admin@gmail.com' && $password == '12345'){
             Session::put('login', true);
-            return view('backend.welcome');
+            return redirect()->route('welcome');
         }else {
 
             $message = 'Đăng nhập không thành công. Tên người dùng hoặc mật khẩu không đúng';
@@ -34,7 +37,8 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        //Auth::logout();
+        Session::forget('login');
         return redirect()->route('show.login');
 
     }

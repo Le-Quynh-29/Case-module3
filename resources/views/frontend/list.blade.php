@@ -11,7 +11,7 @@
 {{--                                                <img src="{{asset('frontend/images/img-pro-01.jpg')}}" class="img-fluid" alt="Image">--}}
                     <div class="mask-icon">
                         <ul>
-                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="{{route('products.detail',$product->id)}}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
 {{--                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>--}}
 {{--                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>--}}
                         </ul>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="why-text">
                     <h4>Lorem ipsum dolor sit amet</h4>
-                    <h5> {{$product->price}}</h5>
+                    <h5>$ {{$product->price}}</h5>
                 </div>
 
             </div>
@@ -52,7 +52,7 @@
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="{{asset('storage/images/' . $productline->img)}}" alt="" style="height: 300px"/>
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                        <a class="btn hvr-hover" href="{{route('productline.detail',$productline->id)}}">Lorem ipsum dolor</a>
                     </div>
     </div>
     @endforeach
