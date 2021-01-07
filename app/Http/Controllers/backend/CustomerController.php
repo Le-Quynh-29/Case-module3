@@ -14,7 +14,7 @@ CustomerController extends Controller
 {
     public function index()
     {
-        $customers = Customer::paginate(10);
+        $customers = Customer::paginate(2);
         return view('backend.customers.list',compact('customers'));
     }
 

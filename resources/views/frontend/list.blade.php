@@ -20,7 +20,7 @@
                 </div>
                 <div class="why-text">
                     <h4>Lorem ipsum dolor sit amet</h4>
-                    <h5>$ {{$product->price}}</h5>
+                    <h5>{{ number_format($product->price)}}đ</h5>
                 </div>
 
             </div>
@@ -52,7 +52,7 @@
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="{{asset('storage/images/' . $productline->img)}}" alt="" style="height: 300px"/>
-                        <a class="btn hvr-hover" href="{{route('productline.detail',$productline->id)}}">Lorem ipsum dolor</a>
+                        <a class="btn hvr-hover" href="{{route('productline.detail',$productline->id)}}">{{$productline->id}}</a>
                     </div>
     </div>
     @endforeach

@@ -12,19 +12,20 @@
         td{
             font-size: 20px!important;
             color: black!important;
+            text-align: center!important;
+
 
         }
         th{
             font-size:25px!important;
             color: black!important;
+            text-align: center!important;
+
 
         }
         button{
             font-size: 15px!important;
         }
-        /*a{*/
-        /*    font-size: 30px!important;*/
-        /*}*/
     </style>
     <div class="col-12">
         <div class="row">
@@ -45,9 +46,9 @@
                 <tbody>
                 @foreach($productline as $key => $pl)
                     <tr>
-                        <td>{{++$key}}</td>
+                        <td>{{ $key + $productline-> firstItem()}}</td>
                         <td>{!! $pl->id !!}</td>
-                        <td>{{$pl->description}}</td>
+                        <td >{{substr($pl->description, 0, 100)}}...</td>
                         <td>
                             <img src="{{asset('storage/images/' . $pl->img)}}" alt="" style="width: 100px;height: 100px">
                         </td>
@@ -59,6 +60,8 @@
                 @endforeach
                 </tbody>
             </table>
+            <div style="float: right;">{{ $productline->links( "pagination::bootstrap-4") }}</div>
+
         </div>
     </div>
 @endsection

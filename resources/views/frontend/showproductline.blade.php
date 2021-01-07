@@ -1,5 +1,5 @@
-@extends('frontend.show')
-@section('productline')
+@extends('frontend.master')
+@section('frontend-master')
 
     <div class="about-box-main">
         <div class="container">

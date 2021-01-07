@@ -18,15 +18,10 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = Product::paginate(10);
+        $products = Product::paginate(5);
         return view('backend.products.list', compact('products'));
     }
 
-//    public function show()
-//    {
-//        $products = Product::all();
-//        return view('frontend.index', compact('products'));
-//    }
 
 
     /**
