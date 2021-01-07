@@ -61,10 +61,9 @@ Route::group(['prefix'=> 'admin'],function () {
 
 });
 
-
-Route::get('/', function () {
-    return view('frontend.index');
-})->name('shop');
+//Route::get('/', function () {
+//    return view('frontend.list');
+//})->name('shop');
 
 Route::group(['prefix'=> 'user'],function () {
 
@@ -73,13 +72,11 @@ Route::group(['prefix'=> 'user'],function () {
     Route::get("register", [\App\Http\Controllers\frontend\LoginController::class, "showRegister"])->name("showRegister");
     Route::post("register", [\App\Http\Controllers\frontend\LoginController::class, "storeRegister"])->name("storeRegister");
     Route::get('logoutfrontend', [\App\Http\Controllers\frontend\LoginController::class, 'logout'])->name('frontend.logout');
+    //    Route::group(['prefix' => 'show'], function () {
+    Route::get('/list', [\App\Http\Controllers\frontend\ProductController::class, 'index'])->name('products.show');
+    Route::get('/list/{id}', [\App\Http\Controllers\frontend\ProductController::class, 'showProductline'])->name('productline.detail');
+    Route::get('/show/{id}',[\App\Http\Controllers\frontend\ProductController::class,'showProduct'])->name('products.detail');
 
-
-
-
-    Route::group(['prefix' => 'show'], function () {
-        Route::get('/index', [\App\Http\Controllers\frontend\ProductController::class, 'index'])->name('products.show');
-
-    });
+//    });
 
 });

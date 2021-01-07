@@ -42,7 +42,7 @@
 
                     <th scope="col">Mã giảm giá</th>
                     <th scope="col">Hình ảnh</th>
-{{--                    <th></th>--}}
+                    <th></th>
 {{--                    <th></th>--}}
                 </tr>
                 </thead>
@@ -62,8 +62,10 @@
                         <td>
                             <img src="{{asset ('storage/images/'.$product->img)}} " alt="" style="width: 100px ;height: 100px">
                         </td>
-                        <td><a href="{{ route('products.edit', $product->id) }}" class="btn btn-info">Sửa</a></td>
-                        <td><a href="{{ route('products.delete', $product->id) }}" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa</a></td>
+                        <td>
+                            <a href="{{ route('products.edit', $product->id) }}" class="btn btn-info">Sửa</a>
+                            <a href="{{ route('products.delete', $product->id) }}" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa</a>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>

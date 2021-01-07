@@ -17,9 +17,18 @@ class ProductController extends Controller
         return view('frontend.list',compact('products','productlines'));
     }
 
-//    public function showproductline()
-//    {
-//
-//        return view('frontend.list',compact('productlines'));
-//    }
+    public function showProductline($id)
+    {
+        $productlines = ProductLine::where('id', '=', $id)->select('*')->first();
+        $des = html_entity_decode($productlines->description);
+        return view('frontend.showproductline', compact('productlines', 'des'));
+    }
+
+    public function showProduct($id)
+    {
+
+        $product = Product::where('id', '=', $id)->select('*')->first();
+        $des1 = html_entity_decode($product->description);
+        return view('frontend.showproduct', compact('product', 'des1'));
+    }
 }
