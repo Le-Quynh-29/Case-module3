@@ -41,6 +41,25 @@ Route::group(['prefix' => 'admin'], function () {
             });
 
 
+            Route::group(['prefix' => 'orders'], function () {
+                Route::get('/', [\App\Http\Controllers\backend\OrderController::class, 'index'])->name('orders.list');
+                Route::get('/create', [\App\Http\Controllers\backend\OrderController::class, 'create'])->name('orders.create');
+                Route::post('/create', [\App\Http\Controllers\backend\OrderController::class, 'store'])->name('orders.store');
+                Route::get('/edit/{id}', [\App\Http\Controllers\backend\OrderController::class, 'edit'])->name('orders.edit');
+                Route::post('/edit/{id}', [\App\Http\Controllers\backend\OrderController::class, 'update'])->name('orders.update');
+                Route::get('/delete/{id}', [\App\Http\Controllers\backend\OrderController::class, 'destroy'])->name('orders.destroy');
+            });
+
+
+            Route::group(['prefix' => 'orderdetails'], function () {
+                Route::get('/', [\App\Http\Controllers\backend\OrderDetailController::class, 'index'])->name('orderdetails.list');
+                Route::get('/create', [\App\Http\Controllers\backend\OrderDetailController::class, 'create'])->name('orderdetails.create');
+                Route::post('/create', [\App\Http\Controllers\backend\OrderDetailController::class, 'store'])->name('orderdetails.store');
+                Route::get('/edit/{id}', [\App\Http\Controllers\backend\OrderDetailController::class, 'edit'])->name('orderdetails.edit');
+                Route::post('/edit/{id}', [\App\Http\Controllers\backend\OrderDetailController::class, 'update'])->name('orderdetails.update');
+
+
+            });
             Route::group(['prefix' => 'products'], function () {
                 Route::get('/', [\App\Http\Controllers\backend\ProductController::class, 'index'])->name('products.list');
                 Route::get('/create', [\App\Http\Controllers\backend\ProductController::class, 'create'])->name('products.create');
@@ -61,8 +80,13 @@ Route::group(['prefix' => 'admin'], function () {
 
             });
 
+
         });
+
+
     });
+
+
 });
 Route::group(['prefix'], function () {
     Route::get('', [\App\Http\Controllers\frontend\ProductController::class, 'index'])->name('products.show');
@@ -87,7 +111,7 @@ Route::group(['prefix' => 'user'], function () {
 
 
     //menu
-    Route::get('menu',function (){
+    Route::get('menu', function () {
         return view('frontend.menu');
     })->name('menu');
 });
