@@ -68,10 +68,6 @@ Route::group(['prefix'], function () {
     Route::get('', [\App\Http\Controllers\frontend\ProductController::class, 'index'])->name('products.show');
 
 });
-//
-//Route::get('/', function () {
-//    return view('frontend.list');
-//})->name('shop');
 Route::group(['prefix' => 'user'], function () {
 
     Route::get("login", [\App\Http\Controllers\frontend\LoginController::class, "showLogin"])->name("showLogin");
