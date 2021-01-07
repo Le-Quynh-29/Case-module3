@@ -10,6 +10,16 @@
             font-size: 70px!important;
 
         }
+        td{
+            font-size: 20px!important;
+            color: black!important;
+
+        }
+        th{
+            font-size:25px!important;
+            color: black!important;
+
+        }
         label{
             font-size: 25px!important;
         }

@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\Locale;
 use App\Http\Middleware\LoginCheck;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -64,6 +65,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'LoginCheck'=>LoginCheck::class,
+        'locale' => Locale::class,
 
     ];
 }
