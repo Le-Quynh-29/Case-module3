@@ -5,6 +5,11 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
 <head>
     <title> @yield('title') </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,8 +74,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
 
         <div class="top-nav clearfix">
+
             <!--search & user info start-->
+
             <ul class="nav pull-right top-menu">
+
+
                 <li>
                     <form action=""   method="post">
                         @csrf
@@ -88,7 +97,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul class="dropdown-menu extended logout">
                         <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
                         <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                        <li><a href="{{route('logout')}}"><i class="fa fa-key"></i> Log Out</a></li>
+                        <li>
+                            <a href="{{route('logout')}}"><i class="fa fa-key"></i> Log Out</a>
+                            <select  name="change-language" onchange="location = this.value;" title="Change Language">
+                                <option value="{!! route('user.change-language', ['vi']) !!}"{{ (app()->getLocale() == 'vi') ? ' selected' : '' }} title="Change to Vietnamese">Vietnamese</option>
+                                <option value="{!! route('user.change-language', ['en']) !!}"{{ (app()->getLocale() == 'en') ? ' selected' : '' }} title="Change to English">English</option>
+                            </select> &nbsp;
+
+                        </li>
                     </ul>
                 </li>
                 <!-- user login dropdown end -->
@@ -107,14 +123,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li>
                         <a class="active" href="{{route('welcome')}}">
                             <i class="fa fa-dashboard"></i>
-                            <span>Trang Chủ</span>
+                            <span> {!! __('language.Trang chủ') !!}</span>
                         </a>
                     </li>
 
                     <li class="sub-menu">
                         <a href="{{route('customers.list')}}">
                             <i class="fa fa-book"></i>
-                            <span>Danh sách khách hàng</span>
+                            <span>{!! __('language.Danh sách khách hàng') !!}</span>
                         </a>
 
                     </li>
@@ -122,17 +138,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li class="sub-menu">
                         <a href="">
                             <i class="fa fa-th"></i>
-                            <span>Danh sách sản phẩm</span>
+                            <span>{!! __('language.Danh sách sản phẩm') !!}</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="{{route('products.list')}}">Danh sách </a></li>
+                            <li><a href="{{route('products.list')}}">{!! __('language.Danh sách') !!}</a></li>
                             <li><a href="responsive_table.html">Responsive Table</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
                         <a href="{{route('productline.list')}}">
                             <i class="fa fa-tasks"></i>
-                            <span>Dòng sản phẩm</span>
+                            <span>{!! __('language.Dòng sản phẩm') !!}</span>
                         </a>
 
                     </li>
