@@ -58,6 +58,7 @@ CustomerController extends Controller
     public function destroy($id)
     {
         $cutomers = Customer::find($id);
+        $cutomers->Order()->delete();
         $cutomers->delete();
         return redirect()->route('customers.list');
     }

@@ -18,7 +18,7 @@ class Orderdetail extends Model
 
     public function Product()
     {
-        return $this->hasMany('App\Models\Product');
+        return $this->belongsTo(Product::class, 'productCode');
     }
 
     public function usesTimestamps():bool
