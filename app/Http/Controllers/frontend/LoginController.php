@@ -43,10 +43,10 @@ class LoginController extends Controller
 
         if (Auth::guard('customer')->attempt($data)) {
 
-            return redirect()->route("shop");
+            return redirect()->route("products.show");
         }
         Session::flash('error_login', "Email hoặc mật khẩu không đúng.");
-        return redirect()->route('login');
+        return redirect()->route('showLogin');
     }
 
     public function logout(Request $request)
