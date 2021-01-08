@@ -1,4 +1,13 @@
 @extends('backend.master')
+@section('search')
+    <li>
+        <form action="{{ route('productline.search')}}" method="get">
+            @csrf
+            <input type="text" name="keyword" class="form-control search" placeholder=" Search...">
+
+        </form>
+    </li>
+@endsection
 @section('title')
     Danh sách dòng sản phẩm
 @endsection

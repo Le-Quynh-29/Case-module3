@@ -1,4 +1,5 @@
 @extends('backend.master')
+
 @section('title')
     Chi tiết đơn hàng
 @endsection

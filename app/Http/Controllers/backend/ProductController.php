@@ -141,4 +141,17 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('products.list');
     }
+
+
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        if ($request->has('productName')){
+            return redirect()->route('products.list');
+        }
+        $products = Product::where('productName', 'LIKE', '%'  . $keyword . '%')->paginate(5);
+
+        $productline = ProductLine::all();
+        return view('backend.products.list', compact('products', 'productline'));
+    }
 }
