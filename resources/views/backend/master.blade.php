@@ -24,6 +24,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             window.scrollTo(0, 1);
         } </script>
 
+    {{ dd(11111111111111111) }}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -78,8 +79,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!--search & user info start-->
 
             <ul class="nav pull-right top-menu">
-
-
                 <li>
                     <form action=""   method="post">
                         @csrf
@@ -150,52 +149,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <i class="fa fa-tasks"></i>
                             <span>{!! __('language.Dòng sản phẩm') !!}</span>
                         </a>
-
                     </li>
-
                     < <li class="sub-menu">
                         <a href="{{route('orders.list')}}">
                             <i class="fa fa-book"></i>
-                            <span>Danh sách hóa đơn</span>
+                            <span>{!! __('language.Đặt hàng') !!}</span>
                         </a>
 
                     </li>
                     <li class="sub-menu">
                         <a href="{{route('orderdetails.list')}}">
                             <i class="fa fa-book"></i>
-                            <span>Danh sách chi tiết hóa đơn</span>
+                            <span>{!! __('language.Chi tiết đặt hàng') !!}</span>
                         </a>
 
-                    </li>
-                    <li class="sub-menu">
-                        <a href="javascript:;">
-                            <i class=" fa fa-bar-chart-o"></i>
-                            <span>Maps</span>
-                        </a>
-                        <ul class="sub">
-                            <li><a href="google_map.html">Google Map</a></li>
-                            <li><a href="vector_map.html">Vector Map</a></li>
-                        </ul>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="javascript:;">
-                            <i class="fa fa-glass"></i>
-                            <span>Extra</span>
-                        </a>
-                        <ul class="sub">
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="404.html">404 Error</a></li>
-                            <li><a href="registration.html">Registration</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="">
-                            <i class="fa fa-user"></i>
-                            <span>Login Page</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+{{--                    </li>--}}
+{{--                    <li class="sub-menu">--}}
+{{--                        <a href="javascript:;">--}}
+{{--                            <i class=" fa fa-bar-chart-o"></i>--}}
+{{--                            <span>Maps</span>--}}
+{{--                        </a>--}}
+{{--                        <ul class="sub">--}}
+{{--                            <li><a href="google_map.html">Google Map</a></li>--}}
+{{--                            <li><a href="vector_map.html">Vector Map</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
+{{--                    <li class="sub-menu">--}}
+{{--                        <a href="javascript:;">--}}
+{{--                            <i class="fa fa-glass"></i>--}}
+{{--                            <span>Extra</span>--}}
+{{--                        </a>--}}
+{{--                        <ul class="sub">--}}
+{{--                            <li><a href="gallery.html">Gallery</a></li>--}}
+{{--                            <li><a href="404.html">404 Error</a></li>--}}
+{{--                            <li><a href="registration.html">Registration</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                        <a href="">--}}
+{{--                            <i class="fa fa-user"></i>--}}
+{{--                            <span>Login Page</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
+{{--                </ul>--}}
+{{--            </div>--}}
             <!-- sidebar menu end-->
         </div>
     </aside>

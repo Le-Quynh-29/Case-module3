@@ -1,6 +1,6 @@
 @extends('backend.master')
 @section('title')
-    Danh sach hoa don
+    Thêm mới hóa đơn
 @endsection
 @section('content')
 
@@ -22,7 +22,7 @@
     <div class="col-12 col-md-12">
         <div class="row">
             <div class="col-12">
-                <h1>Thêm moi hoa don</h1>
+                <h1>Thêm mới hóa đơn</h1>
             </div>
             <div class="col-12">
                 <form method="post" action="{{ route('orders.store') }}">
@@ -40,7 +40,7 @@
                         <input type="date" class="form-control" name="orderDate"  placeholder="Enter Orderdate">
                     </div>
                     <div class="form-group">
-                        <label>Yêu cầu đặt hang</label>
+                        <label>Yêu cầu đặt hàng</label>
                         <input type="date" class="form-control" name="requiredDate" placeholder="Enter RequiredDate">
                     </div>
                     <div class="form-group">
@@ -48,7 +48,7 @@
                         <input type="date" class="form-control" name="shippedDate" placeholder="Enter shippedDate">
                     </div>
                     <div class="form-group">
-                        <label>Trang thai</label>
+                        <label>Trạng thái </label>
                         <select name="status" id="">
                             <option value="Còn hàng">Còn hàng</option>
                             <option value="Hết hàng">Hết hàng</option>

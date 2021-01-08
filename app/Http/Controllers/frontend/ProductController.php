@@ -6,7 +6,9 @@ use App\Http\Controllers\backend\ProductLineController;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductLine;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {
@@ -14,7 +16,8 @@ class ProductController extends Controller
     {
         $products = Product::all();
         $productlines = ProductLine::all();
-        return view('frontend.list',compact('products','productlines'));
+        $count = Cart::count();
+        return view('frontend.list',compact('products','productlines','count'));
     }
 
     public function showProductline($id)
@@ -38,4 +41,5 @@ class ProductController extends Controller
         $productlines = ProductLine::all();
         return view('frontend.menu',compact('products','productlines'));
     }
+
 }

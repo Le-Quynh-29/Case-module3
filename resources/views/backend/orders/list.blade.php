@@ -26,14 +26,14 @@
     <div class="col-12">
         <div class="row">
             <div class="col-12">
-                <h1>Danh Sách Hoa Don</h1>
+                <h1>Danh sách hóa đơn</h1>
             </div>
             <a style="font-size: 25px!important;" class="btn btn-primary" href="{{route('orders.create')}}">Thêm mới</a>
             <table class="table table-striped">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Ten khach hang </th>
+                    <th scope="col">Tên khách hàng</th>
 
                     <th scope="col">Ngày đặt hàng </th>
                     <th scope="col">Yêu cầu đặt hàng </th>

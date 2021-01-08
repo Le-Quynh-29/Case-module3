@@ -1,6 +1,6 @@
 @extends('backend.master')
 @section('title')
-    Chi tiet don hang
+    Thêm mới đơn hàng
 @endsection
 @section('content')
 
@@ -22,13 +22,13 @@
     <div class="col-12 col-md-12">
         <div class="row">
             <div class="col-12">
-                <h1>Them moi don hang</h1>
+                <h1>Thêm mới đơn hàng </h1>
             </div>
             <div class="col-12">
                 <form method="post" action="{{ route('orderdetails.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label>Ma don hang </label>
+                        <label>Mã đơn hàng</label>
                         <select class="form-control" name="orderNumber">
                             @foreach($orders as $order)
                                 <option value="{{ $order->id}}">{{ $order->id }}</option>
@@ -36,7 +36,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label> Ten san pham </label>
+                        <label> Tên đơn hàng  </label>
                         <select class="form-control" name="productCode">
                             @foreach($products as $product)
                                 <option value="{{ $product->id }}">{{ $product->productName }}</option>
