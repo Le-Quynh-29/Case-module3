@@ -35,15 +35,6 @@
                     <p style="font-size: 17px;color: black">
                         {{$product->descripton}}
                     </p>
-                    <ul>
-                        <li>
-                            <div class="form-group quantity-box">
-                                <label class="control-label">Quantity</label>
-                                <input class="form-control" value="0" min="0" max="20" type="number">
-                            </div>
-                        </li>
-                    </ul>
-
                     <div class="price-box-bar">
                         <div class="cart-and-bay-btn">
                             <a class="btn hvr-hover" data-fancybox-close="" href="#">Buy New</a>
