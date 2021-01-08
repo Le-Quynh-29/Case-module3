@@ -2,11 +2,11 @@
 
 @section('search')
     <li>
-<<<<<<< HEAD
-        <form action=""  method="post">
-=======
+{{--<<<<<<< HEAD--}}
+{{--        <form action=""  method="post">--}}
+{{--=======--}}
         <form action="{{route('products.search')}}"  method="post">
->>>>>>> origin/dev
+
             @csrf
             <input type="text" name="search" class="form-control search" placeholder=" Search...">
         </form>
@@ -47,13 +47,6 @@
                         </del>
                         <br/>
                         <h5>
-                        </h5>
-                    @else
-                        <h5>
-                        </h5>
-                    @endif
-
-
                             {{number_format($product->price * (1 - $product->voucher/100))}}đ
                         </h5>
                     @else
@@ -61,7 +54,9 @@
                             {{number_format($product->price)}}đ
                         </h5>
                     @endif
+                </div>
 
+            </div>
                 </div>
 
             </div>

@@ -16,13 +16,9 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-<<<<<<< HEAD
         $productlines = ProductLine::all();
         $count = Cart::count();
         return view('frontend.list',compact('products','productlines','count'));
-=======
-        return view('frontend.list',compact('products'));
->>>>>>> origin/dev
     }
 
     public function showProductline($id)

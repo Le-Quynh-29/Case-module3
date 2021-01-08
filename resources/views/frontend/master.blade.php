@@ -154,6 +154,11 @@
                     <li class="dropdown">
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Danh mục</a>
                         <ul class="dropdown-menu">
+                            <ul>
+                                @foreach($productlines as $productline)
+                                    <li><a href="{{route('show.menu',$productline->id)}}">{{$productline->id}}</a></li>
+                                @endforeach
+                            </ul>
                         </ul>
                     </li>
                 </ul>
@@ -171,11 +176,7 @@
                 </ul>
             </div>
             <div>
-                <ul>
-                    @foreach($productlines as $productline)
-                        <li><a href="{{route('show.menu',$productline->id)}}">{{$productline->id}}</a></li>
-                    @endforeach
-                </ul>
+
                 <ul>
                 <li class="nav-item"><a class="nav-link" href="{{asset('frontend/contact-us.html')}}">Liên hệ</a></li>
                 </ul>
@@ -196,13 +197,13 @@
                     </li>
                 </ul>
             </div>
-<<<<<<< HEAD
+\
             <!-- End Atribute Navigation -->
         </div>
-        =======
+{{--        =======--}}
         {{--            <!-- End Atribute Navigation -->--}}
         {{--        </div>--}}
-        >>>>>>> origin/dev
+
     </nav>
     <!-- End Navigation -->
 </header>

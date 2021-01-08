@@ -109,8 +109,6 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/show/{id}', [\App\Http\Controllers\frontend\ProductController::class, 'showProduct'])->name('products.detail');
     Route::get('/menu/{id}',[\App\Http\Controllers\frontend\ProductController::class,'show'])->name('show.menu');
 
-<<<<<<< HEAD
-//    Route::get('/list',[\App\Http\Controllers\frontend\ProductController::])
 
 //cart
 
@@ -126,7 +124,8 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('menu', function () {
         return view('frontend.master');
     })->name('menu');
-=======
+
+
     Route::post('/search',[\App\Http\Controllers\frontend\SearchController::class,'searchProduct'])->name('products.search');
     Route::post('/searchpl',[\App\Http\Controllers\frontend\SearchController::class,'searchProductLine'])->name('productline.search');
 
@@ -134,7 +133,6 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('menu', function () {
         return view('frontend.searchProduct');
     })->name('search');
->>>>>>> origin/dev
 });
 
 
