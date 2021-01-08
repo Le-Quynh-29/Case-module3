@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 //use App\Models\City;
 use App\Models\Customer;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -62,5 +63,19 @@ CustomerController extends Controller
         $cutomers->delete();
         return redirect()->route('customers.list');
     }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        if ($request->has('user')){
+            return redirect()->route('customers.list');
+        }
+        $customers = Customer::where('user', 'LIKE', '%'  . $keyword . '%')->paginate(5);
+
+        $orders = Order::all();
+        return view('backend.customers.list', compact('customers', 'orders'));
+    }
+
+
 
 }

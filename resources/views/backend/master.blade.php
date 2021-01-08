@@ -79,14 +79,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             <ul class="nav pull-right top-menu">
 
+                    @yield('search')
 
-                <li>
-                    <form action=""   method="post">
-                        @csrf
-                        <input type="text" name="keyword" class="form-control search" placeholder=" Search...">
-
-                    </form>
-                </li>
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -111,7 +105,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             </ul>
             <!--search & user info end-->
-        </div>
+        </
     </header>
     <!--header end-->
     <!--sidebar start-->

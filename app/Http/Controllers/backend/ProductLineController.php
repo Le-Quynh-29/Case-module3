@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use App\Models\ProductLine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -80,5 +81,15 @@ class ProductLineController extends Controller
         $productline->save();
         return redirect()->route('productline.list');
     }
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        if ($request->has('id')){
+            return redirect()->route('productline.list');
+        }
+        $productline = ProductLine::where('id', 'LIKE', '%'  . $keyword . '%')->paginate(5);
 
+        $products = Product::all();
+        return view('backend.productline.list', compact('productline', 'products'));
+    }
 }
