@@ -13,6 +13,7 @@
             font-size: 25px!important;
         }
         input{
+            width: 300px!important;
             font-size: 20px!important;
         }
         button{
@@ -50,10 +51,10 @@
                     <div class="form-group">
                         <label>Trang thai</label>
                         <select name="status" id="">
-                            <option value="Còn hàng">Còn hàng</option>
-                            <option value="Hết hàng">Hết hàng</option>
-                            <option value="Hàng mới nhập">Hàng mới nhập</option>
-                            <option value="Hàng tồn kho">Hàng tồn kho</option>
+                            <option value="Đã xác minh">Đã xác minh</option>
+                            <option value="Đã giao cho bên vận chuyển">Đã giao cho bên vận chuyển</option>
+                            <option value="Đang giao">Đang giao</option>
+                            <option value="Đã nhận hàng">Đã nhận hàng</option>
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Thêm mới</button>
