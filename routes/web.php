@@ -108,13 +108,13 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/list', [\App\Http\Controllers\frontend\ProductController::class, 'index'])->name('products.show');
     Route::get('/list/{id}', [\App\Http\Controllers\frontend\ProductController::class, 'showProductline'])->name('productline.detail');
     Route::get('/show/{id}', [\App\Http\Controllers\frontend\ProductController::class, 'showProduct'])->name('products.detail');
+    Route::get('/menu/{id}',[\App\Http\Controllers\frontend\ProductController::class,'show'])->name('show.menu');
 
-
-//    Route::get('/menu',[\App\Http\Controllers\frontend\ProductController::class,'indexMenu'])->name('show.menu');
-
+    Route::post('/search',[\App\Http\Controllers\frontend\SearchController::class,'searchProduct'])->name('products.search');
+    Route::post('/searchpl',[\App\Http\Controllers\frontend\SearchController::class,'searchProductLine'])->name('productline.search');
 
     //menu
     Route::get('menu', function () {
-        return view('frontend.menu');
-    })->name('menu');
+        return view('frontend.searchProduct');
+    })->name('search');
 });

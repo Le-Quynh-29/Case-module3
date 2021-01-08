@@ -67,17 +67,19 @@ class ProductLineController extends Controller
         $productline = ProductLine::find($id);
         $productline->fill($request->all());
 
-        $file = $request->inputFile;
-        if (!$request->hasFile('inputFile')) {
-            $productline->img = $file;
+        if (!$request->hasFile('img') && file_exists(storage_path('app/public/images/'.$request->imgName))) {
+            $productline->img = $request->imgName;
         } else {
-            $file = $request->file('inputFile');
-            $fileExtension = $file->getClientOriginalExtension();
-            $fileName = $request->inputName;
-            $newFileName = "$fileName.$fileExtension";
-            $request->file('inputFile')->storeAs('public/images', $newFileName);
-            $productline->img = $newFileName;
+            if (file_exists(storage_path('app/public/images/'.$request->imgName))) {
+                unlink(storage_path('app/public/images/'.$request->imgName));
+            }
+            $imageName = time() . '.' . $request->img->getClientOriginalExtension();
+            $request->file('img')->storeAs('public/images', $imageName);
+            //$request->img->move(storage_path('storage/app/public/images'), $imageName);
+            $productline->img = $imageName;
         }
+
+
         $productline->save();
         return redirect()->route('productline.list');
     }

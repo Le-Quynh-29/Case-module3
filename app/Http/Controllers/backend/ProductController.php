@@ -105,7 +105,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+//        dd($request);
         $product = Product::find($id);
 
         $product->productName = $request->input('productName');
@@ -114,17 +114,34 @@ class ProductController extends Controller
         $product->quantity = $request->input('quantity');
         $product->price = $request->input('price');
         $product->voucher = $request->input('voucher');
-                $file = $request->inputFile;
-        if (!$request->hasFile('inputFile')) {
-            $product->img = $file;
+
+//
+//                $file = $request->inputFile;
+//        if (!$request->hasFile('inputFile')) {
+//            $product->img = $file;
+//        } else {
+//            $file = $request->file('inputFile');
+//            $fileExtension = $file->getClientOriginalExtension();
+//            $fileName = $request->inputName;
+//            $newFileName = "$fileName.$fileExtension";
+//            $request->file('inputFile')->storeAs('public/images', $newFileName);
+//            $product->img = $newFileName;
+//        }
+
+//        dd(storage_path('app/public/images/'.$request->imgName));
+        if (!$request->hasFile('img') && file_exists(storage_path('app/public/images/'.$request->imgName))) {
+            $product->img = $request->imgName;
         } else {
-            $file = $request->file('inputFile');
-            $fileExtension = $file->getClientOriginalExtension();
-            $fileName = $request->inputName;
-            $newFileName = "$fileName.$fileExtension";
-            $request->file('inputFile')->storeAs('public/images', $newFileName);
-            $product->img = $newFileName;
+            if (file_exists(storage_path('app/public/images/'.$request->imgName))) {
+                unlink(storage_path('app/public/images/'.$request->imgName));
+            }
+            $imageName = time() . '.' . $request->img->getClientOriginalExtension();
+            $request->file('img')->storeAs('public/images', $imageName);
+            //$request->img->move(storage_path('storage/app/public/images'), $imageName);
+            $product->img = $imageName;
         }
+
+
         $product->save();
         return redirect()->route('products.list');
     }

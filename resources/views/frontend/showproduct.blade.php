@@ -1,5 +1,6 @@
 @extends('frontend.master')
 @section('frontend-master')
+
 <div class="shop-detail-box-main">
     <div class="container">
         <div class="row">
@@ -15,7 +16,20 @@
             </div>
             <div class="col-xl-7 col-lg-7 col-md-6">
                 <div class="single-product-details">
-                    <h2 class="noo-sh-title-top"> <span>{{$product->productName}}</span></h2>                    <h5> <del>$ 60.00</del> ${{$product->price}}</h5>
+                    <h2 class="noo-sh-title-top"> <span>{{$product->productName}}</span></h2>
+                    @if($product->voucher != 0)
+                        <del>
+                            {{number_format($product->price)}}
+                            đ
+                        </del>
+                        <h5>
+                            {{number_format($product->price * (1 - $product->voucher/100))}}đ
+                        </h5>
+                    @else
+                        <h5>
+                            {{number_format($product->price)}}đ
+                        </h5>
+                    @endif
                     <h4>Short Description:</h4>
                     <h5>Số lượng sản phẩm :  {{$product->quantity}}</h5>
                     <p style="font-size: 17px;color: black">

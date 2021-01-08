@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>Freshshop - Ecommerce Bootstrap 4 HTML Template</title>
+    <title>TQTShop</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -54,15 +54,15 @@
                 <div class="our-link">
                     <ul>@if(!\Illuminate\Support\Facades\Auth::guard('customer')->check())
                             <li><a href="{{route('showLogin')}}">
-                                    <i class="fa fa-user s_color"></i> Login</a>
+                                    <i class="fa fa-user s_color"></i> Đăng nhập</a>
                             </li>
                         @else
                             <li><a href="">
-                                    <i class="fa fa-user s_color"></i> My Account</a>
+                                    <i class="fa fa-user s_color"></i> Tài khoản </a>
                             </li>
                         @endif
-                        <li><a href="#"><i class="fas fa-location-arrow"></i> Our location</a></li>
-                        <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
+                        <li><a href="#"><i class="fas fa-location-arrow"></i> Shop</a></li>
+                        <li><a href="#"><i class="fas fa-headset"></i>Liên hê</a></li>
                     </ul>
                 </div>
             </div>
@@ -74,8 +74,8 @@
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
-                            <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                            <li><a href="{{route('frontend.logout')}}"><i class="fa fa-key"></i> Log Out</a></li>
+                            <li><a href="#"><i class="fa fa-cog"></i> Cài đặt</a></li>
+                            <li><a href="{{route('frontend.logout')}}"><i class="fa fa-key"></i>Đăng xuất</a></li>
                         </ul>
                     </li>
                 </div>
@@ -125,17 +125,19 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="{{asset('frontend/index.html')}}"><img src="{{asset('frontend/images/logo.png" class="logo')}}" alt=""></a>
+                <a class="navbar-brand" href="{{asset('frontend/index.html')}}"><img src="{{asset('frontend/images/logo.png')}}" class="logo" alt=""></a>
             </div>
+
+
             <!-- End Header Navigation -->
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
 
-                    <li class="nav-item active"><a class="nav-link" href="{{route('products.show')}}">Home</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="{{route('products.show')}}">Trang chủ</a></li>
                     <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Shop</a>
                         <ul class="dropdown-menu">
                             <li><a href="{{asset('frontend/shop.html')}}">Sidebar Shop</a></li>
                             <li><a href="{{asset('frontend/shop-detail.html')}}">Shop Detail</a></li>
@@ -145,11 +147,20 @@
                             <li><a href="{{asset('frontend/wishlist.html')}}">Wishlist</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{{route('menu')}}">Các dòng sản phẩm</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{asset('frontend/contact-us.html')}}">Contact Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Danh mục</a>
+                        <ul class="dropdown-menu">
+                            @foreach($productlines as $productline)
+                                <li><a href="{{route('show.menu',$productline->id)}}">{{$productline->id}}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
+{{--                    <li class="nav-item"><a class="nav-link" href="{{route('menu')}}">Các dòng sản phẩm</a></li>--}}
+                    <li class="nav-item"><a class="nav-link" href="{{asset('frontend/contact-us.html')}}">Liên hệ</a></li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
+
+            @yield('search')
 
             <!-- Start Atribute Navigation --
             <div class="attr-nav">
@@ -165,9 +176,8 @@
                 </ul>
             </div>
 {{--            <!-- End Atribute Navigation -->--}}
-        </div>
-
-    </nav>
+{{--        </div>--}}
+            </nav>
     <!-- End Navigation -->
 </header>
 <!-- End Main Top -->
