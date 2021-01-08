@@ -24,7 +24,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             window.scrollTo(0, 1);
         } </script>
 
-    {{ dd(11111111111111111) }}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -86,6 +85,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                     </form>
                 </li>
+
+                    @yield('search')
+
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -110,7 +112,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             </ul>
             <!--search & user info end-->
-        </div>
+        </
     </header>
     <!--header end-->
     <!--sidebar start-->
@@ -162,37 +164,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <i class="fa fa-book"></i>
                             <span>{!! __('language.Chi tiết đặt hàng') !!}</span>
                         </a>
-
-{{--                    </li>--}}
-{{--                    <li class="sub-menu">--}}
-{{--                        <a href="javascript:;">--}}
-{{--                            <i class=" fa fa-bar-chart-o"></i>--}}
-{{--                            <span>Maps</span>--}}
-{{--                        </a>--}}
-{{--                        <ul class="sub">--}}
-{{--                            <li><a href="google_map.html">Google Map</a></li>--}}
-{{--                            <li><a href="vector_map.html">Vector Map</a></li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
-{{--                    <li class="sub-menu">--}}
-{{--                        <a href="javascript:;">--}}
-{{--                            <i class="fa fa-glass"></i>--}}
-{{--                            <span>Extra</span>--}}
-{{--                        </a>--}}
-{{--                        <ul class="sub">--}}
-{{--                            <li><a href="gallery.html">Gallery</a></li>--}}
-{{--                            <li><a href="404.html">404 Error</a></li>--}}
-{{--                            <li><a href="registration.html">Registration</a></li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
-{{--                    <li>--}}
-{{--                        <a href="">--}}
-{{--                            <i class="fa fa-user"></i>--}}
-{{--                            <span>Login Page</span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
-{{--            </div>--}}
+                    </li>
+                </ul>
+            </div>
             <!-- sidebar menu end-->
         </div>
     </aside>

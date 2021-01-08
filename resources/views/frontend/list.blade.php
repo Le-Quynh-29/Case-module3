@@ -2,7 +2,11 @@
 
 @section('search')
     <li>
+<<<<<<< HEAD
         <form action=""  method="post">
+=======
+        <form action="{{route('products.search')}}"  method="post">
+>>>>>>> origin/dev
             @csrf
             <input type="text" name="search" class="form-control search" placeholder=" Search...">
         </form>
@@ -15,9 +19,14 @@
             <div class="products-single fix">
                 <div class="box-img-hover">
                     @if($product->voucher != 0)
+
                         <div class="type-lb">
                             <p class="sale">Sale {{$product->voucher}} %</p>
                         </div>
+
+                    <div class="type-lb">
+                        <p class="sale">Sale {{$product->voucher}} %</p>
+                    </div>
                     @else
                     @endif
                     <img src="{{asset ('storage/images/'.$product->img)}} " class="img-fluid" alt="" style="height: 200px">
@@ -33,20 +42,26 @@
                     @if($product->voucher != 0)
                         <h4>{{$product->productName}}</h4>
                         <del>
-{{--                            {{number_format($product->price)}}--}}
+                            {{number_format($product->price)}}
                             đ
                         </del>
                         <br/>
                         <h5>
-{{--                            {{number_format($product->price * (1 - $product->voucher/100))}}đ--}}
                         </h5>
                     @else
                         <h5>
-{{--                            {{number_format($product->price)}}đ--}}
                         </h5>
                     @endif
 
-                    {{--                    <h5>{{number_format($product->price)}}đ</h5>--}}
+
+                            {{number_format($product->price * (1 - $product->voucher/100))}}đ
+                        </h5>
+                    @else
+                        <h5>
+                            {{number_format($product->price)}}đ
+                        </h5>
+                    @endif
+
                 </div>
 
             </div>

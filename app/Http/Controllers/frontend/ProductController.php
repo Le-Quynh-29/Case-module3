@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\backend\ProductLineController;
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
 use App\Models\Product;
 use App\Models\ProductLine;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -15,16 +16,21 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
+<<<<<<< HEAD
         $productlines = ProductLine::all();
         $count = Cart::count();
         return view('frontend.list',compact('products','productlines','count'));
+=======
+        return view('frontend.list',compact('products'));
+>>>>>>> origin/dev
     }
 
     public function showProductline($id)
     {
-        $productlines = ProductLine::where('id', '=', $id)->select('*')->first();
-        $des = html_entity_decode($productlines->description);
-        return view('frontend.showproductline', compact('productlines', 'des'));
+        $productline = ProductLine::where('id', '=', $id)->select('*')->first();
+        $des1 = html_entity_decode($productline->description);
+        $product = Product::where('productLine',$productline->id)->get();
+        return view('frontend.showproductline', compact('productline','des1','product'));
     }
 
     public function showProduct($id)
@@ -35,11 +41,10 @@ class ProductController extends Controller
         return view('frontend.showproduct', compact('product', 'des1'));
     }
 
-    public function indexMenu()
-    {
-        $products = Product::all();
-        $productlines = ProductLine::all();
-        return view('frontend.menu',compact('products','productlines'));
+    public function show($id){
+        $productlines = ProductLine::where('id',$id)->first();
+        $product = Product::where('productLine',$productlines->id)->get();
+        return view('frontend.productline',compact('product'));
     }
 
 }

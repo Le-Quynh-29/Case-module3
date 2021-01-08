@@ -64,13 +64,13 @@
                         <input type="text" class="form-control" name="voucher" value="{{ $product->voucher }}">
                     </div>
                     <div>
-                        <label for="inputName">File Name</label>
-                        <input type="text"
-                               id="inputName"
-                               name="inputName">
-                        <input type="file"
-                               id="inputFile"
-                               name="inputFile">
+{{--                        <label for="inputName">File Name</label>--}}
+                        <img style="width: 400px;height: 300px" class="img-thumbnail img-fluid" src="{{asset ('storage/images/'.$product->img)}} " alt="">
+                        <input type="file" name="img" class="form-control">
+                        <input type="hidden" name="imgName" class="form-control" value="{{ $product->img }}">
+                        @if($errors->any())
+                            <p class="alert-danger my-sm-4">{{ $errors->first('img') }}</p>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label>Mô tả </label>

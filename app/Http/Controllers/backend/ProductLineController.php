@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use App\Models\ProductLine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -66,19 +67,31 @@ class ProductLineController extends Controller
         $productline = ProductLine::find($id);
         $productline->fill($request->all());
 
-        $file = $request->inputFile;
-        if (!$request->hasFile('inputFile')) {
-            $productline->img = $file;
+        if (!$request->hasFile('img') && file_exists(storage_path('app/public/images/'.$request->imgName))) {
+            $productline->img = $request->imgName;
         } else {
-            $file = $request->file('inputFile');
-            $fileExtension = $file->getClientOriginalExtension();
-            $fileName = $request->inputName;
-            $newFileName = "$fileName.$fileExtension";
-            $request->file('inputFile')->storeAs('public/images', $newFileName);
-            $productline->img = $newFileName;
+            if (file_exists(storage_path('app/public/images/'.$request->imgName))) {
+                unlink(storage_path('app/public/images/'.$request->imgName));
+            }
+            $imageName = time() . '.' . $request->img->getClientOriginalExtension();
+            $request->file('img')->storeAs('public/images', $imageName);
+            //$request->img->move(storage_path('storage/app/public/images'), $imageName);
+            $productline->img = $imageName;
         }
+
+
         $productline->save();
         return redirect()->route('productline.list');
     }
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        if ($request->has('id')){
+            return redirect()->route('productline.list');
+        }
+        $productline = ProductLine::where('id', 'LIKE', '%'  . $keyword . '%')->paginate(5);
 
+        $products = Product::all();
+        return view('backend.productline.list', compact('productline', 'products'));
+    }
 }

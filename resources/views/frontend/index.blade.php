@@ -17,8 +17,26 @@
             <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
         </div>
     </div>
+<<<<<<< HEAD
 
     <!-- End Slider -->
+=======
+</div>
+
+<!-- End Slider -->
+
+<div class="categories-shop">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-all text-center">
+                    <h1>Các dòng sản phẩm</h1>
+                    {{--                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>--}}
+                </div>
+            </div>
+        </div><!-- Start Categories  -->
+        <div class="row">
+>>>>>>> origin/dev
 
     <div class="categories-shop">
         <div class="container">
@@ -56,6 +74,7 @@
         </div>
     </div>
 
+
     <!-- Start Products  -->
     <div class="products-box">
         <div class="container">
@@ -63,21 +82,9 @@
                 <div class="col-lg-12">
                     <div class="title-all text-center">
                         <h1>Danh sách sản phẩm</h1>
-                        {{--                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>--}}
                     </div>
                 </div>
             </div>
-            {{--        <div class="row">--}}
-            {{--            <div class="col-lg-12">--}}
-            {{--                <div class="special-menu text-center">--}}
-            {{--                    <div class="button-group filter-button-group">--}}
-            {{--                        <button class="active" data-filter="*">All</button>--}}
-            {{--                        <button data-filter=".top-featured">Top featured</button>--}}
-            {{--                        <button data-filter=".best-seller">Best seller</button>--}}
-            {{--                    </div>--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
-            {{--        </div>--}}
 
 
             <div class="row special-list">
@@ -96,6 +103,33 @@
                         <h1>latest blog</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
                     </div>
+
+<!-- Start Products  -->
+<div class="products-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-all text-center">
+                    <h1>Danh sách sản phẩm</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row special-list">
+            @yield('product')
+
+        </div>
+    </div>
+</div>
+
+
+<div class="latest-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-all text-center">
+                    <h1>latest blog</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
                 </div>
             </div>
             <div class="row">
