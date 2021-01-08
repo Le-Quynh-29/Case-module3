@@ -1,6 +1,6 @@
 @extends('backend.master')
 @section('title')
-    Chỉnh sửa chi tiet dat hang
+    Chỉnh sửa chi tiết đơn hàng
 @endsection
 @section('content')
 
@@ -23,7 +23,7 @@
     <div class="col-12 col-md-12">
         <div class="row">
             <div class="col-12">
-                <h1>Cap nhap don hang </h1>
+                <h1>Chỉnh sửa chi tiết đơn hàng </h1>
             </div>
             <div class="col-12">
                 <form method="post" action="{{ route('orderdetails.update', $orderdetail->id) }}"  enctype="multipart/form-data">

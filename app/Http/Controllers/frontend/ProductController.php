@@ -7,14 +7,22 @@ use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use App\Models\Product;
 use App\Models\ProductLine;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {
     public function index()
     {
         $products = Product::all();
+<<<<<<< HEAD
+        $productlines = ProductLine::all();
+        $count = Cart::count();
+        return view('frontend.list',compact('products','productlines','count'));
+=======
         return view('frontend.list',compact('products'));
+>>>>>>> origin/dev
     }
 
     public function showProductline($id)

@@ -78,6 +78,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!--search & user info start-->
 
             <ul class="nav pull-right top-menu">
+                <li>
+                    <form action=""   method="post">
+                        @csrf
+                        <input type="text" name="keyword" class="form-control search" placeholder=" Search...">
+
+                    </form>
+                </li>
 
                     @yield('search')
 
@@ -144,24 +151,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <i class="fa fa-tasks"></i>
                             <span>{!! __('language.Dòng sản phẩm') !!}</span>
                         </a>
-
                     </li>
-
                     < <li class="sub-menu">
                         <a href="{{route('orders.list')}}">
                             <i class="fa fa-book"></i>
-                            <span>Danh sách hóa đơn</span>
+                            <span>{!! __('language.Đặt hàng') !!}</span>
                         </a>
 
                     </li>
                     <li class="sub-menu">
                         <a href="{{route('orderdetails.list')}}">
                             <i class="fa fa-book"></i>
-                            <span>Danh sách chi tiết hóa đơn</span>
+                            <span>{!! __('language.Chi tiết đặt hàng') !!}</span>
                         </a>
-
                     </li>
-
                 </ul>
             </div>
             <!-- sidebar menu end-->
