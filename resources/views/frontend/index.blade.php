@@ -19,21 +19,8 @@
     </div>
 
     <!-- End Slider -->
-</div>
 
 <!-- End Slider -->
-
-{{--<div class="categories-shop">--}}
-{{--    <div class="container">--}}
-{{--        <div class="row">--}}
-{{--            <div class="col-lg-12">--}}
-{{--                <div class="title-all text-center">--}}
-{{--                    <h1>Các dòng sản phẩm</h1>--}}
-{{--                    --}}{{--                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div><!-- Start Categories  -->--}}
-{{--        <div class="row">--}}
 
     <div class="categories-shop">
         <div class="container">
@@ -41,8 +28,8 @@
                 <div class="col-lg-12">
                     <div class="title-all text-center">
                         <h1>Các dòng sản phẩm</h1>
-                        {{--                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>--}}
                     </div>
+
                 </div>
             </div><!-- Start Categories  -->
             <div class="row">
@@ -52,7 +39,6 @@
             </div>
         </div>
     </div>
-    <!-- End Categories -->
 
     <div class="box-add-products">
         <div class="container">
@@ -61,6 +47,7 @@
                     <div class="offer-box-products">
                         <img class="img-fluid" src="{{asset('frontend/images/add-img-01.jpg')}}" alt="" />
                     </div>
+
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="offer-box-products">
@@ -72,24 +59,6 @@
     </div>
 
 
-{{--    <!-- Start Products  -->--}}
-{{--    <div class="products-box">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-12">--}}
-{{--                    <div class="title-all text-center">--}}
-{{--                        <h1>Danh sách sản phẩm</h1>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-
-{{--            <div class="row special-list">--}}
-{{--                @yield('product')--}}
-
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
 
 
     <div class="latest-blog">

@@ -2,7 +2,7 @@
 
 @section('search')
     <li>
-        <form action="{{ route('customers.search')}}" method="get">
+        <form action="{{ route('customers.search')}}" method="post">
             @csrf
             <input type="text" name="keyword" class="form-control search" placeholder=" Search...">
 

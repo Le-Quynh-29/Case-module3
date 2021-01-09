@@ -1,7 +1,7 @@
 @extends('frontend.master')
 @section('search')
     <li>
-        <form action="{{route('products.search')}}"  method="post">
+        <form action="{{route('p.search')}}"  method="post">
             @csrf
             <input type="text" name="search" class="form-control search" placeholder=" Search...">
         </form>
@@ -14,7 +14,7 @@
 <div class="products-box">
     <div class="container">
             <div class="row special-list">
-                @foreach($products as $key => $product)
+                @foreach($p as $key => $product)
                     <div class="col-lg-3 col-md-6 special-grid best-seller">
                         <div class="products-single fix">
                             <div class="box-img-hover">

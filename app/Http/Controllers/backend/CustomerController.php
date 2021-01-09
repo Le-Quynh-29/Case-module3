@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 //use App\Models\City;
 use App\Models\Customer;
 use App\Models\Order;
+use App\Models\ProductLine;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
@@ -66,16 +68,18 @@ CustomerController extends Controller
 
     public function search(Request $request)
     {
-        $keyword = $request->input('keyword');
-        if ($request->has('user')){
+        $search = $request->input('keyword');
+        if(!$search){
             return redirect()->route('customers.list');
         }
-        $customers = Customer::where('user', 'LIKE', '%'  . $keyword . '%')->paginate(5);
 
-        $orders = Order::all();
-        return view('backend.customers.list', compact('customers', 'orders'));
+        $customers = DB::table('customers')
+            //->where('productName', 'like', '%'.$search.'%')->get();
+            ->where('user','like','%'.$search.'%')
+            ->paginate(5);
+        $productline = Order::all();
+        Session::flash('search_result',true);
+        return view('backend.customers.list',compact('customers','productline'));
     }
-
-
 
 }

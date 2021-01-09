@@ -30,8 +30,8 @@ class OrderDetailController extends Controller
         $orderdetail = new Orderdetail();
         $orderdetail->orderNumber     = $request->input('orderNumber');
         $orderdetail->productCode    = $request->input('productCode');
-        $orderdetail->quantity      = $request->input('quantity');
-        $orderdetail->price  = $request->input('price');
+        $orderdetail->quantity      = (integer)$request->input('quantity');
+        $orderdetail->price  = (float)$request->input('price');
         $orderdetail->save();
 
         //tao moi xong quay ve trang danh sach khach hang
@@ -54,8 +54,8 @@ class OrderDetailController extends Controller
         $orderdetail = Orderdetail::findOrFail($id);
         $orderdetail->orderNumber = $request->input('orderNumber');
         $orderdetail->productCode = $request->input('productCode');
-        $orderdetail->quantity = $request->input('quantity');
-        $orderdetail->price = $request->input('price');
+        $orderdetail->quantity = (integer)$request->input('quantity');
+        $orderdetail->price = (float)$request->input('price');
         $orderdetail->save();
 
         return redirect()->route('orderdetails.list');

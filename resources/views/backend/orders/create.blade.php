@@ -19,6 +19,9 @@
         button{
             font-size: 20px!important;
         }
+        select{
+            width: 300px!important;
+        }
     </style>
     <div class="col-12 col-md-12">
         <div class="row">
