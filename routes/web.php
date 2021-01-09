@@ -96,7 +96,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 });
 Route::group(['prefix'], function () {
-    Route::get('', [\App\Http\Controllers\frontend\ProductController::class, 'index'])->name('products.show');
+    Route::get('/', [\App\Http\Controllers\frontend\ProductController::class, 'index'])->name('products.show');
 
 });
 Route::group(['prefix' => 'user'], function () {
@@ -106,7 +106,6 @@ Route::group(['prefix' => 'user'], function () {
     Route::get("register", [\App\Http\Controllers\frontend\LoginController::class, "showRegister"])->name("showRegister");
     Route::post("register", [\App\Http\Controllers\frontend\LoginController::class, "storeRegister"])->name("storeRegister");
     Route::get('logoutfrontend', [\App\Http\Controllers\frontend\LoginController::class, 'logout'])->name('frontend.logout');
-    //    Route::group(['prefix' => 'show'], function () {
 
 
     Route::get('/list', [\App\Http\Controllers\frontend\ProductController::class, 'index'])->name('products.show');
@@ -114,11 +113,20 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/show/{id}', [\App\Http\Controllers\frontend\ProductController::class, 'showProduct'])->name('products.detail');
     Route::get('/menu/{id}',[\App\Http\Controllers\frontend\ProductController::class,'show'])->name('show.menu');
 
-    Route::post('/search',[\App\Http\Controllers\frontend\SearchController::class,'searchProduct'])->name('p.search');
-//    Route::post('/searchpl',[\App\Http\Controllers\frontend\SearchController::class,'searchProductLine'])->name('productline.search');
 
-    //menu
-    Route::get('menu', function () {
-        return view('frontend.searchProduct');
-    })->name('search');
+    Route::post('/search',[\App\Http\Controllers\frontend\SearchController::class,'searchProduct'])->name('p.search');
+
+//cart
+
+    Route::get('/cart',[\App\Http\Controllers\frontend\CartController::class,'index'])->name('page.cart');
+    Route::post('/cart',[\App\Http\Controllers\frontend\CartController::class,'updateCart'])->name('cart.updateCart');
+    Route::get('/add-to-cart/{id}', [\App\Http\Controllers\frontend\CartController::class, 'addToCart'])->name('cart.addToCart');
+    Route::get('/delete{id}',[\App\Http\Controllers\frontend\CartController::class,'removeProductIntoCart'])->name('delete.cart');
+    Route::get('/checkout',[\App\Http\Controllers\frontend\CartController::class,'showCheckout'])->name('page.checkout');
+
+
+
 });
+
+
+
