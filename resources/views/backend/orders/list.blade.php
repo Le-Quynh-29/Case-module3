@@ -4,6 +4,7 @@
 @endsection
 @section('content')
 
+
     <style>
         h1{
             font-size: 70px!important;
@@ -11,17 +12,21 @@
         }
         td{
             font-size: 20px!important;
+            color: black!important;
+            text-align: center!important;
+
+
         }
         th{
             font-size:25px!important;
+            color: black!important;
+            text-align: center!important;
+
 
         }
         button{
             font-size: 15px!important;
         }
-        /*a{*/
-        /*    font-size: 30px!important;*/
-        /*}*/
     </style>
     <div class="col-12">
         <div class="row">
@@ -52,8 +57,10 @@
                         <td>{{ $order->requiredDate }}</td>
                         <td>{{ $order->shippedDate }}</td>
                         <td>{{ $order->status }}</td>
-                        <td><a href="{{ route('orders.edit', $order->id) }}" class="btn btn-info">Sửa</a></td>
-                        <td><a href="{{ route('orders.destroy', $order->id) }}" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa</a></td>
+                        <td>
+                            <a href="{{ route('orders.edit', $order->id) }}" class="btn btn-info">Sửa</a>
+                            <a href="{{ route('orders.destroy', $order->id) }}" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa</a>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>

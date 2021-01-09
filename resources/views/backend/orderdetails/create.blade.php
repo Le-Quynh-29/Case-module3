@@ -13,22 +13,26 @@
             font-size: 25px!important;
         }
         input{
+            width: 300px!important;
             font-size: 20px!important;
         }
         button{
             font-size: 20px!important;
         }
+        select{
+            width: 300px!important;
+        }
     </style>
     <div class="col-12 col-md-12">
         <div class="row">
             <div class="col-12">
-                <h1>Them moi don hang</h1>
+                <h1>Chi tiết đơn hàng</h1>
             </div>
             <div class="col-12">
                 <form method="post" action="{{ route('orderdetails.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label>Ma don hang </label>
+                        <label>Mã đơn hàng </label>
                         <select class="form-control" name="orderNumber">
                             @foreach($orders as $order)
                                 <option value="{{ $order->id}}">{{ $order->id }}</option>

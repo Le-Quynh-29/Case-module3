@@ -19,6 +19,9 @@
         button{
             font-size: 20px!important;
         }
+        select{
+            width: 300px!important;
+        }
     </style>
     <div class="col-12 col-md-12">
         <div class="row">
@@ -49,7 +52,7 @@
                         <input type="date" class="form-control" name="shippedDate" placeholder="Enter shippedDate">
                     </div>
                     <div class="form-group">
-                        <label>Trang thai</label>
+                        <label>Trạng thái</label>
                         <select name="status" id="">
                             <option value="Đã xác minh">Đã xác minh</option>
                             <option value="Đã giao cho bên vận chuyển">Đã giao cho bên vận chuyển</option>

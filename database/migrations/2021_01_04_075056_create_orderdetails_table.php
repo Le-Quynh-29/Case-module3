@@ -18,7 +18,7 @@ class CreateOrderdetailsTable extends Migration
             $table->unsignedInteger('orderNumber')->nullable();
             $table->unsignedInteger('productCode')->nullable();
             $table->integer('quantity');
-            $table->float('price');
+            $table->string('price');
             $table->timestamps();
         });
     }

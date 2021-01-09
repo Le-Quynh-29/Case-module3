@@ -2,7 +2,7 @@
 
 @section('search')
     <li>
-        <form action="{{route('products.search')}}"  method="post">
+        <form action="{{route('p.search')}}"  method="post">
             @csrf
             <input type="text" name="search" class="form-control search" placeholder=" Search...">
         </form>
@@ -45,8 +45,6 @@
                             {{number_format($product->price)}}đ
                         </h5>
                     @endif
-
-{{--                    <h5>{{number_format($product->price)}}đ</h5>--}}
                 </div>
 
             </div>

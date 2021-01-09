@@ -24,7 +24,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             window.scrollTo(0, 1);
         } </script>
 
-
+    <style>
+        body{
+            background: white!important;
+        }
+    </style>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -44,8 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="{{asset('backend/css/style.css')}}" rel='stylesheet' type='text/css'/>
     <link href="{{asset('backend/css/style-responsive.css')}}" rel="stylesheet"/>
     <!-- font CSS -->
-    <link
-        href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
         rel='stylesheet' type='text/css'>
     <!-- font-awesome icons -->
     <link rel="stylesheet" href="{{asset('backend/css/font.css')}}" type="text/css"/>
@@ -80,7 +83,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <ul class="nav pull-right top-menu">
 
                     @yield('search')
+{{--                <li>--}}
+{{--                    <form action=""   method="post">--}}
+{{--                        @csrf--}}
+{{--                        <input type="text" name="keyword" class="form-control search" placeholder=" Search...">--}}
 
+{{--                    </form>--}}
+{{--                </li>--}}
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -105,7 +114,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             </ul>
             <!--search & user info end-->
-        </
+        </div>
     </header>
     <!--header end-->
     <!--sidebar start-->

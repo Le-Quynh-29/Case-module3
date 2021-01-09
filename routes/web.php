@@ -38,7 +38,7 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::get('/edit/{id}', [\App\Http\Controllers\backend\CustomerController::class, 'edit'])->name('customers.edit');
                 Route::post('/edit/{id}', [\App\Http\Controllers\backend\CustomerController::class, 'update'])->name('customers.update');
                 Route::get('/delete/{id}', [\App\Http\Controllers\backend\CustomerController::class, 'destroy'])->name('customers.destroy');
-                Route::get('/search', [\App\Http\Controllers\backend\CustomerController::class, 'search'])->name('customers.search');
+                Route::post('/search', [\App\Http\Controllers\backend\CustomerController::class, 'search'])->name('customers.search');
             });
 
 
@@ -61,25 +61,29 @@ Route::group(['prefix' => 'admin'], function () {
 
 
             });
+
+
             Route::group(['prefix' => 'products'], function () {
                 Route::get('/', [\App\Http\Controllers\backend\ProductController::class, 'index'])->name('products.list');
+                Route::get('/detail/{id}',[\App\Http\Controllers\backend\ProductController::class,'show'])->name('products.id');
                 Route::get('/create', [\App\Http\Controllers\backend\ProductController::class, 'create'])->name('products.create');
                 Route::post('/create', [\App\Http\Controllers\backend\ProductController::class, 'store'])->name('products.store');
                 Route::get('edit/{id}', [\App\Http\Controllers\backend\ProductController::class, 'edit'])->name('products.edit');
                 Route::post('/edit/{id}', [\App\Http\Controllers\backend\ProductController::class, 'update'])->name('products.update');
                 Route::get('/delete/{id}', [\App\Http\Controllers\backend\ProductController::class, 'destroy'])->name('products.delete');
-                Route::get('/search', [\App\Http\Controllers\backend\ProductController::class, 'search'])->name('products.search');
+                Route::post('/search', [\App\Http\Controllers\backend\ProductController::class, 'search'])->name('product.search');
 
             });
 
             Route::group(['prefix' => 'productline'], function () {
                 Route::get('/', [\App\Http\Controllers\backend\ProductLineController::class, 'index'])->name('productline.list');
+                Route::get('/detail/{id}',[\App\Http\Controllers\backend\ProductLineController::class,'show'])->name('productline.id');
                 Route::get('/create', [\App\Http\Controllers\backend\ProductLineController::class, 'create'])->name('productline.create');
                 Route::post('/create', [\App\Http\Controllers\backend\ProductLineController::class, 'store'])->name('productline.store');
                 Route::get('/edit/{id}', [\App\Http\Controllers\backend\ProductLineController::class, 'edit'])->name('productline.edit');
                 Route::post('/edit/{id}', [\App\Http\Controllers\backend\ProductLineController::class, 'update'])->name('productline.update');
                 Route::get('/delete/{id}', [\App\Http\Controllers\backend\ProductLineController::class, 'destroy'])->name('productline.delete');
-                Route::get('/search', [\App\Http\Controllers\backend\ProductLineController::class, 'search'])->name('productline.search');
+                Route::post('/search', [\App\Http\Controllers\backend\ProductLineController::class, 'search'])->name('productline.search');
 
             });
 
@@ -110,8 +114,8 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/show/{id}', [\App\Http\Controllers\frontend\ProductController::class, 'showProduct'])->name('products.detail');
     Route::get('/menu/{id}',[\App\Http\Controllers\frontend\ProductController::class,'show'])->name('show.menu');
 
-    Route::post('/search',[\App\Http\Controllers\frontend\SearchController::class,'searchProduct'])->name('products.search');
-    Route::post('/searchpl',[\App\Http\Controllers\frontend\SearchController::class,'searchProductLine'])->name('productline.search');
+    Route::post('/search',[\App\Http\Controllers\frontend\SearchController::class,'searchProduct'])->name('p.search');
+//    Route::post('/searchpl',[\App\Http\Controllers\frontend\SearchController::class,'searchProductLine'])->name('productline.search');
 
     //menu
     Route::get('menu', function () {

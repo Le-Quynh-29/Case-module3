@@ -13,13 +13,16 @@
             font-size: 25px!important;
         }
         input{
+            width: 300px!important;
             font-size: 20px!important;
         }
         button{
             font-size: 20px!important;
         }
+        select{
+            width: 300px!important;
+        }
     </style>
-
     <div class="col-12 col-md-12">
         <div class="row">
             <div class="col-12">
@@ -47,7 +50,7 @@
 
                     <div class="form-group">
                         <label>Số lượng </label>
-                        <input type="text" class="form-control" name="quantity" value="{{ $orderdetail->quantity }}">
+                        <input type="number" class="form-control" name="quantity" value="{{ $orderdetail->quantity }}">
                     </div>
                     <div class="form-group">
                         <label>Giá </label>

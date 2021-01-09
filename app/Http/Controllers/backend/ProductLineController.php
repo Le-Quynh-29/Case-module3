@@ -6,14 +6,23 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductLine;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
 class ProductLineController extends Controller
 {
     public function index()
     {
-        $productline = ProductLine::paginate(2);
+        $productline = ProductLine::paginate(5);
         return view('backend.productline.list', compact('productline'));
+    }
+
+    public function show(Request $request)
+    {
+        $productline = ProductLine::findOrFail($request->id);
+        $product =  Product::where('productLine',$productline->id)->paginate(5);
+        return view("backend.productline.show", compact('product','productline'));
     }
 
     public function create()
@@ -85,13 +94,16 @@ class ProductLineController extends Controller
     }
     public function search(Request $request)
     {
-        $keyword = $request->input('keyword');
-        if ($request->has('id')){
+        $search = $request->input('keyword');
+        if(!$search){
             return redirect()->route('productline.list');
         }
-        $productline = ProductLine::where('id', 'LIKE', '%'  . $keyword . '%')->paginate(5);
 
-        $products = Product::all();
-        return view('backend.productline.list', compact('productline', 'products'));
+        $productline = DB::table('product_lines')
+            //->where('productName', 'like', '%'.$search.'%')->get();
+            ->where('id','like','%'.$search.'%')
+            ->paginate(5);
+        Session::flash('search_result',true);
+        return view('backend.productline.list',compact('productline'));
     }
 }

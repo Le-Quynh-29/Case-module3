@@ -26,7 +26,6 @@
             <div class="col-lg-12">
                 <div class="title-all text-center">
                     <h1>Các dòng sản phẩm</h1>
-                    {{--                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>--}}
                 </div>
             </div>
         </div><!-- Start Categories  -->
@@ -37,7 +36,6 @@
         </div>
     </div>
 </div>
-<!-- End Categories -->
 
 <div class="box-add-products">
     <div class="container">
