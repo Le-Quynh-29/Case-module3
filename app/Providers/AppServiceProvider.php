@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\ProductLine;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*',function ($view){
             $view->with([
                 'productlines' => ProductLine::orderBy('id')->get(),
+                'count'=> Cart::count()
             ]);
         });
     }

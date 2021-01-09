@@ -38,7 +38,7 @@
                                                         </del>
                                                         <br/>
                                                         <h5>
-                                                            {{number_format($val->price * (1 - $val->voucher/100))}}đ
+                                                            {{($val->price * (1 - $val->voucher/100))}}đ
                                                         </h5>
                                                     @else
                                                         <h5>

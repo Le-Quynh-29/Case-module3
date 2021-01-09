@@ -120,19 +120,10 @@ Route::group(['prefix' => 'user'], function () {
 
 
 
-    //menu
-    Route::get('menu', function () {
-        return view('frontend.master');
-    })->name('menu');
 
 
-    Route::post('/search',[\App\Http\Controllers\frontend\SearchController::class,'searchProduct'])->name('products.search');
-    Route::post('/searchpl',[\App\Http\Controllers\frontend\SearchController::class,'searchProductLine'])->name('productline.search');
+    Route::post('/search',[\App\Http\Controllers\frontend\SearchController::class,'searchProduct'])->name('p.search');
 
-    //menu
-    Route::get('menu', function () {
-        return view('frontend.searchProduct');
-    })->name('search');
 });
 
 
