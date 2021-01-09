@@ -23,15 +23,21 @@ class CartController extends Controller
     public function index(){
         $cart = Cart::content();
         $count = Cart::count();
-        return view('frontend.cart',compact('cart','count'));
+        $totalprice = Cart::total();
+
+        $total = Cart::subtotal();
+        return view('frontend.cart',compact('cart','count','totalprice','total'));
     }
     public function addToCart($id){
         $product = Product::findOrFail($id);
+//        dd($product->voucher);
         $cartInfo=[
           'id'=>$id,
           'name'=>$product->productName,
-          'price'=>$product->price,
+            'price' => $product->price,
+          'voucher'=>$product->price * (1 - ($product->voucher/100)),
           'qty'=>'1',
+            'options' =>['img'=> $product->img]
         ];
         Cart::add($cartInfo);
 
