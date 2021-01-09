@@ -64,7 +64,7 @@
     </div>
 </div>
 <!-- End All Title Box -->
-<form action="{{ route('cart.updateCart') }}" class="form-control" method="post">
+<form action="{{ route('cart.updateCart') }}" class="form-control" method="post" enctype="multipart/form-data">
     @csrf
 <!-- Start Cart  -->
 <div class="cart-box-main">
@@ -88,7 +88,7 @@
                         <tr>
                             <td class="thumbnail-img">
                                 <a href="#">
-                                    <img class="img-fluid" src="{{asset('frontend/images/img-pro-01.jpg')}}" alt="" />
+                                    <img src="{{asset ('storage/images/'.$value->options->img)}} " class="img-fluid" alt="">
                                 </a>
                             </td>
                             <td class="name-pr">
@@ -97,11 +97,18 @@
                                 </a>
                             </td>
                             <td class="price-pr">
-                                <p>{{$value->price}}</p>
+                                <del>
+                                    {{number_format($value->price)}}đ
+                                </del>
+                                <p>
+                                    {{number_format($value->voucher)}}
+                                    đ
+                                </p>
                             </td>
-                            <td class="quantity-box"><input type="number" name="cart[{{$value->id}}]" value="{{$value->qty}}" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
+                            <td class="quantity-box"><input type="number" name="cart[{{$value->id}}]" value="{{$value->qty}}" size="4" value="1" min="0" step="1" class="c-input-text qty text"
+                            </td>
                             <td class="total-pr">
-                                <p>{{$value->qty}}</p>
+                                <p>{{number_format($value->voucher * $value->qty)}} đ</p>
                             </td>
                             <td class="remove-pr">
                                 <a href="{{route('delete.cart',$value->id)}}">
@@ -119,16 +126,7 @@
         </div>
 
         <div class="row my-5">
-            <div class="col-lg-6 col-sm-6">
-                <div class="coupon-box">
-                    <div class="input-group input-group-sm">
-                        <input class="form-control" placeholder="Enter your coupon code" aria-label="Coupon code" type="text">
-                        <div class="input-group-append">
-                            <button class="btn btn-theme" type="button">Apply Coupon</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <div class="col-lg-6 col-sm-6">
                 <div class="update-box">
                     <input name="updateCart" value="Update Cart" type="submit">
@@ -142,30 +140,18 @@
                 <div class="order-box">
                     <h3>Order summary</h3>
                     <div class="d-flex">
-                        <h4>Sub Total</h4>
-                        <div class="ml-auto font-weight-bold"> $ 130 </div>
-                    </div>
-                    <div class="d-flex">
-                        <h4>Discount</h4>
-                        <div class="ml-auto font-weight-bold"> $ 40 </div>
+                        <h4>Tổng tiền</h4>
+                        <div class="ml-auto font-weight-bold">{{$total}} </div>
                     </div>
                     <hr class="my-1">
                     <div class="d-flex">
-                        <h4>Coupon Discount</h4>
-                        <div class="ml-auto font-weight-bold"> $ 10 </div>
-                    </div>
-                    <div class="d-flex">
-                        <h4>Tax</h4>
-                        <div class="ml-auto font-weight-bold"> $ 2 </div>
-                    </div>
-                    <div class="d-flex">
-                        <h4>Shipping Cost</h4>
+                        <h4>Phí ship</h4>
                         <div class="ml-auto font-weight-bold"> Free </div>
                     </div>
                     <hr>
                     <div class="d-flex gr-total">
-                        <h5>Grand Total</h5>
-                        <div class="ml-auto h5"> $ 388 </div>
+                        <h5>Thành tiền</h5>
+                        <div class="ml-auto h5"> {{$total}} </div>
                     </div>
                     <hr> </div>
             </div>
@@ -175,94 +161,6 @@
     </div>
 </div>
 </form>
-<!-- End Cart -->
-
-<!-- Start Instagram Feed  -->
-<div class="instagram-box">
-    <div class="main-instagram owl-carousel owl-theme">
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="{{asset('frontend/images/instagram-img-01.jpg')}}" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="{{asset('frontend/images/instagram-img-02.jpg')}}" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="{{asset('frontend/images/instagram-img-03.jpg')}}" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="{{asset('frontend/')}}images/instagram-img-04.jpg" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="{{asset('frontend/images/instagram-img-05.jpg')}}" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="{{asset('frontend/images/instagram-img-06.jpg')}}" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="{{asset('frontend/images/instagram-img-07.jpg')}}" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="{{assert('frontend/images/instagram-img-08.jpg')}}" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="{{asset('frontend/images/instagram-img-09.jpg')}}" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="{{asset('frontend/images/instagram-img-05.jpg')}}" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Instagram Feed  -->
 
 
 
