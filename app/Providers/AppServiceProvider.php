@@ -28,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*',function ($view){
             $view->with([
                 'productlines' => ProductLine::orderBy('id')->get(),
+
                 'count' => Cart::count()
             ]);
         });

@@ -126,6 +126,9 @@ Route::group(['prefix' => 'user'], function () {
 
 
 
+
+    Route::post('/search',[\App\Http\Controllers\frontend\SearchController::class,'searchProduct'])->name('p.search');
+
 });
 
 
