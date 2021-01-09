@@ -1,10 +1,9 @@
 @extends('backend.master')
 @section('search')
     <li>
-        <form action="{{ route('products.search')}}" method="get">
+        <form action="{{ route('product.search')}}" method="post">
             @csrf
             <input type="text" name="keyword" class="form-control search" placeholder=" Search...">
-
         </form>
     </li>
 @endsection
@@ -75,7 +74,9 @@
                 @foreach($products as $key => $product)
                     <tr>
                         <th scope="row">{{ $key + $products ->firstItem() }}</th>
-                        <td>{{$product->productName }}</td>
+                        <td>
+                            <a href="{{route('products.id',$product->id)}}">{{$product->productName }}</a>
+                        </td>
                         <td>{{$product->productLine }}</td>
                         <td> {!!substr($product->descripton, 0, 100) !!}  ...</td>
                         <td>{{$product->quantity }}</td>

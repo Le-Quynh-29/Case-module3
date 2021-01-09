@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductLine;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -111,8 +113,9 @@ class ProductController extends Controller
         $product->productName = $request->input('productName');
         $product->productLine = $request->input('productLine');
         $product->descripton = $request->input('descripton');
-        $product->quantity =(integer) $request->input('quantity');
-        $product->price =(float) $request->input('price');
+
+        $product->quantity = (integer)$request->input('quantity');
+        $product->price = (float)$request->input('price');
         $product->voucher = (float)$request->input('voucher');
 
 //
@@ -159,16 +162,28 @@ class ProductController extends Controller
         return redirect()->route('products.list');
     }
 
+    public function show(Request $request)
+    {
+        $product = Product::findOrFail($request->id);
+        return view("backend.products.show", compact('product'));
+    }
+
+
 
     public function search(Request $request)
     {
-        $keyword = $request->input('keyword');
-        if ($request->has('productName')){
+        $search = $request->input('keyword');
+        if(!$search){
             return redirect()->route('products.list');
         }
-        $products = Product::where('productName', 'LIKE', '%'  . $keyword . '%')->paginate(5);
 
+        $products = DB::table('products')
+            //->where('productName', 'like', '%'.$search.'%')->get();
+            ->where('productName','like','%'.$search.'%')
+            ->orWhere('productLine','like','%'.$search.'%')
+        ->paginate(5);
         $productline = ProductLine::all();
-        return view('backend.products.list', compact('products', 'productline'));
+        Session::flash('search_result',true);
+        return view('backend.products.list',compact('products','productline'));
     }
 }

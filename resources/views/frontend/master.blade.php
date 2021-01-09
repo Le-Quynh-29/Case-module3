@@ -156,16 +156,16 @@
                         <ul class="dropdown-menu">
                             <ul>
                                 @foreach($productlines as $productline)
-                                    <li><a href="{{route('show.menu',$productline->id)}}">{{$productline->id}}</a></li>
+                                    <li><a style="color: black!important;background: white!important;" href="{{route('show.menu',$productline->id)}}">{{$productline->id}}</a></li>
                                 @endforeach
                             </ul>
                         </ul>
                     </li>
+                    <li  class="dropdown"><a class="nav-link" href="#">Liên hệ</a></li>
                 </ul>
             </div>
             <div class="attr-nav">
                 <ul>
-                    {{--                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>--}}
                     <li class="side-menu">
                         <a href="{{route('page.cart')}}">
                             <i class="fa fa-shopping-bag"></i>
@@ -175,29 +175,12 @@
                     </li>
                 </ul>
             </div>
-            <div>
-
-                <ul>
-                <li class="nav-item"><a class="nav-link" href="{{asset('frontend/contact-us.html')}}">Liên hệ</a></li>
-                </ul>
-            </div>
 
         @yield('search')
 
 
-        <!-- Start Atribute Navigation --
-            <div class="attr-nav">
-                <ul>
-                    <li class="side-menu">
-                        <a href="#">
-                            <i class="fa fa-shopping-bag"></i>
-                            <span class="badge">3</span>
-                            <p>My Cart</p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-\
+
+
             <!-- End Atribute Navigation -->
         </div>
 {{--        =======--}}
@@ -206,19 +189,20 @@
 
     </nav>
     <!-- End Navigation -->
+
 </header>
 <!-- End Main Top -->
 
 <!-- Start Top Search -->
-<div class="top-search">
-    <div class="container">
-        <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-            <input type="text" class="form-control" placeholder="Search">
-            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-        </div>
-    </div>
-</div>
+{{--<div class="top-search">--}}
+{{--    <div class="container">--}}
+{{--        <div class="input-group">--}}
+{{--            <span class="input-group-addon"><i class="fa fa-search"></i></span>--}}
+{{--            <input type="text" class="form-control" placeholder="search">--}}
+{{--            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 @yield('frontend-master')
 

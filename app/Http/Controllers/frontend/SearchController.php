@@ -15,18 +15,20 @@ class SearchController extends Controller
     {
         $search = $request->input('search');
         if(!$search){
-            return redirect()->route('products.search');
+            return redirect()->route('p.search');
         }
-
-        $products = DB::table('products')
-            //->where('productName', 'like', '%'.$search.'%')->get();
-            ->where('productName','like','%'.$search.'%')
-            ->orWhere('productLine', 'like', '%' . $search . '%')
-            ->orWhere('price', '<=',  $search )
+//
+//        $p = DB::table('products')->where(function ($query) use ($search){
+//                $query->where('productName','like','%'.$search.'%')
+//                ->orWhere('productLine', 'like', '%' . $search . '%')
+//                    ->orWhere('price', '<=', $search );
+//            })
+//            ->get();
+        $p = DB::table('products')->where('productName','like','%'.$search.'%')
             ->get();
         $productline = ProductLine::all();
         Session::flash('search_result',true);
-        return view('frontend.searchProduct',compact('products','productline'));
+        return view('frontend.searchProduct',compact('p','productline'));
     }
 
 }

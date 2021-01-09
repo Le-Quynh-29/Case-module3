@@ -24,11 +24,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         } </script>
 
 
+
    <style>
        body{
            background: white!important;
        }
    </style>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -46,8 +51,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="{{asset('backend/css/style.css')}}" rel='stylesheet' type='text/css'/>
     <link href="{{asset('backend/css/style-responsive.css')}}" rel="stylesheet"/>
     <!-- font CSS -->
-    <link href='{{asset('backend//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic')}}' rel='stylesheet' type='text/css'>
 
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
+        rel='stylesheet' type='text/css'>
+    <!-- font-awesome icons -->
     <link rel="stylesheet" href="{{asset('backend/css/font.css')}}" type="text/css"/>
     <link href="{{asset('backend/css/font-awesome.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('backend/css/morris.css')}}" type="text/css"/>
@@ -58,7 +65,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 <section id="container">
-    <!--header start-->
     <header class="header fixed-top clearfix">
         <!--logo start-->
         <div class="brand">
@@ -84,7 +90,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </li>
 
                     @yield('search')
+{{--                <li>--}}
+{{--                    <form action=""   method="post">--}}
+{{--                        @csrf--}}
+{{--                        <input type="text" name="keyword" class="form-control search" placeholder=" Search...">--}}
 
+{{--                    </form>--}}
+{{--                </li>--}}
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -108,6 +120,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
             </ul>
+
         </div>
     </header>
     <!--header end-->

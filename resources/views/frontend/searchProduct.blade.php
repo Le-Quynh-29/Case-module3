@@ -14,7 +14,7 @@
 <div class="products-box">
     <div class="container">
             <div class="row special-list">
-                @foreach($products as $key => $product)
+                @foreach($p as $key => $product)
                     <div class="col-lg-3 col-md-6 special-grid best-seller">
                         <div class="products-single fix">
                             <div class="box-img-hover">
@@ -30,7 +30,7 @@
                                         <li><a href="{{route('products.detail',$product->id)}}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
 
                                     </ul>
-                                    <a class="cart" href="#">Add to Cart</a>
+                                    <a class="cart" href="{{route('cart.addToCart',$product->id)}}">Add to Cart</a>
                                 </div>
                             </div>
                             <div class="why-text">

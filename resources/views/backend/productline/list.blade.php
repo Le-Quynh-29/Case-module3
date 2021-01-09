@@ -1,10 +1,9 @@
 @extends('backend.master')
 @section('search')
     <li>
-        <form action="{{ route('productline.search')}}" method="get">
+        <form action="{{ route('productline.search')}}" method="post">
             @csrf
             <input type="text" name="keyword" class="form-control search" placeholder=" Search...">
-
         </form>
     </li>
 @endsection
@@ -14,6 +13,9 @@
 @section('content')
 
     <style>
+        tr{
+            bo: 1px solid black!important;
+        }
         h1{
             font-size: 70px!important;
 
@@ -42,7 +44,7 @@
                 <h1>Các dòng sản phẩm</h1>
             </div>
             <a style="font-size: 25px!important;" class="btn btn-primary" href="{{route('productline.create')}}">Thêm Mới</a>
-            <table class="table table-striped">
+            <table  class="table table-striped">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -56,7 +58,11 @@
                 @foreach($productline as $key => $pl)
                     <tr>
                         <td>{{ $key + $productline-> firstItem()}}</td>
-                        <td>{!! $pl->id !!}</td>
+                        <td>
+                            <a href="{{route('productline.id',$pl->id)}}">
+                            {!! $pl->id !!}
+                            </a>
+                        </td>
                         <td >{{substr($pl->description, 0, 100)}}...</td>
                         <td>
                             <img src="{{asset('storage/images/' . $pl->img)}}" alt="" style="width: 100px;height: 100px">

@@ -2,7 +2,8 @@
 
 @section('search')
     <li>
-        <form action="{{route('p.search')}}" method="post">
+
+        <form action="{{route('p.search')}}"  method="post">
             @csrf
             <input type="text" name="search" class="form-control search" placeholder=" Search...">
         </form>
@@ -51,7 +52,6 @@
                         </h5>
                     @endif
                 </div>
-
             </div>
         </div>
     @endforeach
