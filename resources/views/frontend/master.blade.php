@@ -156,11 +156,12 @@
                         <ul class="dropdown-menu">
                             <ul>
                                 @foreach($productlines as $productline)
-                                    <li><a href="{{route('show.menu',$productline->id)}}">{{$productline->id}}</a></li>
+                                    <li><a style="color: black!important;background: white!important;" href="{{route('show.menu',$productline->id)}}">{{$productline->id}}</a></li>
                                 @endforeach
                             </ul>
                         </ul>
                     </li>
+                    <li  class="dropdown"><a class="nav-link" href="#">Liên hệ</a></li>
                 </ul>
             </div>
             <div class="attr-nav">
@@ -172,12 +173,6 @@
                             <p>My Cart</p>
                         </a>
                     </li>
-                </ul>
-            </div>
-            <div>
-
-                <ul>
-                <li class="nav-item"><a class="nav-link" href="{{asset('frontend/contact-us.html')}}">Liên hệ</a></li>
                 </ul>
             </div>
 
