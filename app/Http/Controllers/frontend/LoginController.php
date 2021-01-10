@@ -59,7 +59,7 @@ class LoginController extends Controller
 
 
 // đăng nhập và đăng kí ở trang checkout
-    public function loginCheckout(Request $request)
+    public function loginCheckout(FormExampleRequest  $request)
     {
         $data = [
             'email' => $request->input('email'),
@@ -74,7 +74,7 @@ class LoginController extends Controller
         return redirect()->route('page.checkout');
     }
 
-    public function registerCheckout(Request $request)
+    public function registerCheckout(LoginExampleRequest $request)
     {
 
         $user = new Customer();
@@ -84,7 +84,7 @@ class LoginController extends Controller
         $user->address = $request->input('address');
         $user->phone = $request->input('phone');
         $user->save();
-        return redirect()->route("page.checkout");
+        return redirect()->back();
     }
 
 

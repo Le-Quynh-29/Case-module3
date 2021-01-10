@@ -71,15 +71,24 @@
                     <h3>Đăng nhập tài khoản</h3>
                 </div>
                 <h5><a data-toggle="collapse" href="#formLogin" role="button" aria-expanded="false">Đăng nhập</a></h5>
+                @if(\Illuminate\Support\Facades\Session::has('error_login'))
+                    <div class="alert-danger">{{ \Illuminate\Support\Facades\Session::get('error_login') }}</div>
+                @endif
                 <form action="{{route('login.checkout')}}" method="post" class="mt-3 collapse review-form-box" id="formLogin">
                     @csrf
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="InputEmail" class="mb-0">Địa chỉ Email</label>
                             <input type="email" name="email" class="form-control" id="InputEmail" placeholder="Enter Email"> </div>
+                        @if($errors->any())
+                            <div class="alert-danger">{{ $errors->first('email') }}</div>
+                        @endif
                         <div class="form-group col-md-6">
                             <label for="InputPassword" class="mb-0">Mật Khẩu</label>
                             <input type="password" name="password" class="form-control" id="InputPassword" placeholder="Password"> </div>
+                        @if($errors->any())
+                            <div class="alert-danger">{{ $errors->first('password') }}</div>
+                        @endif
                     </div>
                     <button type="submit" class="btn hvr-hover">Đăng nhập</button>
                 </form>
@@ -95,18 +104,33 @@
                         <div class="form-group col-md-6">
                             <label for="InputName" class="mb-0">Tên khách hàng</label>
                             <input type="text" class="form-control" id="InputName" name="user"  placeholder="Enter name"> </div>
+{{--                        @if($errors->any())--}}
+{{--                            <div class="alert alert-danger">{{ $errors->first('name') }}</div>--}}
+{{--                        @endif--}}
                         <div class="form-group col-md-6">
                             <label for="InputLastname" class="mb-0">Địa chỉ Email</label>
                             <input type="email" class="form-control" id="InputLastname" name ="email" placeholder="Enter email"> </div>
+{{--                        @if($errors->any())--}}
+{{--                            <div class="alert alert-danger">{{ $errors->first('email') }}</div>--}}
+{{--                        @endif--}}
                         <div class="form-group col-md-6">
                             <label for="InputEmail1" class="mb-0">Mật khẩu</label>
                             <input type="password" class="form-control" id="InputEmail1" name="password" placeholder="Enter password"> </div>
+{{--                        @if($errors->any())--}}
+{{--                            <div class="alert alert-danger">{{ $errors->first('password') }}</div>--}}
+{{--                        @endif--}}
                         <div class="form-group col-md-6">
                             <label for="InputPassword1" class="mb-0">Địa chỉ</label>
                             <input type="text" class="form-control" id="InputPassword1" name = "address" placeholder="Enter address"> </div>
+{{--                        @if($errors->any())--}}
+{{--                            <div class="alert alert-danger">{{ $errors->first('address') }}</div>--}}
+{{--                        @endif--}}
                         <div class="form-group col-md-6">
                             <label for="InputPassword1" class="mb-0">Số điện thoại</label>
                             <input type="number" class="form-control" id="InputPassword1" name="phone" placeholder="Enter phone"> </div>
+{{--                        @if($errors->any())--}}
+{{--                            <div class="alert alert-danger">{{ $errors->first('phone') }}</div>--}}
+{{--                        @endif--}}
                     </div>
                     <button type="submit" class="btn hvr-hover">Đăng kí</button>
                 </form>
