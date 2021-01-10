@@ -66,7 +66,10 @@
         </div>
 
     @endforeach
+
     </div>
         </div>
+        <div style="top: 100px;float: right;">{{ $product->links( "pagination::bootstrap-4") }}</div>
     </div>
+
 @endsection
