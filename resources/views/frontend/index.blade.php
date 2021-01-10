@@ -31,13 +31,16 @@
                     </div>
 
                 </div>
-            </div><!-- Start Categories  -->
+            </div>
+
             <div class="row">
 
                 @yield('productlines')
 
             </div>
         </div>
+{{--        <div style="float: right;">{{ $productline->links( "pagination::bootstrap-4") }}</div>--}}
+
     </div>
 
     <div class="box-add-products">

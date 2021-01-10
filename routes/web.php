@@ -112,6 +112,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/list/{id}', [\App\Http\Controllers\frontend\ProductController::class, 'showProductline'])->name('productline.detail');
     Route::get('/show/{id}', [\App\Http\Controllers\frontend\ProductController::class, 'showProduct'])->name('products.detail');
     Route::get('/menu/{id}',[\App\Http\Controllers\frontend\ProductController::class,'show'])->name('show.menu');
+    Route::get('show',[\App\Http\Controllers\frontend\ProductController::class,'indexpl']);
 
 
     Route::post('/search',[\App\Http\Controllers\frontend\SearchController::class,'searchProduct'])->name('p.search');
@@ -124,7 +125,12 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/delete{id}',[\App\Http\Controllers\frontend\CartController::class,'removeProductIntoCart'])->name('delete.cart');
     Route::get('/checkout',[\App\Http\Controllers\frontend\CartController::class,'showCheckout'])->name('page.checkout');
 
+    Route::get('/editcustomer/{id}',[\App\Http\Controllers\frontend\CustomerController::class,'edit'])->name('customer.edit');
+    Route::post('/editcustomer/{id}',[\App\Http\Controllers\frontend\CustomerController::class,'update'])->name('customer.update');
 
+    Route::get('customer',function (){
+        return view('frontend.showCustomer');
+    })->name('customers.detail');
 
 });
 
