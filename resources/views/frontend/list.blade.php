@@ -44,7 +44,7 @@
                         </del>
                         <br/>
                         <h5>
-                                                        {{($product->price * (1 - $product->voucher/100))}}đ
+                            {{($product->price * (1 - $product->voucher/100))}}đ
                         </h5>
                     @else
                         <h5>

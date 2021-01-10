@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -15,29 +16,36 @@ class CartController extends Controller
             foreach (Cart::content() as $rowid => $cart_item) {
                 if ($id == $cart_item->id) {
                     Cart::update($cart_item->rowId, $qty);
-                    return redirect()->route('page.cart');
                 }
             }
         }
+        return redirect()->route('page.cart');
     }
     public function index(){
+        // Dat discount cho tung san pham o cart.
+        foreach (Cart::content() as $cart_item){
+            Cart::setDiscount($cart_item->rowId, $cart_item->options->discount);
+        }
         $cart = Cart::content();
         $count = Cart::count();
-        $totalprice = Cart::total();
-
+//        $totalprice = Cart::total();
         $total = Cart::subtotal();
-        return view('frontend.cart',compact('cart','count','totalprice','total'));
+        return view('frontend.cart',compact('cart','count','total'));
     }
     public function addToCart($id){
         $product = Product::findOrFail($id);
-//        dd($product->voucher);
         $cartInfo=[
           'id'=>$id,
           'name'=>$product->productName,
             'price' => $product->price,
-          'voucher'=>$product->price * (1 - ($product->voucher/100)),
+//          'voucher'=>$product->price * (1 - ($product->voucher/100)),
           'qty'=>'1',
-            'options' =>['img'=> $product->img]
+            'options' =>[
+                'img'=> $product->img,
+                'voucher'=>$product->price * (1 - ($product->voucher/100)),
+                'discount'=>$product->voucher,
+
+            ]
         ];
         Cart::add($cartInfo);
 
@@ -58,7 +66,16 @@ class CartController extends Controller
     public function showCheckout(){
         $cart = Cart::content();
         $count = Cart::count();
-        return view('frontend.checkout',compact('cart','count'));
+        $totalprice = Cart::subtotal();
+        //$customer = Auth::guard('customer')->user();
+        return view('frontend.checkout',compact('cart','count','totalprice'));
+    }
+
+    public function wishList(){
+        $list = Cart::content();
+
+
+        return view('frontend.wishlist',compact('list'));
     }
 
 
