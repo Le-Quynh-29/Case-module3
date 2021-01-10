@@ -30,6 +30,7 @@ class OrderDetailController extends Controller
         $orderdetail = new Orderdetail();
         $orderdetail->orderNumber     = $request->input('orderNumber');
         $orderdetail->productCode    = $request->input('productCode');
+
         $orderdetail->quantity      = (integer)$request->input('quantity');
         $orderdetail->price  = (float)$request->input('price');
         $orderdetail->save();
@@ -55,6 +56,7 @@ class OrderDetailController extends Controller
         $orderdetail->orderNumber = $request->input('orderNumber');
         $orderdetail->productCode = $request->input('productCode');
         $orderdetail->quantity = (integer)$request->input('quantity');
+
         $orderdetail->price = (float)$request->input('price');
         $orderdetail->save();
 

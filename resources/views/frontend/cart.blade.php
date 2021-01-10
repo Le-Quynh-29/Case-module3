@@ -54,10 +54,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2>Cart</h2>
+                <h2>Giỏ hàng</h2>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                    <li class="breadcrumb-item active">Cart</li>
+                    <li class="breadcrumb-item active">Giỏ hàng</li>
                 </ul>
             </div>
         </div>
@@ -75,12 +75,12 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>Images</th>
-                            <th>Product Name</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                            <th>Remove</th>
+                            <th>Hình ảnh</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Tổng tiền</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -101,14 +101,14 @@
                                     {{number_format($value->price)}}đ
                                 </del>
                                 <p>
-                                    {{number_format($value->voucher)}}
+                                    {{number_format($value->options->voucher)}}
                                     đ
                                 </p>
                             </td>
                             <td class="quantity-box"><input type="number" name="cart[{{$value->id}}]" value="{{$value->qty}}" size="4" value="1" min="0" step="1" class="c-input-text qty text"
                             </td>
                             <td class="total-pr">
-                                <p>{{number_format($value->voucher * $value->qty)}} đ</p>
+                                <p>{{number_format($value->options->voucher * $value->qty)}} đ</p>
                             </td>
                             <td class="remove-pr">
                                 <a href="{{route('delete.cart',$value->id)}}">
@@ -129,7 +129,7 @@
 
             <div class="col-lg-6 col-sm-6">
                 <div class="update-box">
-                    <input name="updateCart" value="Update Cart" type="submit">
+                    <input name="updateCart" value="Cập nhật giỏ hàng" type="submit">
                 </div>
             </div>
         </div>
@@ -138,7 +138,7 @@
             <div class="col-lg-8 col-sm-12"></div>
             <div class="col-lg-4 col-sm-12">
                 <div class="order-box">
-                    <h3>Order summary</h3>
+                    <h3>Tóm tắt</h3>
                     <div class="d-flex">
                         <h4>Tổng tiền</h4>
                         <div class="ml-auto font-weight-bold">{{$total}} </div>
@@ -155,7 +155,7 @@
                     </div>
                     <hr> </div>
             </div>
-            <div class="col-12 d-flex shopping-box"><a href="{{route('page.checkout')}}" class="ml-auto btn hvr-hover">Checkout</a> </div>
+            <div class="col-12 d-flex shopping-box"><a href="{{route('page.checkout')}}" class="ml-auto btn hvr-hover">Thanh toán</a> </div>
         </div>
 
     </div>

@@ -30,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with([
                 'productlines' => ProductLine::orderBy('id')->get(),
                 'count' => Cart::count(),
+
             ]);
         });
     }

@@ -132,6 +132,19 @@ Route::group(['prefix' => 'user'], function () {
         return view('frontend.showCustomer');
     })->name('customers.detail');
 
+
+    Route::post('/search',[\App\Http\Controllers\frontend\SearchController::class,'searchProduct'])->name('p.search');
+
+
+    // hiển thị trang yêu thích
+    Route::get('/wishlist',[\App\Http\Controllers\frontend\CartController::class,'wishList'])->name('wish.list');
+
+
+
+    //Đăng nhập và đăng kí ở trang checkout
+    Route::post('checkout.login',[\App\Http\Controllers\frontend\LoginController::class,'loginCheckout'])->name('login.checkout');
+    Route::post("register.login", [\App\Http\Controllers\frontend\LoginController::class, "registerCheckout"])->name("login.register");
+
 });
 
 

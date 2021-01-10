@@ -142,6 +142,7 @@
 
                     <li class="nav-item active"><a class="nav-link" href="{{route('products.show')}}">Trang chủ</a></li>
                     <li class="dropdown">
+
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Danh mục</a>
                         <ul class="dropdown-menu">
                             <ul>
@@ -205,7 +206,7 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-01.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -213,7 +214,7 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-02.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -221,7 +222,7 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-03.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -229,7 +230,7 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-04.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -237,7 +238,7 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-05.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -245,7 +246,7 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-06.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -253,7 +254,7 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-07.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -261,7 +262,7 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-08.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -269,7 +270,7 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-09.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -277,7 +278,7 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-05.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>

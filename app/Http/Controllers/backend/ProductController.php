@@ -113,6 +113,7 @@ class ProductController extends Controller
         $product->productName = $request->input('productName');
         $product->productLine = $request->input('productLine');
         $product->descripton = $request->input('descripton');
+
         $product->quantity = (integer)$request->input('quantity');
         $product->price = (float)$request->input('price');
         $product->voucher = (float)$request->input('voucher');
