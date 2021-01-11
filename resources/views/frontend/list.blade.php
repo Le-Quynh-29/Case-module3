@@ -56,8 +56,10 @@
                     @endif
                 </div>
             </div>
+
         </div>
     @endforeach
+
 @endsection
 
 @section('productline')
@@ -80,7 +82,19 @@
 
 
 @section('productlines')
-    @foreach($productlines as $productline)
+    <div class="categories-shop">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>Các dòng sản phẩm</h1>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+    @foreach($pl as $productline)
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="shop-cat-box">
                 <img class="img-fluid" src="{{asset('storage/images/' . $productline->img)}}" alt=""
@@ -90,4 +104,10 @@
             </div>
         </div>
     @endforeach
+            </div>
+                        <div style="float: right;">{{ $pl->links("pagination::bootstrap-4") }}</div>
+        </div>
+
+    </div>
+
 @endsection
