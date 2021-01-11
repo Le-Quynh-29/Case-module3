@@ -49,6 +49,7 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::get('/edit/{id}', [\App\Http\Controllers\backend\OrderController::class, 'edit'])->name('orders.edit');
                 Route::post('/edit/{id}', [\App\Http\Controllers\backend\OrderController::class, 'update'])->name('orders.update');
                 Route::get('/delete/{id}', [\App\Http\Controllers\backend\OrderController::class, 'destroy'])->name('orders.destroy');
+                Route::get('/detail/{id}', [\App\Http\Controllers\backend\OrderController::class, 'show'])->name('orders.show');
             });
 
 

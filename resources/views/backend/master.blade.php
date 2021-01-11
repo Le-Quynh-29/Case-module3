@@ -82,21 +82,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             <ul class="nav pull-right top-menu">
                 <li>
-                    <form action=""   method="post">
-                        @csrf
-                        <input type="text" name="keyword" class="form-control search" placeholder=" Search...">
-
-                    </form>
-                </li>
-
-                    @yield('search')
-{{--                <li>--}}
 {{--                    <form action=""   method="post">--}}
 {{--                        @csrf--}}
 {{--                        <input type="text" name="keyword" class="form-control search" placeholder=" Search...">--}}
 
 {{--                    </form>--}}
-{{--                </li>--}}
+                </li>
+
+                    @yield('search')
+
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -168,12 +162,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
 
                     </li>
-                    <li class="sub-menu">
-                        <a href="{{route('orderdetails.list')}}">
-                            <i class="fa fa-book"></i>
-                            <span>{!! __('language.Chi tiết đặt hàng') !!}</span>
-                        </a>
-                    </li>
+{{--                    <li class="sub-menu">--}}
+{{--                        <a href="{{route('orderdetails.list')}}">--}}
+{{--                            <i class="fa fa-book"></i>--}}
+{{--                            <span>{!! __('language.Chi tiết đặt hàng') !!}</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                 </ul>
             </div>
             <!-- sidebar menu end-->
