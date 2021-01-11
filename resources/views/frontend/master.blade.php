@@ -29,8 +29,10 @@
     <link rel="stylesheet" href="{{asset('frontend/css/custom.css')}}">
 
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="{{asset('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')}}"></script>
+    <script src="{{asset('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')}}"></script>
+    <script src="{{asset('https://code.jquery.com/jquery-latest.js')}}"></script>
+
     <![endif]-->
 
 </head>
@@ -57,11 +59,10 @@
                                     <i class="fa fa-user s_color"></i> Đăng nhập</a>
                             </li>
                         @else
-                            <li><a href="">
-                                    <i class="fa fa-user s_color"></i> Tài khoản </a>
+                            <li><a href="{{route('customers.detail')}}">
+                                    <i class="fa fa-user s_color"></i> Tài khoản</a>
                             </li>
                         @endif
-                        <li><a href="#"><i class="fas fa-location-arrow"></i> Shop</a></li>
                         <li><a href="#"><i class="fas fa-headset"></i>Liên hê</a></li>
                     </ul>
                 </div>
@@ -140,9 +141,9 @@
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
 
                     <li class="nav-item active"><a class="nav-link" href="{{route('products.show')}}">Trang chủ</a></li>
-{{--                    <li class="dropdown"><a class="nav-link" href="{{route('wish.list')}}">Yêu thích</a></li>--}}
 
                     <li class="dropdown">
+
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Danh mục</a>
                         <ul class="dropdown-menu">
                             <ul>

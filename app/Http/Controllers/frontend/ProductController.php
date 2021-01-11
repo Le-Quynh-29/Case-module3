@@ -16,7 +16,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        $productlines = ProductLine::all();
+        $productlines = ProductLine::paginate(3);
         $count = Cart::count();
         return view('frontend.list',compact('products','productlines','count'));
     }
@@ -25,7 +25,7 @@ class ProductController extends Controller
     {
         $productline = ProductLine::where('id', '=', $id)->select('*')->first();
         $des1 = html_entity_decode($productline->description);
-        $product = Product::where('productLine',$productline->id)->get();
+        $product = Product::where('productLine',$productline->id)->paginate(4);
         return view('frontend.showproductline', compact('productline','des1','product'));
     }
 
@@ -43,4 +43,9 @@ class ProductController extends Controller
         return view('frontend.productline',compact('product'));
     }
 
+    public function indexpl()
+    {
+        $productline = ProductLine::paginate(3);
+        return view('frontend.index',compact('productline'));
+    }
 }
