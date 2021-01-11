@@ -77,21 +77,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
 
         <div class="top-nav clearfix">
-
-            <!--search & user info start-->
-
             <ul class="nav pull-right top-menu">
-                <li>
-{{--                    <form action=""   method="post">--}}
-{{--                        @csrf--}}
-{{--                        <input type="text" name="keyword" class="form-control search" placeholder=" Search...">--}}
-
-{{--                    </form>--}}
-                </li>
-
                     @yield('search')
 
-                <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <img alt="" src="">
@@ -119,11 +107,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </header>
     <!--header end-->
     <!--sidebar start-->
-    <aside>
-        <div id="sidebar" class="nav-collapse">
+    <aside >
+        <div  id="sidebar" class="nav-collapse">
             <!-- sidebar menu start-->
-            <div class="leftside-navigation">
-                <ul class="sidebar-menu" id="nav-accordion">
+            <div  class="leftside-navigation">
+                <ul  class="sidebar-menu" id="nav-accordion">
                     <li>
                         <a class="active" href="{{route('welcome')}}">
                             <i class="fa fa-dashboard"></i>
@@ -155,7 +143,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <span>{!! __('language.Dòng sản phẩm') !!}</span>
                         </a>
                     </li>
-                    < <li class="sub-menu">
+                    <li class="sub-menu">
                         <a href="{{route('orders.list')}}">
                             <i class="fa fa-book"></i>
                             <span>{!! __('language.Đặt hàng') !!}</span>
@@ -185,7 +173,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             style=" text-align: center !important; margin-top: 100px !important; width: 100% !important;clear: both !important; "
             class="footer">
             <div class="wthree-copyright">
-                <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+                <p>© 2020 TQTShop.WELCOME TO <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal">FACEBOOK</a></p>
             </div>
         </div>
         <!-- / footer -->

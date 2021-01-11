@@ -18,11 +18,15 @@ class Order extends Model
         return $this->belongsTo(Customer::class, 'customerNumber');
     }
 
-    public function Orderdetail()
-    {
-        return $this->hasMany(Orderdetail::class,'orderNumber');
-    }
+//    public function Orderdetail()
+//    {
+//        return $this->hasMany(Orderdetail::class,'orderNumber');
+//    }
+//Orderdetai
 
+public function Product(){
+        return $this->belongsToMany(Product::class,'orderdetails','orderNumber','productCode');
+}
     public function usesTimestamps():bool
     {
         return false;

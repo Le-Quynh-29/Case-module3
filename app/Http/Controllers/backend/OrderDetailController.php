@@ -14,7 +14,7 @@ class OrderDetailController extends Controller
     {
         $products = Product::all();
         $orders = Order::all();
-        $orderdetails = Orderdetail::paginate(10);
+        $orderdetails = Orderdetail::paginate(5);
         return view('backend.orderdetails.list', compact('orderdetails','products', 'orders'));
     }
 

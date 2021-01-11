@@ -1,4 +1,8 @@
 @extends('backend.master')
+
+@section('title')
+    Chi tiết dòng sản phẩm
+@endsection
 @section('content')
 
     <style>

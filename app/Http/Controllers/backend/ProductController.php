@@ -70,7 +70,6 @@ class ProductController extends Controller
         return redirect()->route('products.list');
 
 
-
     }
 
     /**
@@ -118,18 +117,6 @@ class ProductController extends Controller
         $product->price = (float)$request->input('price');
         $product->voucher = (float)$request->input('voucher');
 
-//
-//                $file = $request->inputFile;
-//        if (!$request->hasFile('inputFile')) {
-//            $product->img = $file;
-//        } else {
-//            $file = $request->file('inputFile');
-//            $fileExtension = $file->getClientOriginalExtension();
-//            $fileName = $request->inputName;
-//            $newFileName = "$fileName.$fileExtension";
-//            $request->file('inputFile')->storeAs('public/images', $newFileName);
-//            $product->img = $newFileName;
-//        }
 
 //        dd(storage_path('app/public/images/'.$request->imgName));
         if (!$request->hasFile('img') && file_exists(storage_path('app/public/images/'.$request->imgName))) {
@@ -158,6 +145,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
+        $product->orders()->detach();
         $product->delete();
         return redirect()->route('products.list');
     }

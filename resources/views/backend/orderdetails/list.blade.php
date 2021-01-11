@@ -7,34 +7,26 @@
 
 
     <style>
-        h1{
-            font-size: 70px!important;
 
-        }
         td{
-            font-size: 20px!important;
             color: black!important;
             text-align: center!important;
 
 
         }
         th{
-            font-size:25px!important;
             color: black!important;
             text-align: center!important;
 
 
         }
-        button{
-            font-size: 15px!important;
-        }
+
     </style>
     <div class="col-12">
         <div class="row">
             <div class="col-12">
                 <h1>Chi tiết đơn hàng </h1>
             </div>
-            <a style="font-size: 25px!important;" class="btn btn-primary" href="{{route('orderdetails.create')}}">Thêm mới</a>
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -65,9 +57,8 @@
                 @endforeach
                 </tbody>
             </table>
-            <div style="font-size:25px;text-align: right!important; ">
-                {{$orderdetails->links()}}
-            </div>
+            <div style="float: right;">{{ $orderdetails->links( "pagination::bootstrap-4") }}</div>
+
         </div>
     </div>
 

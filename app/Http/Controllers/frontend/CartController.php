@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
+use App\Models\Order;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
@@ -90,7 +93,38 @@ class CartController extends Controller
             ]
         ];
         Cart::add($cartInfo);
-        return redirect()->route('wish.list');
+        return redirect()->back();
+    }
+
+    public function checkOutBank(Request $request, Customer $customer, Order $order,Product $product)
+    {
+                $carts = Cart::content();
+                foreach ($carts as $cart) {
+                    $product_id = $cart->id;
+                    $customer_id = Auth::guard('customer')->id();
+                    $order->orderDate = date('Y-m-d ');
+                    $order->requiredDate =date('Y-m-d', strtotime( $order->orderDate . " +2 days"));;
+                    $order->shippedDate = date('Y-m-d', strtotime( $order->orderDate . " +4 days"));;
+                    $order->customerNumber = $customer_id;
+                    $order->status = 'New';
+                    $order->save();
+
+                    $ctm = $customer::findOrFail($customer_id);
+                    $ctm->user = $request->user;
+                    $ctm->email = $request->email;
+                    $ctm->phone = $request->phone;
+                    $ctm->address = $request->address;
+                    $ctm->save();
+                    DB::connection()->enableQueryLog();
+                    $product = Product::find($product_id);
+                    $product->orders()->attach($order->id, [
+                            'quantity' => (int) $cart->qty,
+                            'price' =>(int) $cart->options->voucher ,
+                        ]
+                    );
+                }
+                Cart::destroy();
+                return view('frontend.cod');
     }
 
 

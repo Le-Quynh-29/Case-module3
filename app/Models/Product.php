@@ -11,9 +11,9 @@ class Product extends Model
 
     protected $fillable = ['productName','productLine','description','quantity','price','img'];
 
-    public function Orderdetail()
+    public function orders()
     {
-        return $this->hasMany(Orderdetail::class,'productCode');
+        return $this->belongsToMany(Order::class, 'orderdetails', 'productCode', 'orderNumber');
     }
 
     public function ProductLine()

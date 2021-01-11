@@ -6,42 +6,34 @@
 
 
     <style>
-        h1{
-            font-size: 70px!important;
 
-        }
         td{
-            font-size: 20px!important;
             color: black!important;
             text-align: center!important;
 
 
         }
         th{
-            font-size:25px!important;
             color: black!important;
             text-align: center!important;
 
 
         }
-        button{
-            font-size: 15px!important;
-        }
+
     </style>
     <div class="col-12">
         <div class="row">
             <div class="col-12">
                 <h1>Danh sách hóa đơn</h1>
             </div>
-            <a style="font-size: 25px!important;" class="btn btn-primary" href="{{route('orders.create')}}">Thêm mới</a>
             <table class="table table-striped">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Tên khách hàng</th>
                     <th scope="col">Ngày đặt hàng </th>
-                    <th scope="col">Yêu cầu đặt hàng </th>
-                    <th scope="col">Ngày vận chuyển</th>
+                    <th scope="col"> Ngày giao hàng </th>
+                    <th scope="col">Ngày nhận hàng</th>
                     <th scope="col">Trạng thái</th>
                     <th></th>
                     <th></th>
@@ -64,9 +56,8 @@
                 @endforeach
                 </tbody>
             </table>
-            <div style="font-size:25px;text-align: right!important; ">
-                {{$orders->links()}}
-            </div>
+            <div style="float: right;">{{ $orders->links( "pagination::bootstrap-4") }}</div>
+
         </div>
     </div>
 

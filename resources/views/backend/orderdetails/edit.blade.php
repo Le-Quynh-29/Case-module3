@@ -5,25 +5,18 @@
 @section('content')
 
     <style>
-        h1{
-            font-size: 70px!important;
-
-        }
-        label{
-            font-size: 25px!important;
-        }
         input{
-            width: 300px!important;
-            font-size: 20px!important;
+            width: 400px!important;
         }
-        button{
-            font-size: 20px!important;
+        select {
+            width: 400px !important;
         }
-        select{
-            width: 300px!important;
-        }
+        /*div{*/
+        /*    margin-left: 30px!important;*/
+        /*}*/
+
     </style>
-    <div class="col-12 col-md-12">
+    <div style="margin-left: 580px!important;"  class="col-12 col-md-12">
         <div class="row">
             <div class="col-12">
                 <h1>Chỉnh sửa chi tiết đơn hàng </h1>

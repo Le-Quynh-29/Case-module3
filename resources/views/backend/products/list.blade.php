@@ -13,46 +13,23 @@
 @endsection
 @section('content')
     <style>
-        h1 {
-            font-size: 70px !important;
-
-        }
-
         td {
-            font-size: 20px !important;
             color: black !important;
-
+            text-align: center !important;
         }
 
         th {
-            font-size: 25px !important;
             color: black !important;
             text-align: center !important;
-
-
         }
 
-        button {
-            font-size: 15px !important;
-        }
-
-        #text {
-            display: -webkit-box;
-            width: 300px;
-            line-height: 25px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-
-        }
     </style>
     <div class="col-12">
         <div class="row">
             <div class="col-12">
                 <h1>Danh Sách Sản Phẩm</h1>
             </div>
-            <a style="font-size: 25px!important;" class="btn btn-primary" href="{{route('products.create')}}">Thêm
+            <a class="btn btn-primary" href="{{route('products.create')}}">Thêm
                 mới</a>
             <table class="table table-striped">
                 <thead>
@@ -64,7 +41,7 @@
                     <th scope="col">Số lượng</th>
                     <th scope="col">Giá</th>
 
-                    <th scope="col">Mã giảm giá</th>
+                    <th scope="col">Số lượng giảm giá</th>
                     <th scope="col">Hình ảnh</th>
                     <th></th>
                 </tr>

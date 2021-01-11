@@ -14,7 +14,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-      $orders = Order::paginate(10);
+      $orders = Order::paginate(5);
       $customer = Customer::all();
       return view('backend.orders.list',compact('orders','customer'));
     }
@@ -60,7 +60,7 @@ class OrderController extends Controller
     public function destroy($id)
     {
         $orders = Order::find($id);
-        $orders->Orderdetail()->delete();
+        $orders->Product()->detach();
         $orders->delete();
         return redirect()->route('orders.list');
     }
