@@ -39,7 +39,9 @@
                         <div class="cart-and-bay-btn">
                             <a class="btn hvr-hover" data-fancybox-close="" href="#">Buy New</a>
                             <a class="btn hvr-hover" data-fancybox-close="" href="{{route('cart.addToCart',$product->id)}}"> Thêm vào giỏ hàng</a>
-                            <a class="btn hvr-hover" href="{{route('wish.list',$product->id)}}"><i class="fas fa-heart"></i> Yêu thích</a>
+{{--                            <a class="btn hvr-hover"  href="{{route('wish.list',$product->id)}}"> Yêu thích</a>--}}
+
+                            <a class="btn hvr-hover" href="{{route('add.wishlist',$product->id)}}"><i class="fas fa-heart"></i> Yêu thích</a>
 
                         </div>
                     </div>

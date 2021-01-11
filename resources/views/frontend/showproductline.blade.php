@@ -38,9 +38,11 @@
                     <div class="mask-icon">
                         <ul>
                             <li><a href="{{route('products.detail',$val->id)}}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="{{route('add.wishlist',$val->id)}}" data-toggle="tooltip"
+                                   data-placement="right" title="Yêu thích"><i class="far fa-heart"></i></a></li>
 
                         </ul>
-                        <a class="cart" href="{{route('cart.addToCart',$val->id)}}">Add to Cart</a>
+                        <a class="cart" href="{{route('cart.addToCart',$val->id)}}">Thêm vào giỏ hàng</a>
                     </div>
                 </div>
                 <div class="why-text">

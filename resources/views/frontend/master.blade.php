@@ -141,6 +141,7 @@
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
 
                     <li class="nav-item active"><a class="nav-link" href="{{route('products.show')}}">Trang chủ</a></li>
+
                     <li class="dropdown">
 
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Danh mục</a>
@@ -153,6 +154,8 @@
                         </ul>
                     </li>
                     <li  class="dropdown"><a class="nav-link" href="#">Liên hệ</a></li>
+                    <li class="dropdown"><a class="nav-link" href="{{route('wish.list')}}">Yêu thích</a></li>
+
                 </ul>
             </div>
             <div class="attr-nav">
