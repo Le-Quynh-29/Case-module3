@@ -49,6 +49,7 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::get('/edit/{id}', [\App\Http\Controllers\backend\OrderController::class, 'edit'])->name('orders.edit');
                 Route::post('/edit/{id}', [\App\Http\Controllers\backend\OrderController::class, 'update'])->name('orders.update');
                 Route::get('/delete/{id}', [\App\Http\Controllers\backend\OrderController::class, 'destroy'])->name('orders.destroy');
+                Route::get('/detail/{id}', [\App\Http\Controllers\backend\OrderController::class, 'show'])->name('orders.show');
             });
 
 
@@ -112,7 +113,8 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/list/{id}', [\App\Http\Controllers\frontend\ProductController::class, 'showProductline'])->name('productline.detail');
     Route::get('/show/{id}', [\App\Http\Controllers\frontend\ProductController::class, 'showProduct'])->name('products.detail');
     Route::get('/menu/{id}',[\App\Http\Controllers\frontend\ProductController::class,'show'])->name('show.menu');
-    Route::get('show',[\App\Http\Controllers\frontend\ProductController::class,'indexpl']);
+    Route::get('/show',[\App\Http\Controllers\frontend\ProductController::class,'indexpl']);
+    Route::get('/index',[\App\Http\Controllers\frontend\ProductController::class,'indexMaster'])->name('index.index');
 
 
     Route::post('/search',[\App\Http\Controllers\frontend\SearchController::class,'searchProduct'])->name('p.search');

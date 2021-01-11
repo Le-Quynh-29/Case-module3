@@ -78,8 +78,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         <div class="top-nav clearfix">
             <ul class="nav pull-right top-menu">
-
-
                     @yield('search')
 
                 <li class="dropdown">
@@ -152,12 +150,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
 
                     </li>
-                    <li class="sub-menu">
-                        <a href="{{route('orderdetails.list')}}">
-                            <i class="fa fa-book"></i>
-                            <span>{!! __('language.Chi tiết đặt hàng') !!}</span>
-                        </a>
-                    </li>
+{{--                    <li class="sub-menu">--}}
+{{--                        <a href="{{route('orderdetails.list')}}">--}}
+{{--                            <i class="fa fa-book"></i>--}}
+{{--                            <span>{!! __('language.Chi tiết đặt hàng') !!}</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                 </ul>
             </div>
             <!-- sidebar menu end-->

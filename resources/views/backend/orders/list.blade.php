@@ -31,7 +31,6 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Tên khách hàng</th>
-
                     <th scope="col">Ngày đặt hàng </th>
                     <th scope="col"> Ngày giao hàng </th>
                     <th scope="col">Ngày nhận hàng</th>
@@ -44,7 +43,7 @@
                 @foreach($orders as $key => $order)
                     <tr>
                         <th scope="row">{{ ++$key }}</th>
-                        <td>{{ $order->customer()->first()->user }}</td>
+                        <td><a href="{{route('orders.show', $order->id)}}">{{ $order->customer()->first()->user }}</a></td>
                         <td>{{ $order->orderDate }}</td>
                         <td>{{ $order->requiredDate }}</td>
                         <td>{{ $order->shippedDate }}</td>

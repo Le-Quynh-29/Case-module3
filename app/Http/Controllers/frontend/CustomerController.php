@@ -22,7 +22,7 @@ class CustomerController extends Controller
         $customer->address = $request->input('address');
         $customer->email = $request->input('email');
         $customer->phone = $request->input('phone');
-        $customer->password =Hash::make($request->password);
+//        $customer->password =Hash::make($request->password);
         $customer->save();
 
         return redirect()->route('customers.detail');
