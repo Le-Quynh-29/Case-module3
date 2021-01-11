@@ -13,37 +13,30 @@
 @section('content')
 
     <style>
-        tr{
-            bo: 1px solid black!important;
-        }
-        h1{
-            font-size: 70px!important;
+        /*tr{*/
+        /*    boder: 1px solid black!important;*/
+        /*}*/
 
-        }
         td{
-            font-size: 20px!important;
             color: black!important;
             text-align: center!important;
 
 
         }
         th{
-            font-size:25px!important;
             color: black!important;
             text-align: center!important;
 
 
         }
-        button{
-            font-size: 15px!important;
-        }
+
     </style>
     <div class="col-12">
         <div class="row">
             <div class="col-12">
                 <h1>Các dòng sản phẩm</h1>
             </div>
-            <a style="font-size: 25px!important;" class="btn btn-primary" href="{{route('productline.create')}}">Thêm Mới</a>
+            <a class="btn btn-primary" href="{{route('productline.create')}}">Thêm Mới</a>
             <table  class="table table-striped">
                 <thead>
                 <tr>

@@ -124,6 +124,8 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/add-to-cart/{id}', [\App\Http\Controllers\frontend\CartController::class, 'addToCart'])->name('cart.addToCart');
     Route::get('/delete{id}',[\App\Http\Controllers\frontend\CartController::class,'removeProductIntoCart'])->name('delete.cart');
     Route::get('/checkout',[\App\Http\Controllers\frontend\CartController::class,'showCheckout'])->name('page.checkout');
+    Route::post('/order', [\App\Http\Controllers\frontend\CartController::class, 'checkOutBank'])->name('order');
+
 
     Route::get('/editcustomer/{id}',[\App\Http\Controllers\frontend\CustomerController::class,'edit'])->name('customer.edit');
     Route::post('/editcustomer/{id}',[\App\Http\Controllers\frontend\CustomerController::class,'update'])->name('customer.update');
@@ -142,9 +144,9 @@ Route::group(['prefix' => 'user'], function () {
 
 
 
-    //Đăng nhập và đăng kí ở trang checkout
-    Route::post('checkout.login',[\App\Http\Controllers\frontend\LoginController::class,'loginCheckout'])->name('login.checkout');
-    Route::post("register.login", [\App\Http\Controllers\frontend\LoginController::class, "registerCheckout"])->name("login.register");
+//    //Đăng nhập và đăng kí ở trang checkout
+    Route::post('/checkout.login',[\App\Http\Controllers\frontend\LoginController::class,'loginCheckout'])->name('login.checkout');
+//    Route::post("/register.login", [\App\Http\Controllers\frontend\LoginController::class, "registerCheckout"])->name("login.register");
 
 });
 

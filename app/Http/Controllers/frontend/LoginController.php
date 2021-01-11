@@ -58,34 +58,30 @@ class LoginController extends Controller
 
 
 
-// đăng nhập và đăng kí ở trang checkout
-    public function loginCheckout(FormExampleRequest  $request)
+//// đăng nhập và đăng kí ở trang checkout
+    public function loginCheckout(Request  $request)
     {
         $data = [
             'email' => $request->input('email'),
             'password' => $request->input('password'),
         ];
-
         if (Auth::guard('customer')->attempt($data)) {
-
-            return redirect()->route("page.checkout");
+            return redirect()->back();
         }
-        Session::flash('error_login', "Email hoặc mật khẩu không đúng.");
-        return redirect()->route('page.checkout');
     }
-
-    public function registerCheckout(LoginExampleRequest $request)
-    {
-
-        $user = new Customer();
-        $user->user = $request->input('user');
-        $user->email = $request->input('email');
-        $user->password = Hash::make($request->password);
-        $user->address = $request->input('address');
-        $user->phone = $request->input('phone');
-        $user->save();
-        return redirect()->back();
-    }
+//
+//    public function registerCheckout(Request $request)
+//    {
+//
+//        $user = new Customer();
+//        $user->user = $request->input('user');
+//        $user->email = $request->input('email');
+//        $user->password = Hash::make($request->password);
+//        $user->address = $request->input('address');
+//        $user->phone = $request->input('phone');
+//        $user->save();
+//        return redirect()->back();
+//    }
 
 
 

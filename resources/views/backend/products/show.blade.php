@@ -1,4 +1,8 @@
 @extends('backend.master')
+
+@section('title')
+    Chi tiết  sản phẩm
+@endsection
 @section('content')
 
     <style>
@@ -19,6 +23,11 @@
        .table-responsive{
            width: 900px!important;
        }
+        button{
+            background: #3f3f3f;
+            color: white;
+            font-size: 20px!important;
+        }
 
     </style>
     <main>
@@ -43,6 +52,12 @@
                                 <td>Giá: {{ number_format($product->price) }} đ</td>
                             </tr>
                             <tr>
+                                <td>Số lượng: {{($product->quantity) }}</td>
+                            </tr>
+                            <tr>
+                                <td>Phần trăm giảm giá: {{($product->voucher) }} </td>
+                            </tr>
+                            <tr>
                                 <td>
                                     <img class="img-thumbnail img-fluid" src="{{asset ('storage/images/'.$product->img)}} " alt="">
                                 </td>
@@ -52,6 +67,8 @@
                                 <td><p>Mô tả sản phẩm:</p><br> {!! $product->descripton !!}</td>
                             </tr>
                         </table>
+                        <button onclick="window.history.go(-1); return false;">Hủy</button>
+
                     </div>
                 </div>
             </div>
