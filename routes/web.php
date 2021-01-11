@@ -113,7 +113,8 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/list/{id}', [\App\Http\Controllers\frontend\ProductController::class, 'showProductline'])->name('productline.detail');
     Route::get('/show/{id}', [\App\Http\Controllers\frontend\ProductController::class, 'showProduct'])->name('products.detail');
     Route::get('/menu/{id}',[\App\Http\Controllers\frontend\ProductController::class,'show'])->name('show.menu');
-    Route::get('show',[\App\Http\Controllers\frontend\ProductController::class,'indexpl']);
+    Route::get('/show',[\App\Http\Controllers\frontend\ProductController::class,'indexpl']);
+    Route::get('/index',[\App\Http\Controllers\frontend\ProductController::class,'indexMaster'])->name('index.index');
 
 
     Route::post('/search',[\App\Http\Controllers\frontend\SearchController::class,'searchProduct'])->name('p.search');

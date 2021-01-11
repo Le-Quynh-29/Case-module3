@@ -15,10 +15,11 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
-        $productlines = ProductLine::paginate(3);
+        $products = Product::paginate(4);
+        $productlines = ProductLine::all();
+        $pl = ProductLine::paginate(3);
         $count = Cart::count();
-        return view('frontend.list',compact('products','productlines','count'));
+        return view('frontend.list',compact('products','productlines','count','pl'));
     }
 
     public function showProductline($id)
@@ -43,9 +44,10 @@ class ProductController extends Controller
         return view('frontend.productline',compact('product'));
     }
 
-    public function indexpl()
+    public function indexMaster()
     {
         $productline = ProductLine::paginate(3);
         return view('frontend.index',compact('productline'));
     }
+
 }
