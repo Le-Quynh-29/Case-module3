@@ -132,6 +132,7 @@ Route::group(['prefix' => 'user'], function () {
 
     // hiển thị trang yêu thích
     Route::get('/wishlist',[\App\Http\Controllers\frontend\CartController::class,'wishList'])->name('wish.list');
+    Route::get('/wishlist/{id}',[\App\Http\Controllers\frontend\CartController::class,'addToWishList'])->name('add.wishlist');
 
 
 

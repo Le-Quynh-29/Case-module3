@@ -38,13 +38,11 @@ class CartController extends Controller
           'id'=>$id,
           'name'=>$product->productName,
             'price' => $product->price,
-//          'voucher'=>$product->price * (1 - ($product->voucher/100)),
           'qty'=>'1',
             'options' =>[
                 'img'=> $product->img,
                 'voucher'=>$product->price * (1 - ($product->voucher/100)),
                 'discount'=>$product->voucher,
-
             ]
         ];
         Cart::add($cartInfo);
@@ -71,11 +69,28 @@ class CartController extends Controller
         return view('frontend.checkout',compact('cart','count','totalprice'));
     }
 
+
+    //controller trang yêu thích
     public function wishList(){
         $list = Cart::content();
-
-
         return view('frontend.wishlist',compact('list'));
+    }
+
+    public function addToWishList($id){
+        $product = Product::findOrFail($id);
+        $cartInfo=[
+            'id'=>$id,
+            'name'=>$product->productName,
+            'price' => $product->price,
+            'qty'=>'1',
+            'options' =>[
+                'img'=> $product->img,
+                'voucher'=>$product->price * (1 - ($product->voucher/100)),
+                'discount'=>$product->voucher,
+            ]
+        ];
+        Cart::add($cartInfo);
+        return redirect()->route('wish.list');
     }
 
 

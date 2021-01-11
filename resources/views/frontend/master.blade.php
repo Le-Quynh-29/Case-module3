@@ -140,17 +140,8 @@
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
 
                     <li class="nav-item active"><a class="nav-link" href="{{route('products.show')}}">Trang chủ</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Shop</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{asset('frontend/shop.html')}}">Sidebar Shop</a></li>
-                            <li><a href="{{asset('frontend/shop-detail.html')}}">Shop Detail</a></li>
-                            <li><a href="{{asset('frontend/cart.html')}}">Cart</a></li>
-                            <li><a href="{{asset('frontend/checkout.html')}}">Checkout</a></li>
-                            <li><a href="{{asset('frontend/my-account.html')}}">My Account</a></li>
-                            <li><a href="{{route('wish.list')}}">Sản phẩm yêu thích</a></li>
-                        </ul>
-                    </li>
+{{--                    <li class="dropdown"><a class="nav-link" href="{{route('wish.list')}}">Yêu thích</a></li>--}}
+
                     <li class="dropdown">
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Danh mục</a>
                         <ul class="dropdown-menu">
@@ -162,6 +153,8 @@
                         </ul>
                     </li>
                     <li  class="dropdown"><a class="nav-link" href="#">Liên hệ</a></li>
+                    <li class="dropdown"><a class="nav-link" href="{{route('wish.list')}}">Yêu thích</a></li>
+
                 </ul>
             </div>
             <div class="attr-nav">
