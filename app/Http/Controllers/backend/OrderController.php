@@ -7,6 +7,7 @@ use App\Models\Customer;
 use App\Models\Order;
 use App\Models\Orderdetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class OrderController extends Controller
@@ -62,5 +63,11 @@ class OrderController extends Controller
         $orders->Orderdetail()->delete();
         $orders->delete();
         return redirect()->route('orders.list');
+    }
+
+    public function show(Order $order ,$id)
+    {
+     $orderdetail = DB::table('orderdetails')->where('orderNumber', $id)->get();
+     return view('backend.orders.show', compact('orderdetail'));
     }
 }
