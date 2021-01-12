@@ -32,7 +32,7 @@
                                                data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
 
                                     </ul>
-                                    <a class="cart" href="{{route('cart.addToCart',$product->id)}}">Add to Cart</a>
+                                    <a class="cart" href="{{route('cart.addToCart',$product->id)}}">Thêm vào giỏ hàng </a>
                                 </div>
                             </div>
                             <div class="why-text">
@@ -51,7 +51,6 @@
                                         {{number_format($product->price)}}đ
                                     </h5>
                                 @endif
-                                {{--                    <h5>{{number_format($product->price)}}đ</h5>--}}
                             </div>
 
                         </div>

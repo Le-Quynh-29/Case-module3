@@ -14,7 +14,7 @@ class ProductLineController extends Controller
 {
     public function index()
     {
-        $productline = ProductLine::paginate(5);
+        $productline = ProductLine::paginate(4);
         return view('backend.productline.list', compact('productline'));
     }
 
@@ -102,7 +102,7 @@ class ProductLineController extends Controller
         $productline = DB::table('product_lines')
             //->where('productName', 'like', '%'.$search.'%')->get();
             ->where('id','like','%'.$search.'%')
-            ->paginate(5);
+            ->paginate(4);
         Session::flash('search_result',true);
         return view('backend.productline.list',compact('productline'));
     }

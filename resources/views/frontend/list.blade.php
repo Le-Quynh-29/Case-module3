@@ -11,6 +11,17 @@
 @endsection
 
 @section('product')
+    <div class="products-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>Danh sách sản phẩm</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row special-list">
     @foreach($products as $key => $product)
         <div class="col-lg-3 col-md-6 special-grid best-seller">
             <div class="products-single fix">
@@ -47,9 +58,15 @@
                         </del>
                         <br/>
                         <h5>
-                            {{($product->price * (1 - $product->voucher/100))}}đ
+                            {{number_format($product->price * (1 - $product->voucher/100))}}đ
                         </h5>
                     @else
+                        <del>
+
+                        </del>
+                    <br/>
+                        <br/>
+
                         <h5>
                             {{number_format($product->price)}}đ
                         </h5>
@@ -59,12 +76,20 @@
 
         </div>
     @endforeach
+    </div>
+        <div style="float: right;">{{ $products->links("pagination::bootstrap-4") }}</div>
+
+        </div>
+        </div>
 
 @endsection
 
 @section('productline')
+    <div id="slides-shop" class="cover-slides">
+
+        <ul class="slides-container">
     @foreach($productlines as $productline)
-        <li class="text-center">--}}
+        <li class="text-center">
             <img src="{{asset('storage/images/' . $productline->img)}}" alt="">
             <div class="container">
                 <div class="row">
@@ -78,6 +103,12 @@
             </div>
         </li>
     @endforeach
+        </ul>
+        <div class="slides-navigation">
+            <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+        </div>
+    </div>
 @endsection
 
 
@@ -94,6 +125,7 @@
             </div>
 
             <div class="row">
+
     @foreach($pl as $productline)
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="shop-cat-box">

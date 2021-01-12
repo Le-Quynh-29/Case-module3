@@ -28,7 +28,7 @@
                                                             <li><a href="{{route('add.wishlist',$val->id)}}" data-toggle="tooltip"
                                                                    data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                         </ul>
-                                                        <a class="cart" href="{{route('cart.addToCart',$val->id)}}">Add to Cart</a>
+                                                        <a class="cart" href="{{route('cart.addToCart',$val->id)}}">Thêm vào giỏ h</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">

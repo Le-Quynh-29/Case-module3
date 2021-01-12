@@ -14,7 +14,7 @@
                     <p style="color: black;font-size: 20px">
                         {{$productline->description}}
                     </p>
-                    <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Cancle</button>
+{{--                    <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Cancle</button>--}}
 
                 </div>
             </div>

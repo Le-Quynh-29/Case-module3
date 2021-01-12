@@ -30,14 +30,13 @@
                             {{number_format($product->price)}}đ
                         </h5>
                     @endif
-                    <h4>Short Description:</h4>
+                    <h4>Mô t:</h4>
                     <h5>Số lượng sản phẩm :  {{$product->quantity}}</h5>
                     <p style="font-size: 17px;color: black">
                         {{$product->descripton}}
                     </p>
                     <div class="price-box-bar">
                         <div class="cart-and-bay-btn">
-                            <a class="btn hvr-hover" data-fancybox-close="" href="#">Buy New</a>
                             <a class="btn hvr-hover" data-fancybox-close="" href="{{route('cart.addToCart',$product->id)}}"> Thêm vào giỏ hàng</a>
 {{--                            <a class="btn hvr-hover"  href="{{route('wish.list',$product->id)}}"> Yêu thích</a>--}}
 

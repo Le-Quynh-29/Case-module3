@@ -1,12 +1,20 @@
 @extends('backend.master')
 @section('content')
+    <style>
+        td{
+            color: black!important;
+        }
+        th{
+            color: black!important;
+        }
+    </style>
     <main>
         <div class="container-fluid">
             <div class="card mb-4 mt-4">
-                <div class="card-header">
+                <h1 class="card-header">
                     <i class="fas fa-table mr-1"></i>
                     Chi tiết đơn hàng
-                </div>
+                </h1>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -32,7 +40,7 @@
                                             @php
                                                 $productCode = $od->productCode;
                                                 $product = \App\Models\Product::findOrFail($productCode);
-                                                echo '<a href="'. route('orders.show', $productCode) .'">'.$product->productName.'</a>';
+                                                echo '<p>'.$product->productName.'</p>';
                                             @endphp
                                         </td>
                                         <td>{{ $od->quantity }}</td>
@@ -44,6 +52,8 @@
                             </tbody>
                         </table>
                     </div>
+                    <div style="float: right;">{{ $orderdetail->links("pagination::bootstrap-4") }}</div>
+
                 </div>
             </div>
         </div>
