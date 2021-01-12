@@ -23,6 +23,7 @@
           width: 400px !important;
       }
   </style>
+
     <div class="container">
         <div class="col-12 col-md-12">
             <div class="row">
@@ -59,6 +60,6 @@
                 </div>
             </div>
         </div>
-    </div>
+{{--    </div>--}}
 @endsection
 

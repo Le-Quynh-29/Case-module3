@@ -1,16 +1,8 @@
 @extends('frontend.master')
 @section('frontend-master')
 
-    <div id="slides-shop" class="cover-slides">
-
-        <ul class="slides-container">
             @yield('productline')
-        </ul>
-        <div class="slides-navigation">
-            <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-            <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-        </div>
-    </div>
+
                 @yield('productlines')
     <div class="box-add-products">
         <div class="container">
@@ -29,24 +21,8 @@
             </div>
         </div>
     </div>
-                    <div class="products-box">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="title-all text-center">
-                                        <h1>Danh sách sản phẩm</h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row special-list">
+
                                 @yield('product')
-
-                            </div>
-                            <div style="top: 100px;float: right;">{{ $products->links( "pagination::bootstrap-4") }}</div>
-
-                        </div>
-                    </div>
-
 
                                         <div class="latest-blog">
                                             <div class="container">

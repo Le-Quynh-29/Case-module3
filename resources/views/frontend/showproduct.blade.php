@@ -15,6 +15,7 @@
 
                     </div>
                 </div>
+
                 <div class="col-xl-7 col-lg-7 col-md-6">
                     <div class="single-product-details">
                         <h2 class="noo-sh-title-top"><span>{{$product->productName}}</span></h2>
@@ -40,7 +41,6 @@
                             <div class="cart-and-bay-btn">
                                 <a class="btn hvr-hover" data-fancybox-close=""
                                    href="{{route('cart.addToCart',$product->id)}}"> Thêm vào giỏ hàng</a>
-
                             </div>
                         </div>
 

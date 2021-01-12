@@ -32,12 +32,12 @@
     <div class="agil-info-calendar">
         <!-- calendar -->
         <div class="col-md-6 agile-calendar">
-            <div style="width: 1600px!important;" class="calendar-widget">
+            <div style="width: 1000px!important;" class="calendar-widget">
                 <div class="panel-heading ui-sortable-handle">
 					<span class="panel-icon">
                       <i class="fa fa-calendar-o"></i>
                     </span>
-                    <span style="font-size: 40px!important;" class="panel-title"> LỊCH </span>
+                    <span style="font-size: 20px!important;" class="panel-title"> LỊCH </span>
                 </div>
                 <!-- grids -->
                 <div class="agile-calendar-grid">

@@ -67,7 +67,7 @@ class OrderController extends Controller
 
     public function show(Order $order ,$id)
     {
-     $orderdetail = DB::table('orderdetails')->where('orderNumber', $id)->get();
+     $orderdetail = DB::table('orderdetails')->where('orderNumber', $id)->paginate(5);
      return view('backend.orders.show', compact('orderdetail'));
     }
 }

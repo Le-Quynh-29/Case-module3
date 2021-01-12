@@ -51,6 +51,9 @@
                             <li><a href="{{route('showLogin')}}">
                                     <i class="fa fa-user s_color"></i> Đăng nhập</a>
                             </li>
+                            <li><a href="{{route('showRegister')}}">
+                                    <i class="fa fa-user s_color"></i> Đăng ký</a>
+                            </li>
                         @else
                             <li><a href="{{route('customers.detail')}}">
                                     <i class="fa fa-user s_color"></i> Tài khoản</a>
@@ -145,7 +148,7 @@
                                 @endforeach
                             </ul>
                         </ul>
-                    </li>
+
                 </ul>
             </div>
             <div class="attr-nav">
