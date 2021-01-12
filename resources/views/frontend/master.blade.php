@@ -28,7 +28,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{asset('frontend/css/custom.css')}}">
 
-    <!--[if lt IE 9]>
+<!--[if lt IE 9]>
     <script src="{{asset('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')}}"></script>
     <script src="{{asset('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')}}"></script>
     <script src="{{asset('https://code.jquery.com/jquery-latest.js')}}"></script>
@@ -43,15 +43,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="custom-select-box">
-                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-                        <option>¥ JPY</option>
-                        <option>$ USD</option>
-                        <option>€ EUR</option>
-                    </select>
-                </div>
                 <div class="right-phone-box">
-                    <p>Call US :- <a href="#"> +11 900 800 100</a></p>
+                    <p>Liên hệ với chúng tôi:- <a href="#"> 0912422002</a></p>
                 </div>
                 <div class="our-link">
                     <ul>@if(!\Illuminate\Support\Facades\Auth::guard('customer')->check())
@@ -131,7 +124,7 @@
                         aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="{{asset('frontend/index.html')}}"><img
+                <a class="navbar-brand" href="#"><img
                         src="{{asset('frontend/images/logo.png')}}" class="logo" alt=""></a>
             </div>
 
@@ -150,12 +143,11 @@
                         <ul class="dropdown-menu">
                             <ul>
                                 @foreach($productlines as $productline)
-                                    <li><a style="color: black!important;background: white!important;" href="{{route('show.menu',$productline->id)}}">{{$productline->id}}</a></li>
+                                    <li><a style="color: black!important;background: white!important;"
+                                           href="{{route('show.menu',$productline->id)}}">{{$productline->id}}</a></li>
                                 @endforeach
                             </ul>
                         </ul>
-                    </li>
-                    <li class="dropdown"><a class="nav-link" href="{{route('wish.list')}}">Yêu thích</a></li>
 
                 </ul>
             </div>
@@ -165,44 +157,19 @@
                         <a href="{{route('page.cart')}}">
                             <i class="fa fa-shopping-bag"></i>
                             <span class="badge">{{$count}}</span>
-                            <p>My Cart</p>
+                            <p>Giỏ hàng</p>
                         </a>
                     </li>
                 </ul>
             </div>
-
-        @yield('search')
-
-
-
-
-            <!-- End Atribute Navigation -->
-        </div>
-{{--        =======--}}
-        {{--            <!-- End Atribute Navigation -->--}}
-        {{--        </div>--}}
+{{--            <div>--}}
+                @yield('search')
+            </div>
 
     </nav>
-    <!-- End Navigation -->
-
 </header>
-<!-- End Main Top -->
-
-<!-- Start Top Search -->
-{{--<div class="top-search">--}}
-{{--    <div class="container">--}}
-{{--        <div class="input-group">--}}
-{{--            <span class="input-group-addon"><i class="fa fa-search"></i></span>--}}
-{{--            <input type="text" class="form-control" placeholder="search">--}}
-{{--            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
 
 @yield('frontend-master')
-
-
-
 <!-- Start Instagram Feed  -->
 <div class="instagram-box">
     <div class="main-instagram owl-carousel owl-theme">
@@ -210,7 +177,8 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-01.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i
+                            class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -218,7 +186,8 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-02.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i
+                            class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -226,7 +195,8 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-03.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i
+                            class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -234,7 +204,8 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-04.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i
+                            class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -242,7 +213,8 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-05.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i
+                            class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -250,7 +222,8 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-06.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i
+                            class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -258,7 +231,8 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-07.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i
+                            class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -266,7 +240,8 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-08.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i
+                            class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -274,7 +249,8 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-09.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i
+                            class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -282,7 +258,8 @@
             <div class="ins-inner-box">
                 <img src="{{asset('frontend/images/instagram-img-05.jpg')}}" alt=""/>
                 <div class="hov-in">
-                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/TQTShop-101588998577657/?ref=page_internal"><i
+                            class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -298,11 +275,11 @@
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-top-box">
-                        <h3>Business Time</h3>
+                        <h3>Thời gian kinh doanh</h3>
                         <ul class="list-time">
-                            <li>Monday - Friday: 08.00am to 05.00pm</li>
-                            <li>Saturday: 10.00am to 08.00pm</li>
-                            <li>Sunday: <span>Closed</span></li>
+                            <li>Thứ hai - Thứ sáu: 08.00am to 05.00pm</li>
+                            <li>Thứ bảy: 10.00am to 08.00pm</li>
+                            <li>Chủ nhật: <span>Đóng cửa.</span></li>
                         </ul>
                     </div>
                 </div>
@@ -311,41 +288,41 @@
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-widget">
-                        <h4>About Freshshop</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. </p>
+                        <h4>Giới thiệu về TQTShop</h4>
+                        <p>TQTShop là một điểm đến của rất nhiều khách hàng vì sự tin tưởng và
+                            tin dùng tất cả lương thực và thực phẩm đến từ TQTShop.</p>
+                        <p>Chúng tôi sẽ nỗ lực và cố gắng mang đến cho khách hàng những sản phẩm
+                            tốt nhất và giá cả hợp lý với mọi gia đình.</p>
+                        <p>Cảm ơn quý khách đã đến và đặt niềm tin cho TQTShop.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-link">
-                        <h4>Information</h4>
+                        <h4>Thông tin</h4>
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Customer Service</a></li>
-                            <li><a href="#">Our Sitemap</a></li>
-                            <li><a href="#">Terms &amp; Conditions</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Delivery Information</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                            <li><a href="#">Dịch vụ khách hàng</a></li>
+                            <li><a href="#">Điều khoản và điền k</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Thông tin giao hàng</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-link-contact">
-                        <h4>Contact Us</h4>
+                        <h4>Liên hệ với chúng tôi</h4>
                         <ul>
                             <li>
-                                <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street
-                                    Wichita,<br> KS 67213 </p>
+                                <p><i class="fas fa-map-marker-alt"></i>Địa chỉ : TQTShop . Số 2002 <br> Khu đô thị Mon
+                                    City
+                                    ,<br> Mỹ Đình 2 - Hà Nội</p>
                             </li>
                             <li>
-                                <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705
-                                        770</a></p>
+                                <p><i class="fas fa-phone-square"></i>Số điện thoại: <a href="tel:+1-888705770">0912422002</a>
+                                </p>
                             </li>
                             <li>
-                                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a>
+                                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:tqtshop2002@gmail.com">mailto:tqtshop2002@gmail.com</a>
                                 </p>
                             </li>
                         </ul>
@@ -359,8 +336,8 @@
 
 <!-- Start copyright  -->
 <div class="footer-copyright">
-    <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By :
-        <a href="https://html.design/">html design</a></p>
+    <p class="footer-company">Cảm ơn quý khách!!! <a href="#">TQTShop</a>
+        <a href="https://html.design/"></a></p>
 </div>
 <!-- End copyright  -->
 

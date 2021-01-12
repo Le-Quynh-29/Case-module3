@@ -43,7 +43,7 @@
                 @foreach($orders as $key => $order)
                     <tr>
                         <th scope="row">{{ ++$key }}</th>
-                        <td><a href="{{route('orders.show', $order->id)}}">{{ $order->customer()->first()->user }}</a></td>
+                        <td><a href="{{route('orders.show', $order->id)}}">{{ $order->customer()->first()->user}}</a></td>
                         <td>{{ $order->orderDate }}</td>
                         <td>{{ $order->requiredDate }}</td>
                         <td>{{ $order->shippedDate }}</td>

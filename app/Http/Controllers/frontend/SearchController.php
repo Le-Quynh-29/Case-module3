@@ -17,13 +17,7 @@ class SearchController extends Controller
         if(!$search){
             return redirect()->route('p.search');
         }
-//
-//        $p = DB::table('products')->where(function ($query) use ($search){
-//                $query->where('productName','like','%'.$search.'%')
-//                ->orWhere('productLine', 'like', '%' . $search . '%')
-//                    ->orWhere('price', '<=', $search );
-//            })
-//            ->get();
+
         $p = DB::table('products')->where('productName','like','%'.$search.'%')
             ->get();
         $productline = ProductLine::all();

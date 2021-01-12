@@ -1,7 +1,7 @@
 @extends('frontend.master')
 @section('search')
     <li>
-        <form action="{{route('p.search')}}"  method="post">
+        <form action="{{route('p.search')}}" method="post">
             @csrf
             <input type="text" name="search" class="form-control search" placeholder=" Search...">
         </form>
@@ -11,8 +11,8 @@
 
 @section('frontend-master')
 
-<div class="products-box">
-    <div class="container">
+    <div class="products-box">
+        <div class="container">
             <div class="row special-list">
                 @foreach($p as $key => $product)
                     <div class="col-lg-3 col-md-6 special-grid best-seller">
@@ -24,15 +24,16 @@
                                     </div>
                                 @else
                                 @endif
-                                <img src="{{asset ('storage/images/'.$product->img)}} " class="img-fluid" alt="" style="height: 200px">
+                                <img src="{{asset ('storage/images/'.$product->img)}} " class="img-fluid" alt=""
+                                     style="height: 200px">
                                 <div class="mask-icon">
                                     <ul>
-                                        <li><a href="{{route('products.detail',$product->id)}}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                        <li><a href="{{route('add.wishlist',$product->id)}}" data-toggle="tooltip"
-                                               data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                        <li><a href="{{route('products.detail',$product->id)}}" data-toggle="tooltip"
+                                               data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
 
                                     </ul>
                                     <a class="cart" href="{{route('cart.addToCart',$product->id)}}">Thêm vào giỏ hàng </a>
+
                                 </div>
                             </div>
                             <div class="why-text">

@@ -21,10 +21,6 @@
                     <label>Số điện thoại</label>
                     <input type="text" name="phone" value="{{$customer->phone}}"/>
                 </div>
-{{--                <div class="form-group">--}}
-{{--                    <label>Thay đổi mật khẩu</label>--}}
-{{--                    <input type="password" name="password" value="{{$customer->password}}"/>--}}
-{{--                </div>--}}
                 <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
                 <a class="btn btn-secondary" href="{{route('customers.detail')}}">Hủy</a>
             </form>

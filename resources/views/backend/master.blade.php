@@ -83,7 +83,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <img alt="" src="">
-                        <span style="font-size: 30px!important; text-align: center!important; width: 100px!important;" class="username">Action</span>
+                        <span style="font-size: 30px!important; text-align: center!important; width: 100px!important;" class="username"></span>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">

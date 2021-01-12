@@ -1,21 +1,9 @@
 @extends('frontend.master')
 @section('frontend-master')
 
-
-
-
             @yield('productline')
 
-
-
-
-
-
-
                 @yield('productlines')
-
-
-
     <div class="box-add-products">
         <div class="container">
             <div class="row">
@@ -34,14 +22,7 @@
         </div>
     </div>
 
-
-
-
                                 @yield('product')
-
-
-
-
 
                                         <div class="latest-blog">
                                             <div class="container">

@@ -14,8 +14,6 @@
                     <p style="color: black;font-size: 20px">
                         {{$productline->description}}
                     </p>
-{{--                    <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Cancle</button>--}}
-
                 </div>
             </div>
         </div>
@@ -38,8 +36,6 @@
                     <div class="mask-icon">
                         <ul>
                             <li><a href="{{route('products.detail',$val->id)}}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                            <li><a href="{{route('add.wishlist',$val->id)}}" data-toggle="tooltip"
-                                   data-placement="right" title="Yêu thích"><i class="far fa-heart"></i></a></li>
 
                         </ul>
                         <a class="cart" href="{{route('cart.addToCart',$val->id)}}">Thêm vào giỏ hàng</a>
@@ -61,7 +57,6 @@
                             {{number_format($val->price)}}đ
                         </h5>
                     @endif
-                    {{--                    <h5>{{number_format($product->price)}}đ</h5>--}}
                 </div>
 
             </div>
