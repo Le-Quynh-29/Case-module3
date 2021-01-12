@@ -60,20 +60,8 @@
                 @yield('customer')
                 @endif
 
-
-
         </div>
     </div>
 </div>
 
-
-{{--    <script>--}}
-{{--        $(function(){--}}
-{{--            $('#1').hide();--}}
-{{--            $('button').click(function(){--}}
-{{--                $('#1').show();--}}
-
-{{--            });--}}
-{{--        });--}}
-{{--    </script>--}}
 @endsection

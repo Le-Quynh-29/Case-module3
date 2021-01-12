@@ -14,9 +14,7 @@
             color: black!important;
 
         }
-        label{
-            font-size: 25px!important;
-        }
+
         input{
             font-size: 20px!important;
         }
@@ -24,7 +22,6 @@
             font-size: 20px!important;
         }
     </style>
-
     <div class="col-12 col-md-12">
         <div class="row">
             <div class="col-12">
@@ -59,7 +56,6 @@
                         <input type="text" class="form-control" name="voucher" value="{{ $product->voucher }}">
                     </div>
                     <div>
-{{--                        <label for="inputName">File Name</label>--}}
                         <img style="width: 400px;height: 300px" class="img-thumbnail img-fluid" src="{{asset ('storage/images/'.$product->img)}} " alt="">
                         <input type="file" name="img" class="form-control">
                         <input type="hidden" name="imgName" class="form-control" value="{{ $product->img }}">
@@ -70,7 +66,6 @@
                     <div class="form-group">
                         <label>Mô tả </label>
                         <textarea style="height: 200px" class="form-control" name="descripton" >{{ $product->descripton }}</textarea>
-{{--                        <input type="text" class="form-control" name="descripton" value="{{ $product->descripton }}">--}}
                     </div>
                     <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
                     <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>
