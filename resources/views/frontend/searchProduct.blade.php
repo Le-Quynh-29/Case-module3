@@ -32,7 +32,6 @@
                                                data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
 
                                     </ul>
-                                    <a class="cart" href="{{route('cart.addToCart',$product->id)}}">Thêm vào giỏ hàng </a>
 
                                 </div>
                             </div>
