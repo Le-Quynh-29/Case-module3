@@ -62,7 +62,7 @@
                                     {{ $val->productName }}
                                     </a>
                                     @endforeach
-                                    <div style="float: right;">{{ $product->links( "pagination::bootstrap-4") }}</div>
+                                    <div style="float: right ;">{{ $product->links( "pagination::bootstrap-4") }}</div>
                                 </td>
 
                             </tr>

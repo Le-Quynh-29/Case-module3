@@ -1,6 +1,6 @@
 @extends('frontend.showCustomer')
 @section('customer')
-    <div class="col-lg-4 col-sm-12" >
+    <div class="col-lg-6 col-sm-12" >
         <div class="contact-info-left" id="1">
             <h2>Sửa thông tin của bạn</h2>
             <form action="{{route('customer.update',$customer->id)}}" method="post">

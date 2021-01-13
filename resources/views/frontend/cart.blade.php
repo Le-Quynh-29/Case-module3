@@ -97,6 +97,7 @@
                                 </a>
                             </td>
                             <td class="price-pr">
+                                @if($value->discount != 0)
                                 <del>
                                     {{number_format($value->price)}}đ
                                 </del>
@@ -104,6 +105,11 @@
                                     {{number_format($value->options->voucher)}}
                                     đ
                                 </p>
+                                @else
+                                    <p>
+                                        {{number_format($value->price)}}đ
+                                    </p>
+                                    @endif
                             </td>
                             <td class="quantity-box"><input type="number" name="cart[{{$value->id}}]" value="{{$value->qty}}" size="4" value="1" min="0" step="1" class="c-input-text qty text"
                             </td>

@@ -13,7 +13,7 @@
             width: 400px!important;
         }
         .contact-info-left{
-            background: wheat!important;
+            background: white!important;
         }
         li{
             color: black!important;
@@ -28,7 +28,7 @@
                 @php
                 $customer = \Illuminate\Support\Facades\Auth::guard('customer')->user();
                 @endphp
-<div class="col-lg-8 col-sm-12">
+<div class="col-lg-6 col-sm-12">
     <div class="contact-form-right">
         <h2>Thông tin của bạn: {{$customer->user}}</h2>
 

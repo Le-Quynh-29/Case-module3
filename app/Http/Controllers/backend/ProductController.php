@@ -20,7 +20,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = Product::paginate(5);
+        $products = Product::paginate(7);
         return view('backend.products.list', compact('products'));
     }
 
@@ -169,7 +169,7 @@ class ProductController extends Controller
             //->where('productName', 'like', '%'.$search.'%')->get();
             ->where('productName','like','%'.$search.'%')
             ->orWhere('productLine','like','%'.$search.'%')
-        ->paginate(5);
+        ->paginate(7);
         $productline = ProductLine::all();
         Session::flash('search_result',true);
         return view('backend.products.list',compact('products','productline'));
