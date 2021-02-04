@@ -11,14 +11,14 @@ class Product extends Model
 
     protected $fillable = ['productName','productLine','description','quantity','price','img'];
 
-    public function Orderdetail()
+    public function orders()
     {
-        return $this->belongsTo('App\Models\Orderdetail');
+        return $this->belongsToMany(Order::class, 'orderdetails', 'productCode', 'orderNumber');
     }
 
     public function ProductLine()
     {
-        return $this->belongsTo('App\Models\ProductLine');
+        return $this->belongsTo(ProductLine::class,'productLine');
     }
 
     public function usesTimestamps():bool

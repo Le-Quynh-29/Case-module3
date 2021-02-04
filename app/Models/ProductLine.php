@@ -9,15 +9,17 @@ class ProductLine extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['productLine','description','img'];
+    protected $fillable = ['id','description','img'];
 
     public function Product()
     {
-        return $this->hasMany('App\Models\Product');
+        return $this->hasMany(Product::class, 'productline');
     }
 
     public function usesTimestamps():bool
     {
         return false;
     }
+    public $incrementing = false;
+
 }

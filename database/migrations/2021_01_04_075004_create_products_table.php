@@ -17,9 +17,9 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('productName');
             $table->string('productLine');
-            $table->string('descripton');
+            $table->text('descripton');
             $table->integer('quantity');
-            $table->float('price');
+            $table->string('price');
             $table->string('img');
             $table->string('voucher');
             $table->timestamps();

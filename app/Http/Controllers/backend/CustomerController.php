@@ -5,15 +5,19 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 //use App\Models\City;
 use App\Models\Customer;
+use App\Models\Order;
+use App\Models\ProductLine;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
-class CustomerController extends Controller
+class
+CustomerController extends Controller
 {
     public function index()
     {
-        $customers = Customer::paginate(10);
+        $customers = Customer::paginate(5);
         return view('backend.customers.list',compact('customers'));
     }
 
@@ -51,18 +55,31 @@ class CustomerController extends Controller
 //        $customer->password =Hash::make($request->password);
         $customer->save();
 
-        //dung session de dua ra thong bao
-//        Session::flash('success', 'Cập nhật khách hàng thành công');
-
-        //cap nhat xong quay ve trang danh sach khach hang
         return redirect()->route('customers.list');
     }
 
     public function destroy($id)
     {
         $cutomers = Customer::find($id);
+        $cutomers->Order()->delete();
         $cutomers->delete();
         return redirect()->route('customers.list');
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('keyword');
+        if(!$search){
+            return redirect()->route('customers.list');
+        }
+
+        $customers = DB::table('customers')
+            //->where('productName', 'like', '%'.$search.'%')->get();
+            ->where('user','like','%'.$search.'%')
+            ->paginate(5);
+        $productline = Order::all();
+        Session::flash('search_result',true);
+        return view('backend.customers.list',compact('customers','productline'));
     }
 
 }

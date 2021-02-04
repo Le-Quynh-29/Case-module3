@@ -10,19 +10,23 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
-      'orderDate','requiredDate','shippedDate','status'
+      'orderDate','requiredDate','shippedDate','status','customerNumber'
     ];
 
-    public function Customer()
+    public function customer()
     {
-        return $this->belongsTo('App\Models\Customer');
+        return $this->belongsTo(Customer::class, 'customerNumber');
     }
 
-    public function Orderdetail()
-    {
-        return $this->hasMany('App\Models\Orderdetail');
-    }
+//    public function Orderdetail()
+//    {
+//        return $this->hasMany(Orderdetail::class,'orderNumber');
+//    }
+//Orderdetai
 
+public function Product(){
+        return $this->belongsToMany(Product::class,'orderdetails','orderNumber','productCode');
+}
     public function usesTimestamps():bool
     {
         return false;
